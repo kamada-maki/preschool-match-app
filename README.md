@@ -105,11 +105,14 @@ Rubocop
 
 #### Association
 - has_many :comments
+- has_many :likes
 ---------------------------------------------
 ### commentsテーブル
-| column     | Type         |  Options      |
-|------------|------------- |---------------|
-|text        |string        | null: false   |
+| column     | Type         |  Options            |
+|------------|------------- |---------------------|
+|text        |string        | null: false         |
+|user        |references    | foreign_key: true   |
+|preschool   |references    | foreign_key: true   |
 #### Association
 - belongs_to :user
 - belongs_to :preschool
@@ -133,9 +136,22 @@ Rubocop
 |building      |string        |                              |
 |open_hour     |time          | null: false                  |
 |close_hour    |time          | null: false                  |
+|capacity      |integer       | null: false                  |
 |category_id   |integer       | null: false                  |
 |concept       |string        | null: false                  |
+|admin         |references    | foreign_key: true            |
 ※ imageはActivestrageで実装すること
 #### Association
 - belongs_to :admin
 - has_many :comments
+- has_many :likes
+
+---------------------------------------------
+### likesテーブル
+| column     | Type         |  Options         |
+|------------|------------- |------------------|
+|user_id     |references    |foreign_key: true | 
+|preschool_id|references    |foreign_key: true |
+#### Association
+- belongs_to :preschool
+- belongs_to :user
