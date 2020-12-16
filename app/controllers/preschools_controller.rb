@@ -7,6 +7,11 @@ class PreschoolsController < ApplicationController
   end
   def create
     @preschool =Preschool.new(preschool_params)
+    if @preschool.save
+     render :create
+    else
+      render :new
+    end
   end  
 
   private
