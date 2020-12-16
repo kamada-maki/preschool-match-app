@@ -1,7 +1,7 @@
 <h2>新規登録（運営者）</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "admins/shared/error_messages", resource: resource %>
+<%= form_with model: @admin, url: admin_registration_path, class: 'registration-main', local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
 
   <div class="field">
    <%= f.label :name, "登録名" %><br />
