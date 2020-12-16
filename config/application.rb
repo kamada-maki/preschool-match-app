@@ -12,5 +12,6 @@ module PreschoolMatch
     config.load_defaults 6.0
 
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
   end
 end
