@@ -130,10 +130,11 @@ Rubocop
 | column       | Type         |  Options                     |
 |--------------|------------- |------------------------------|
 |name          |string        | null: false                  |
-|post-number   |text          | null: false                  |
+|post-number   |string        | null: false                  |
 |area_id       |integer       | null: false                  |
 |street_number |string        | null: false                  |
 |building      |string        |                              |
+|phone_number  |string        | null: false                  |
 |open_hour     |time          | null: false                  |
 |close_hour    |time          | null: false                  |
 |capacity      |integer       | null: false                  |
