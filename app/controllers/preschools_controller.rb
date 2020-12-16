@@ -21,8 +21,9 @@ class PreschoolsController < ApplicationController
   end
   
   def update
+      @preschool =Preschool.find(params[:id])
     if @preschool.update(preschool_params)
-      redirect_to preschool_path(@preschool.id)
+      render :update
     else
       render action: :edit
     end
