@@ -25,13 +25,14 @@ class PreschoolsController < ApplicationController
     if @preschool.update(preschool_params)
       render :update
     else
-      render action: :edit
+      render :edit
     end
   end
 
   def destroy
+    @preschool =Preschool.find(params[:id])
     @preschool.destroy
-    redirect_to root_path
+    render :destroy
    end
   
 
