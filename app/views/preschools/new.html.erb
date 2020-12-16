@@ -4,8 +4,7 @@
     <h2 class="preschools-title">保育園の情報を入力</h2>
     <%= form_with(model: @preschool, local: true) do |f| %>
 
-    <%# <エラーメッセージ実装する>
-    <%= render 'shared/error_messages', model: @preschool %> 
+    <%= render 'shared/error_messages', model: f.object %>
   
     <div class="img-upload">
         <div id="image-list"></div>
