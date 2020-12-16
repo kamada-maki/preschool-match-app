@@ -1,4 +1,5 @@
 class PreschoolsController < ApplicationController
+  before_action :move_to_index ,only:[:edit,:update]
   def index
     @preschools = Preschool.all.order("created_at DESC")
   end
@@ -25,13 +26,14 @@ class PreschoolsController < ApplicationController
     if @preschool.update(preschool_params)
       render :update
     else
-      render action: :edit
+      render :edit
     end
   end
 
   def destroy
+    @preschool =Preschool.find(params[:id])
     @preschool.destroy
-    redirect_to root_path
+    render :destroy
    end
   
 
@@ -39,5 +41,11 @@ class PreschoolsController < ApplicationController
   def preschool_params
     params.require(:preschool)
     .permit(:name,:post_number,:area_id, :street_number,:building,:phone_number,:station,:open_hour,:close_hour,:capacity,:category_id,:concept,images: []).merge(admin_id: current_admin.id)
+  end
+  def move_to_index
+    @preschool = Preschool.find(params[:id])
+    unless admin_signed_in? && @preschool.admin_id == current_admin.id
+    redirect_to action: :index
+    end
   end
 end
