@@ -13,7 +13,9 @@ class PreschoolsController < ApplicationController
       render :new
     end
   end
-
+  def show
+    @preschool =Preschool.find(params[:id])
+  end
   def edit
     @preschool =Preschool.find(params[:id])
   end

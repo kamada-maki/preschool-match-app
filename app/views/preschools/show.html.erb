@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+
+<div class="detail-info">
+<div class="detail-name"><%= @preschool.name %></div>
+<div class="detail-name">
+<% @preschool.images.each do |image| %>
+  <%= image_tag image, class: 'images' %>
+<% end %>
+</div>
+<div class="detail-name"><%= @preschool.post_number %></div>
+<div class="detail-name"><%= @preschool.area.name%></div>
+<div class="detail-name"><%= @preschool.street_number %></div>
+<div class="detail-name"><%= @preschool.building %></div>
+<div class="detail-name"><%= @preschool.phone_number%></div>
+<div class="detail-name"><%= @preschool.station %></div>
+<div class="detail-name"><%= @preschool.capacity %></div>
+<div class="detail-name"><%= @preschool.category.name%></div>
+<div class="detail-name"><%= @preschool.open_hour%>〜<%= @preschool.close_hour %></div>
+<div class="detail-name"><%= @preschool.concept%></div>
+
+
+
+</div>
