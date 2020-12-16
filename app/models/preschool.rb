@@ -3,6 +3,7 @@ class Preschool < ApplicationRecord
   belongs_to :area
   belongs_to :category
   belongs_to :admin
+  has_many_attached :images
   validates :name, length: { maximum: 20 }
   validates :post_number ,format:{ with: /\A\d{3}[-]\d{4}\z/}
   validates :phone_number,format:{ with: /\A[0-9]+\z/},length: { maximum: 11 }
