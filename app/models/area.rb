@@ -5,7 +5,7 @@ class Area < ActiveHash::Base
     { id: 3, name: '大阪市福島区'},
     { id: 4, name: '大阪市此花区'},
     { id: 5, name: '大阪市西区'},
-    { id: 6, name: '大阪市港区区'},
+    { id: 6, name: '大阪市港区'},
     { id: 7, name: '大阪市大正区'},
     { id: 8, name: '大阪市天王寺区'},
     { id: 9, name: '大阪市浪速区'},
