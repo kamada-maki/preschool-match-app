@@ -1,1 +1,61 @@
 <h2>保育園情報投稿ページ</h2>
+
+<div class="preschools-main">
+    <h2 class="preschools-title">保育園の情報を入力</h2>
+    <%= form_with(model: @preschool, local: true) do |f| %>
+
+    <%# <エラーメッセージ実装する>
+    <%= render 'shared/error_messages', model: @preschool %> 
+  
+    <div class="img-upload">
+        <div id="image-list"></div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, name:'preschool[images][]', id:"preschool-image" %>
+      </div>
+    </div>
+  
+    <div class="new-preschools">
+      <div class="preschool-name">
+        保育園名
+      <%= f.text_field  :name, class:"preschools-name", id:"preschool-name", placeholder:"〇〇保育園（最大40文字）", maxlength:"40" %>
+      </div>
+       <div class="preschool-address">
+        <div class="post-number">郵便番号
+        <%= f.text_field :explanation, class:"preschools-text", placeholder:"123-4567" %>
+        </div>
+        <div class="area">所在地
+        <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %>
+       <%= f.text_field  :street_number, class:"preschools-street-number", id:"preschools-street-number", placeholder:"堂島1-2-3" %>
+       <%= f.text_field  :building, class:"preschools-building", placeholder:"ABCビル2階" %>
+       </div>
+       <div class="phone-number">電話番号
+       <%= f.text_field :phone_number, class:"phone-number", placeholder:"例）0612345678",maxlength:"11"%>
+       </div>
+        <div class="station">最寄り駅
+       <%= f.text_field :station, class:"station", placeholder:"例）大阪駅より徒歩10分"%>
+       </div>
+       <div class="capacity">定員数
+       <%= f.text_field :capacity, class:"capacity", placeholder:"例）50"%>
+       </div>
+       <div class="category">運営業態
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+       </div>
+      <div class="opening-hour">開園時間
+       <%= f.time_select :open_hour,:minute_step => 15,class:"open-hour"%>〜
+       <%= f.time_select :close_hour,:minute_step => 15, class:"close-hour"%>
+       </div>
+      <div class="concept">園の特徴
+       <%= f.text_area :concept, class:"concept", placeholder:"例）たくましい子どもを育てます！"%>
+       </div>
+
+
+    <div class="register-btn-contents">
+      <%= f.submit "投稿する" ,url:preschools_path, class:"register-btn" %>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+ 
+  </div>
+  <% end %>

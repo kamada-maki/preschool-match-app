@@ -1,7 +1,8 @@
 class Preschool < ApplicationRecord
-  validates :area_id,:category_id,numericality:{other_than:1}
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
   belongs_to :category
+  validates :area_id,:category_id,numericality:{other_than:1}
   belongs_to :admin
   has_many_attached :images
   validates :name, length: { maximum: 20 }
@@ -19,4 +20,5 @@ class Preschool < ApplicationRecord
   validates :close_hour
   validates :capacity 
   validates :concept
+  end
 end

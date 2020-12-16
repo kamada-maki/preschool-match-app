@@ -1,4 +1,4 @@
-class Area < ApplicationRecord
+class Area < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '大阪市都島区'},
