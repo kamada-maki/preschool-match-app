@@ -1,24 +1,39 @@
 <%= render "shared/header" %>
 
+<h1>詳細ページ</h1>
 
 <div class="detail-info">
-<div class="detail-name"><%= @preschool.name %></div>
+<div class="detail-name">園名
+<%= @preschool.name %></div>
 <div class="detail-name">
 <% @preschool.images.each do |image| %>
   <%= image_tag image, class: 'images' %>
 <% end %>
 </div>
-<div class="detail-name"><%= @preschool.post_number %></div>
-<div class="detail-name"><%= @preschool.area.name%></div>
-<div class="detail-name"><%= @preschool.street_number %></div>
-<div class="detail-name"><%= @preschool.building %></div>
-<div class="detail-name"><%= @preschool.phone_number%></div>
-<div class="detail-name"><%= @preschool.station %></div>
-<div class="detail-name"><%= @preschool.capacity %></div>
-<div class="detail-name"><%= @preschool.category.name%></div>
-<div class="detail-name"><%= @preschool.open_hour%>〜<%= @preschool.close_hour %></div>
-<div class="detail-name"><%= @preschool.concept%></div>
-
-
-
+<div class="detail-name">郵便番号
+<%= @preschool.post_number %>
 </div>
+<div class="detail-name">エリア<%= @preschool.area.name%></div>
+<div class="detail-name">詳細住所<%= @preschool.street_number %><%= @preschool.building %></div>
+<div class="detail-name">電話番号
+<%= @preschool.phone_number%>
+</div>
+<div class="detail-name">最寄り駅
+<%= @preschool.station %></div>
+<div class="detail-name">定員数
+<%= @preschool.capacity %></div>
+<div class="detail-name">運営種別
+<%= @preschool.category.name%></div>
+<div class="detail-name">開園時間
+<%= l @preschool.open_hour, format: :short%>〜<%= l @preschool.close_hour ,format: :short%></div>
+<div class="detail-name">園の特徴
+<%= @preschool.concept%></div>
+</div>
+
+
+ <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
+<div class="preschool__manage">
+<%= link_to "編集する",  edit_preschool_path(@preschool.id), class: :preschool__btn %>
+<%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
+</div>
+<% end%>
