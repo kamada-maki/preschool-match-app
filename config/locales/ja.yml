@@ -8,3 +8,8 @@ ja:
        email: Eメール
        password: パスワード
        password_confirmation: パスワード（確認用）
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%H:%M"
