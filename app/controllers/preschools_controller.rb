@@ -12,7 +12,25 @@ class PreschoolsController < ApplicationController
     else
       render :new
     end
-  end  
+  end
+
+  def edit
+    @preschool =Preschool.find(params[:id])
+  end
+  
+  def update
+    if @preschool.update(preschool_params)
+      redirect_to preschool_path(@preschool.id)
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    @preschool.destroy
+    redirect_to root_path
+   end
+  
 
   private
   def preschool_params
