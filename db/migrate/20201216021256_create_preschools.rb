@@ -7,6 +7,7 @@ class CreatePreschools < ActiveRecord::Migration[6.0]
       t.string :street_number, null: false
       t.string :building
       t.string :phone_number, null: false
+      t.station :phone_number, null: false
       t.time :open_hour, null: false
       t.time :close_hour, null: false
       t.integer :capacity , null: false

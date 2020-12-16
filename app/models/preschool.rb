@@ -13,6 +13,7 @@ class Preschool < ApplicationRecord
   validates :street_number
   validates :building
   validates :phone_number
+  validates :station
   validates :open_hour
   validates :close_hour
   validates :capacity 
