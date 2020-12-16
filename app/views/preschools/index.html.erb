@@ -8,10 +8,10 @@
     <ul class='preschool-lists'>
     <li class='list'>
       <% @preschools.each do |preschool| %>
-       <%= link_to preschool_path(preschool.id) %>
+       <%= link_to preschool_path(preschool.id) do %>
        <div class='preschool-img-content'>
         <% preschool.images.each do |image|%>
-        <%= image_tag(@preschool.images[0], class:"preschool-img")%> 
+        <%= image_tag(preschool.images[0], class:"preschool-img")%> 
        </div>
        <div class='preschool-info'>
         <h3 class='preschool-name'><%= preschool.name %></h3>
@@ -19,3 +19,9 @@
         </div>
       <% end %>
       <% end %>
+        <% end %>
+
+
+<% if admin_signed_in? %>
+<%= link_to '新規投稿',new_preschool_path, class: 'tweet-btn' %>
+<%end%>
