@@ -29,11 +29,41 @@
 <div class="detail-name">園の特徴
 <%= @preschool.concept%></div>
 </div>
-
-
  <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
 <div class="preschool__manage">
 <%= link_to "編集する",  edit_preschool_path(@preschool.id), class: :preschool__btn %>
 <%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
 </div>
 <% end%>
+
+<div class="preschool__comments">
+ <% if user_signed_in? %>
+<%= form_with( model: [@preschool, @comment],local: true) do |f|%>
+<div class="field">
+<%= f.label :text, "ママ友の口コミ" %><br />
+<%= f.text_field :text %>
+</div>
+<div class="actions">
+<%= f.submit "送信する", class: :form__btn  %>
+</div>
+<% end %> 
+<% end%>
+
+<ul class="comments_lists">
+   <% @preschool.comments.each do |comment|%>
+    <li class="comments_list">
+      <%= comment.text%>
+      <%= link_to "#{comment.user.nickname}さん", "/users/#{comment.user_id}",class: :comment_user %>
+    </li>
+    <% if user_signed_in? && current_user.id == comment.user_id %>
+      <div class="comments_manage">
+        <%= link_to "編集",  edit_preschool_comment_path(comment.id), class: :comment_edit__btn %>
+        <%= link_to "削除", preschool_comment_path(@preschool,comment), class: :comment_destroy_btn,method: :delete %>
+      </div>
+    <% end%>
+   <% end %>
+
+
+
+
+
