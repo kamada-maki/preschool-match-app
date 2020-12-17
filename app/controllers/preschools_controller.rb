@@ -5,6 +5,7 @@ class PreschoolsController < ApplicationController
   end
   def new
     @preschool = Preschool.new
+   
   end
   def create
     @preschool =Preschool.new(preschool_params)
@@ -16,6 +17,8 @@ class PreschoolsController < ApplicationController
   end
   def show
     @preschool =Preschool.find(params[:id])
+    @comment = Comment.new
+    @comments=@preschool.comments.includes(:user)
   end
   def edit
     @preschool =Preschool.find(params[:id])
