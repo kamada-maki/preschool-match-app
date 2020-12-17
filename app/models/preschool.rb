@@ -21,4 +21,5 @@ class Preschool < ApplicationRecord
   validates :capacity 
   validates :concept
   end
+  has_many :comments, dependent: :destroy
 end
