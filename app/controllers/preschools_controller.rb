@@ -18,7 +18,7 @@ class PreschoolsController < ApplicationController
   def show
     @preschool =Preschool.find(params[:id])
     @comment = Comment.new
-    @comments=@preschool.comments.includes(:user)
+    @comments=@preschool.comments.includes(:user).order(created_at: :DESC)
   end
   def edit
     @preschool =Preschool.find(params[:id])

@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 
+
 <h1>詳細ページ</h1>
 
 <div class="detail-info">
@@ -38,32 +39,30 @@
 
 <div class="preschool__comments">
  <% if user_signed_in? %>
-<%= form_with( model: [@preschool, @comment],local: true) do |f|%>
+<%= form_with( model: [@preschool, @comment], id: "comment-form") do |f|%>
 <div class="field">
 <%= f.label :text, "ママ友の口コミ" %><br />
-<%= f.text_field :text %>
+<%= f.text_field :text, id:"comment-content"%>
 </div>
-<div class="actions">
-<%= f.submit "送信する", class: :form__btn  %>
+<div class="actions" data-id=<%= @preschool.id %>>
+<%= f.submit "送信する", class: :comment_form__btn, id:"submit", data: {id: @preschool.id} %>
 </div>
 <% end %> 
 <% end%>
 
-<ul class="comments_lists">
+<div class="comments_lists" , id = "comment-list" >
    <% @preschool.comments.each do |comment|%>
-    <li class="comments_list">
+    <div class="comments_list">
       <%= comment.text%>
       <%= link_to "#{comment.user.nickname}さん", "/users/#{comment.user_id}",class: :comment_user %>
-    </li>
     <% if user_signed_in? && current_user.id == comment.user_id %>
       <div class="comments_manage">
         <%= link_to "編集",  edit_preschool_comment_path(comment.id), class: :comment_edit__btn %>
-        <%= link_to "削除", preschool_comment_path(@preschool,comment), class: :comment_destroy_btn,method: :delete %>
+        <%= link_to "削除", preschool_comment_path(@preschool,comment), id:"comment-delete",class: :comment_destroy_btn,method: :delete %>
       </div>
     <% end%>
    <% end %>
-
-
-
+   </div>
+</div>
 
 
