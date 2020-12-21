@@ -19,10 +19,10 @@
 <div class="detail-name">電話番号
 <%= @preschool.phone_number%>
 </div>
-<div class="detail-name">最寄り駅
+<div class="detail-name">アクセス
 <%= @preschool.station %></div>
 <div class="detail-name">定員数
-<%= @preschool.capacity %></div>
+<%= @preschool.capacity %>人</div>
 <div class="detail-name">運営種別
 <%= @preschool.category.name%></div>
 <div class="detail-name">開園時間
@@ -41,7 +41,7 @@
  <% if user_signed_in? %>
 <%= form_with( model: [@preschool, @comment], id: "comment-form") do |f|%>
 <div class="field">
-<%= f.label :text, "ママ友の口コミ" %><br />
+<%= f.label :text, "口コミ" %><br />
 <%= f.text_field :text, id:"comment-content"%>
 </div>
 <div class="actions" data-id=<%= @preschool.id %>>
