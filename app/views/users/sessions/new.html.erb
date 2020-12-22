@@ -18,5 +18,5 @@
   </div>
   <% end %>
 
-
-<%= render "users/shared/links" %>
+<%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
+<%# <%= render "users/shared/links" %> 
