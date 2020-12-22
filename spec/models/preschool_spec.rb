@@ -18,57 +18,47 @@ RSpec.describe Preschool, type: :model do
         it '名前が空だと登録できない' do
           @preschool.name = nil
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Nameを入力してください")
         end
         it '郵便番号が空だと登録できない' do
           @preschool.post_number = nil
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Post numberは不正な値です", "Post numberを入力してください")
         end
         it '郵便番号が空だと登録できない' do
           @preschool.post_number = "1234567"
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Post numberは不正な値です")
         end
         it 'エリアを選択しないと登録できない' do
           @preschool.area_id = 1
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Areaは1以外の値にしてください")
         end
         it '住所が空と登録できない' do
-          @preschool.street_number = 1
+          @preschool.street_number = nil
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Street numberを入力してください")
         end
         it '電話番号が空と登録できない' do
           @preschool.phone_number = nil
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Phone numberは不正な値です", "Phone numberを入力してください")
         end
         it '電話番号にハイフンが入っていると登録できない' do
           @preschool.phone_number = "090-1234-5678"
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
-        end
-        it '電話番号にハイフンが入っていると登録できない' do
-          @preschool.phone_number = "090-1234-5678"
-          @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Phone numberは不正な値です", "Phone numberは11文字以内で入力してください")
         end
         it '電話番号が12桁以上だと登録できない' do
-          @preschool.phone_number = "0900-1234-5678"
+          @preschool.phone_number = "090012345678"
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Phone numberは11文字以内で入力してください")
         end
         it '最寄り駅情報が空だと登録できない' do
           @preschool.station = nil
           @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
-        end
-        it '最寄り駅情報が空だと登録できない' do
-          @preschool.station = nil
-          @preschool.valid?
-          expect(@preschool.eroors.full_messages).to include("")
+          expect(@preschool.errors.full_messages).to include("Stationを入力してください")
         end
       end
     end
