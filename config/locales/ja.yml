@@ -1,15 +1,11 @@
 ja:
  activerecord:
    attributes:
-     user:
-       nickname: ニックネーム
-     admin:
-       name: 運営者名
-       email: Eメール
-       password: パスワード
-       password_confirmation: パスワード（確認用）
+     preschool:
+       name: 保育園名
+       image: 画像
 ja:
   time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
-      short: "%H:%M"
+   formats:
+     default: "%Y/%m/%d %H:%M:%S"
+     short: "%H:%M"
