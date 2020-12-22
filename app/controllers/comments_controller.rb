@@ -5,14 +5,6 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     @user = User.find(@comment.user_id)
     render json:{ comment: @comment, user: @user }
-    # if @comment.save
-    #   redirect_to preschool_path(@comment.preschool)
-    # else
-    #   @preschool = @comment.preschool
-    #   @comments = @preschool.comments
-    #   render "preschools/show"
-    # end
-   
   end
   def edit
   end
