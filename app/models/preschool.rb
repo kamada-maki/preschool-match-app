@@ -8,7 +8,7 @@ class Preschool < ApplicationRecord
   validates :name, length: { maximum: 20 }
   validates :post_number ,format:{ with: /\A\d{3}[-]\d{4}\z/}
   validates :phone_number,format:{ with: /\A[0-9]+\z/},length: { maximum: 11 }
-  
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
   with_options presence: true do
   validates :name
   validates :post_number
@@ -19,6 +19,7 @@ class Preschool < ApplicationRecord
   validates :close_hour
   validates :capacity 
   validates :concept
+  validates :email
   end
   has_many :comments, dependent: :destroy
 end
