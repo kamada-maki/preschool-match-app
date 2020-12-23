@@ -132,8 +132,7 @@ Rubocop
 |name          |string        | null: false                  |
 |post-number   |string        | null: false                  |
 |area_id       |integer       | null: false                  |
-|street_number |string        | null: false                  |
-|building      |string        |                              |
+|address       |string        | null: false                  |
 |phone_number  |string        | null: false                  |
 |station       |string        | null: false                  |
 |open_hour     |time          | null: false                  |
