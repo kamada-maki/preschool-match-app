@@ -44,7 +44,7 @@
 <div class="google-map", id = "google-map">
 <%= render "shared/map" %>
 </div>
-
+<%= link_to "GoogleMapで開く", "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank"  %>
 
 <div class="preschool__comments">
  <% if user_signed_in? %>

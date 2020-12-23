@@ -8,7 +8,8 @@
     const transitLayer = new google.maps.TransitLayer();
     transitLayer.setMap(map);
 
-    const contentString = '住所：<%= @preschool.address %>';
+    const contentString = 
+    '<%= @preschool.name%></br><%= @preschool.address %>';
     const infowindow = new google.maps.InfoWindow({
       content: contentString
     });
