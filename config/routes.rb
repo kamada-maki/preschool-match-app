@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root to: 'preschools#index'
   resources :preschools do
     resources :comments, only:[:create,:edit,:update,:destroy]
+    resource :likes, only:[:create,:destroy]
   end
 end

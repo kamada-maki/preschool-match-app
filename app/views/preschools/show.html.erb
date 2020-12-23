@@ -6,11 +6,26 @@
 <div class="detail-info">
 <div class="detail-name">園名
 <%= @preschool.name %></div>
-<div class="detail-name">
-<% @preschool.images.each do |image| %>
+<div class="detail-image">
+  <% @preschool.images.each do |image| %>
   <%= image_tag image, class: 'images' %>
-<% end %>
+  <% end %>
 </div>
+<%unless user_signed_in?%>
+<h2>いいね数<%= @preschool.likes.count %></h2>
+<%end%>
+
+
+<% if user_signed_in? && current_user.already_liked?(@preschool) %>
+  <%= link_to "いいね解除",preschool_likes_path(@preschool), method: :delete  %>
+  <%= @preschool.likes.count %>
+  <% elsif user_signed_in?  %>
+  <%= link_to "いいね！", preschool_likes_path(@preschool), method: :post  %>
+  <%= @preschool.likes.count %>
+<% end %>
+
+
+
 <div class="detail-name">郵便番号
 <%= @preschool.post_number %>
 </div>
