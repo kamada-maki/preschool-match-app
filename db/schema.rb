@@ -60,8 +60,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_022700) do
     t.string "name", null: false
     t.string "post_number", null: false
     t.integer "area_id", null: false
-    t.string "street_number", null: false
-    t.string "building"
+    t.string "address", null: false
     t.string "phone_number", null: false
     t.string "station", null: false
     t.time "open_hour", null: false
@@ -71,6 +70,8 @@ ActiveRecord::Schema.define(version: 2020_12_22_022700) do
     t.string "concept", null: false
     t.bigint "admin_id"
     t.string "email", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["admin_id"], name: "index_preschools_on_admin_id"

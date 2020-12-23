@@ -43,7 +43,7 @@ class PreschoolsController < ApplicationController
   private
   def preschool_params
     params.require(:preschool)
-    .permit(:name,:post_number,:area_id, :street_number,:building,:phone_number,:station,:open_hour,:close_hour,:capacity,:category_id,:concept,:email,images: []).merge(admin_id: current_admin.id)
+    .permit(:name,:post_number,:area_id, :address,:phone_number,:station,:open_hour,:close_hour,:capacity,:category_id,:concept,:email,images: []).merge(admin_id: current_admin.id)
   end
   def move_to_index
     @preschool = Preschool.find(params[:id])
