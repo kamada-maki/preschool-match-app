@@ -15,7 +15,7 @@
 <%= @preschool.post_number %>
 </div>
 <div class="detail-name">エリア<%= @preschool.area.name%></div>
-<div class="detail-name">詳細住所<%= @preschool.street_number %><%= @preschool.building %></div>
+<div class="detail-name">詳細住所<%= @preschool.address%></div>
 <div class="detail-name">電話番号
 <%= @preschool.phone_number%>
 </div>
@@ -40,6 +40,11 @@
 <%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
 </div>
 <% end%>
+
+<div class="google-map", id = "google-map">
+<%= render "shared/map" %>
+</div>
+<%= link_to "GoogleMapで開く", "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank"  %>
 
 <div class="preschool__comments">
  <% if user_signed_in? %>

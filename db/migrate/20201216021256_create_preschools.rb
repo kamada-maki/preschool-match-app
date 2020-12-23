@@ -4,8 +4,7 @@ class CreatePreschools < ActiveRecord::Migration[6.0]
       t.string :name,              null: false
       t.string :post_number,       null:false
       t.integer :area_id,          null: false
-      t.string :street_number,     null: false
-      t.string :building
+      t.string :address,           null: false
       t.string :phone_number,      null: false
       t.string :station,           null: false
       t.time :open_hour,           null: false
@@ -15,6 +14,8 @@ class CreatePreschools < ActiveRecord::Migration[6.0]
       t.string :concept,           null:false
       t.references :admin,         foreign_key: true
       t.string :email,             null: false
+      t.float :latitude,           null:false
+      t.float :longitude,          null:false
       t.timestamps
     end
   end

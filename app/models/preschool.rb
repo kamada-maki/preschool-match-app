@@ -12,7 +12,7 @@ class Preschool < ApplicationRecord
   with_options presence: true do
   validates :name
   validates :post_number
-  validates :street_number
+  validates :address
   validates :phone_number
   validates :station
   validates :open_hour
@@ -21,5 +21,7 @@ class Preschool < ApplicationRecord
   validates :concept
   validates :email
   end
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   has_many :comments, dependent: :destroy
 end

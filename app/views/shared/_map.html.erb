@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  function initMap() {
+    const test ={lat: <%= @preschool.latitude %>, lng: <%= @preschool.longitude %>};
+    const map = new google.maps.Map(document.getElementById('google-map'), {
+              zoom: 15, 
+              center: test
+              });
+    const transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    const contentString = 
+    '<%= @preschool.name%></br><%= @preschool.address %>';
+    const infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    const marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>
+
+<script async defer
+              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
