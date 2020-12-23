@@ -24,5 +24,5 @@ class Preschool < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   has_many :comments, dependent: :destroy
-  has_many :comments
+  has_many :likes
 end
