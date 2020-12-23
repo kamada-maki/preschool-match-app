@@ -65,3 +65,4 @@ gem 'pry-rails'
 gem 'gon'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+gem "geocoder"
