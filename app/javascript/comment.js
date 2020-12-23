@@ -21,11 +21,7 @@ function comment(){
     }
     const list = document.getElementById("comment-list");
     const formText = document.getElementById("comment-content");
-    const HTML = `
-    <li class="comments_list">${item.text} 
-     <a href  "/users/${item.user_id}">${itemUser.nickname}さん</a></li>
-    `;
-    list.insertAdjacentHTML("afterend", HTML);
+    list.insertAdjacentHTML("afterend", XHR.response.html);
     formText.value = "";
   };
   e.preventDefault();

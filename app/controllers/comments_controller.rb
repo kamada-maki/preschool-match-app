@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
   def create
     @preschool =Preschool.find(params[:preschool_id])
-    # binding.pry
     @comment = Comment.create(comment_params)
     @user = User.find(@comment.user_id)
-    render json:{ comment: @comment, user: @user }
+    html = render_to_string layout: false
+    render json:{ comment: @comment, user: @user, html: html }
   end
   def edit
   end
@@ -12,9 +12,10 @@ class CommentsController < ApplicationController
   end
   def destroy
     @preschool =Preschool.find(params[:preschool_id])
-    @comment =Comment.find(params[:id])
-    @comment.destroy
-    redirect_to preschool_path(@preschool.id)
+    @comment =Comment.destroy(params[:id])
+    @user = User.find(@comment.user_id)
+    html = render_to_string layout: false
+    render json:{ comment: @comment, user: @user, html: html }
   end
 
   private
