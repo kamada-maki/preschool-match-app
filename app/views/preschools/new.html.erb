@@ -49,7 +49,9 @@
       <div class="concept">園の特徴
        <%= f.text_area :concept, class:"concept", placeholder:"例）たくましい子どもを育てます！"%>
        </div>
-
+      <div class="email">見学日程調整用アドレス
+       <%= f.text_field :email, class:"email", placeholder:"例）test@test.com"%>
+       </div>
 
     <div class="register-btn-contents">
       <%= f.submit "投稿する" ,url:preschools_path, class:"register-btn" %>

@@ -29,6 +29,10 @@
 <%= l @preschool.open_hour, format: :short%>〜<%= l @preschool.close_hour ,format: :short%></div>
 <div class="detail-name">園の特徴
 <%= @preschool.concept%></div>
+<div class="email-btn">
+<%= mail_to @preschool.email, "見学に行く",
+      :subject => '見学日程調整希望',
+      :body => '↓↓ご希望の日時を３日程書いていただきますようお願いいたします↓↓'  %></div>
 </div>
  <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
 <div class="preschool__manage">
@@ -58,7 +62,8 @@
     <% if user_signed_in? && current_user.id == comment.user_id %>
       <div class="comments_manage">
         <%= link_to "編集",  edit_preschool_comment_path(comment.id), class: :comment_edit__btn %>
-        <%= link_to "削除", preschool_comment_path(@preschool,comment), id:"comment-delete",class: :comment_destroy_btn,method: :delete %>
+      <div class="comments_manage">
+      <%= link_to "削除", preschool_comment_path(@preschool,comment), remote: true, id:"comment-delete", class: :comment_destroy_btn, data: {'preschool-id': @preschool.id, 'comment-id': comment.id},method: :delete %>
       </div>
     <% end%>
    <% end %>
