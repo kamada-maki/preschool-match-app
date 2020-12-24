@@ -1,7 +1,7 @@
 <%= link_to 'トップページに戻る（画像にする）', root_path %>
 <ul class='lists-right'>
       <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname"  %></li>
+      <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname"  %></li>
       <li><%= link_to 'ログアウト(保護者）', destroy_user_session_path, method: :delete, class: "logout" %></li> 
       <%else%>
       <li><%= link_to 'ログイン（保護者）', new_user_session_path, class: "login" %></li>
@@ -10,7 +10,7 @@
     </ul>
 <ul class='lists-right'>
       <% if admin_signed_in? %>
-      <li><%= link_to current_admin.name, "#", class: "admin-name"  %></li>
+      <li><%= link_to current_admin.name, admin_path(current_admin.id), class: "admin-name"  %></li>
       <li><%= link_to 'ログアウト(運営者）', destroy_admin_session_path, method: :delete, class: "logout" %></li> 
       <%else%>
       <li><%= link_to 'ログイン（運営者）', new_admin_session_path, class: "login" %></li>

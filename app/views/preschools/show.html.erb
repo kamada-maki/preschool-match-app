@@ -30,12 +30,12 @@
 <%= @preschool.post_number %>
 </div>
 <div class="detail-name">エリア<%= @preschool.area.name%></div>
-<div class="detail-name">詳細住所<%= @preschool.address%></div>
+<div class="detail-name">詳細住所<%= @preschool.address%><%= @preschool.building%></div>
 <div class="detail-name">電話番号
 <%= @preschool.phone_number%>
 </div>
 <div class="detail-name">アクセス
-<%= @preschool.station %></div>
+<%= @preschool.access %></div>
 <div class="detail-name">定員数
 <%= @preschool.capacity %>人</div>
 <div class="detail-name">運営種別
