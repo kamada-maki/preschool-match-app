@@ -6,7 +6,7 @@ FactoryBot.define do
     street_number     {Faker::Address.street_address}
     building          {Faker::Address.secondary_address}
     phone_number      {"09012345678"}
-    station           {Faker::Lorem.sentence(1..30)}
+    access            {Faker::Lorem.sentence(1..30)}
     open_hour         {Faker::Number.decimal_part(digits: 2)}
     close_hour        {Faker::Number.decimal_part(digits: 2)}
     capacity          {Faker::Number.number(digits: 10)}

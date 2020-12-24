@@ -56,9 +56,9 @@ RSpec.describe Preschool, type: :model do
           expect(@preschool.errors.full_messages).to include("Phone numberは11文字以内で入力してください")
         end
         it '最寄り駅情報が空だと登録できない' do
-          @preschool.station = nil
+          @preschool.access = nil
           @preschool.valid?
-          expect(@preschool.errors.full_messages).to include("Stationを入力してください")
+          expect(@preschool.errors.full_messages).to include("accessを入力してください")
         end
       end
     end
