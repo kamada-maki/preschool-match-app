@@ -26,8 +26,13 @@
       <%= link_to "いいね！", preschool_likes_path(preschool), method: :post  %>
       <%= preschool.likes.count %>
       <% end %>
+       <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
+      <div class="preschool__manage">
+      <%= link_to "編集する",  edit_preschool_path(@preschool.id), class: :preschool__btn %>
+      <%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
+      </div>
+      <% end%>
       <% end %>
-
 
 <% if admin_signed_in? %>
 <%= link_to '新規投稿',new_preschool_path, class: 'tweet-btn' %>
