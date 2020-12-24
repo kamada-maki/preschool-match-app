@@ -9,7 +9,7 @@
     transitLayer.setMap(map);
 
     const contentString = 
-    '<%= @preschool.name%></br><%= @preschool.address %>';
+    '<%= @preschool.name%></br><%= @preschool.address %><%= @preschool.building %>';
     const infowindow = new google.maps.InfoWindow({
       content: contentString
     });

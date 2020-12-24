@@ -27,13 +27,14 @@
         </div>
         <div class="area">所在地
         <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %>
-       <%= f.text_field  :address, class:"preschools-street-number", id:"preschools-street-number", placeholder:"天満1-2-3 ABCビル1階" %>
+       <%= f.text_field  :address, class:"preschools-address", id:"preschools-address", placeholder:"天満1-2-3" %>
+       <%= f.text_field  :building, class:"preschools-building", id:"preschools-building", placeholder:"ABCビル1階" %>
        </div>
        <div class="phone-number">電話番号
        <%= f.text_field :phone_number, class:"phone-number", placeholder:"例）0612345678",maxlength:"11"%>
        </div>
-        <div class="station">アクセス
-       <%= f.text_field :station, class:"station", placeholder:"例）大阪駅より徒歩10分"%>
+        <div class="access">アクセス
+       <%= f.text_field :access, class:"access", placeholder:"例）大阪駅より徒歩10分"%>
        </div>
        <div class="capacity">定員数
        <%= f.text_field :capacity, class:"capacity", placeholder:"例）50"%>
