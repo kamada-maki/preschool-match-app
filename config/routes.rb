@@ -5,6 +5,8 @@ Rails.application.routes.draw do
    registrations: 'users/registrations'
   }
   root to: 'preschools#index'
+  resources :users, only: :show
+  resources :admins, only: :show
   resources :preschools do
     resources :comments, only:[:create,:edit,:update,:destroy]
     resource :likes, only:[:create,:destroy]
