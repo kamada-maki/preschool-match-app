@@ -14,7 +14,7 @@ class Preschool < ApplicationRecord
   validates :post_number
   validates :address
   validates :phone_number
-  validates :station
+  validates :access
   validates :open_hour
   validates :close_hour
   validates :capacity 
