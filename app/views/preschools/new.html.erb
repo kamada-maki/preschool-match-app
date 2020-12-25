@@ -26,8 +26,8 @@
         <%= f.text_field :post_number, class:"preschool-postnumber", placeholder:"123-4567" %>
         </div>
         <div class="area">所在地
-        <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %>
-       <%= f.text_field  :address, class:"preschools-address", id:"preschools-address", placeholder:"天満1-2-3" %>
+        <%= f.collection_select :area_id, Area.all, :id, :name, include_blank: "選択してください",class:"select-box"%>
+        <%= f.text_field  :address, class:"preschools-address", id:"preschools-address", placeholder:"天満1-2-3" %>
        <%= f.text_field  :building, class:"preschools-building", id:"preschools-building", placeholder:"ABCビル1階" %>
        </div>
        <div class="phone-number">電話番号
@@ -40,7 +40,7 @@
        <%= f.text_field :capacity, class:"capacity", placeholder:"例）50"%>
        </div>
        <div class="category">運営業態
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, include_blank: "選択してください",class:"select-box") %>
        </div>
       <div class="opening-hour">開園時間
        <%= f.time_select :open_hour,:minute_step => 15,class:"open-hour",prompt: "--",ignore_data: false %>〜
