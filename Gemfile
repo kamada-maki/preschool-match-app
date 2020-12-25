@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'bullet'
 end
 
 group :development do
@@ -67,3 +68,4 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem "geocoder"
 gem "dotenv-rails"
+gem "ransack"

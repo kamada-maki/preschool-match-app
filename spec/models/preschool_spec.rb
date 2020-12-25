@@ -31,7 +31,7 @@ RSpec.describe Preschool, type: :model do
           expect(@preschool.errors.full_messages).to include("Post numberは不正な値です")
         end
         it 'エリアを選択しないと登録できない' do
-          @preschool.area_id = 1
+          @preschool.area_id = nil
           @preschool.valid?
           expect(@preschool.errors.full_messages).to include("Areaは1以外の値にしてください")
         end

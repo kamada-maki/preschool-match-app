@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     get :likes, on: :collection
   end
-
+  get 'search', to: 'preschools#search'
   resources :preschools do
     resources :comments, only:[:create,:edit,:update,:destroy]
     resource :likes, only:[:create,:destroy]

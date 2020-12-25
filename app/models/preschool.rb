@@ -2,7 +2,7 @@ class Preschool < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
   belongs_to :category
-  validates :area_id,:category_id,numericality:{other_than:1}
+  validates :area_id,:category_id,numericality: {only_integer: true} 
   belongs_to :admin
   has_many_attached :images
   validates :name, length: { maximum: 20 }
