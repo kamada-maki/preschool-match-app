@@ -3,7 +3,22 @@
 
 <h2>保育園一覧表示</h2>
 
+<%# 検索結果表示 %>
+<h1>こちらから検索</h1>
+<%= search_form_for @q, url: search_path do |f| %>
+  <%= f.text_field :name_or_address_or_access_or_concept_cont, placeholder: "キーワードから探す"%>
+  <div class="category">運営業態
+    <%= f.collection_select(:category_id_eq, Category.where.not(id: 0), :id, :name, include_blank: '指定なし', class: 'search-select') %>
+  </div>
+  <div class="area">所在地
+  <%= f.collection_select(:area_id_eq,  Area.where.not(id: 0), :id, :name, include_blank: '指定なし', class: 'search-select') %>
+  </div>
+  <div>
+    <%= f.submit '検索する' ,class:"search-btn"%>
+  </div>
+<% end %>
 
+<%# 検索結果表示 %>
 <div class='preschool-contents'>
     <ul class='preschool-lists'>
     <li class='list'>
