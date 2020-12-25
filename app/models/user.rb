@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :password, format:{ with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
   has_many :comments
   has_many :likes
+  has_many :liked_preschools, through: :likes, source: :preschool
   has_many :sns_credentials
   
   def already_liked?(preschool)
