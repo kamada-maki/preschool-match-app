@@ -43,8 +43,8 @@
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
        </div>
       <div class="opening-hour">開園時間
-       <%= f.time_select :open_hour,:minute_step => 15,class:"open-hour"%>〜
-       <%= f.time_select :close_hour,:minute_step => 15, class:"close-hour"%>
+       <%= f.time_select :open_hour,:minute_step => 15,class:"open-hour",prompt: "--",ignore_data: false %>〜
+       <%= f.time_select :close_hour,:minute_step => 15, class:"close-hour",prompt: "--",ignore_data: false %>
        </div>
       <div class="concept">園の特徴
        <%= f.text_area :concept, class:"concept", placeholder:"例）たくましい子どもを育てます！"%>
