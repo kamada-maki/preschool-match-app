@@ -1,11 +1,16 @@
 class PreschoolsController < ApplicationController
   before_action :move_to_index ,only:[:edit,:update]
   def index
-    @preschools = Preschool.all.order("created_at DESC")
+    # @preschools = Preschool.all.order("created_at DESC")
+    @q =  Preschool.ransack(params[:q])
+    @preschools  = @q.result(distinct: true)
+  end
+  def search
+    @q = Preschool.search(search_params)
+    @preschools = @q.result(distinct: true)
   end
   def new
     @preschool = Preschool.new
-   
   end
   def create
     @preschool =Preschool.new(preschool_params)
@@ -52,4 +57,8 @@ class PreschoolsController < ApplicationController
     redirect_to action: :index
     end
   end
+  def search_params
+    params.require(:q).permit!
+  end
+
 end
