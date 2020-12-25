@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+
+
+
+<h1>検索結果</h1>
+
+<%# 検索結果表示 %>
+<h1>こちらから検索</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont, "キーワード検索"%>
+  <%= f.text_field :name_or_address_or_access_or_concept_cont%>
+  <div class="category">運営業態
+    <%= f.collection_select(:category_id_eq, Category.where.not(id: 0), :id, :name, include_blank: '指定なし', class: 'search-select') %>
+  </div>
+  <div class="area">所在地
+  <%= f.collection_select(:area_id_eq,  Area.where.not(id: 0), :id, :name, include_blank: '指定なし', class: 'search-select') %>
+  </div>
+  <div>
+    <%= f.submit '検索する' ,url: search_path,class:"search-btn"%>
+  </div>
+<% end %>
+
+<%# 検索結果表示 %>
+<div class='preschool-contents'>
+    <ul class='preschool-lists'>
+    <li class='list'>
+      <% @preschools.each do |preschool| %>
+       <%= link_to preschool_path(preschool.id) do %>
+       <div class='preschool-img-content'>
+        <% preschool.images.each do |image|%>
+        <%= image_tag(preschool.images[0], class:"preschool-img")%> 
+       </div>
+       <div class='preschool-info'>
+        <h3 class='preschool-name'><%= preschool.name %></h3>
+        <h3 class='preschool-concept'><%= preschool.concept %></h3>
+        </div>
+      <% end %>
+      <% end %>
+      <%unless user_signed_in?%>
+      <h2>いいね数<%= preschool.likes.count %></h2>
+      <%end%>
+      <% if user_signed_in? && current_user.already_liked?(preschool) %>
+      <%= link_to "いいね解除",preschool_likes_path(preschool), method: :delete  %>
+      <%= preschool.likes.count %>
+      <% elsif user_signed_in?  %>
+      <%= link_to "いいね！", preschool_likes_path(preschool), method: :post  %>
+      <%= preschool.likes.count %>
+      <% end %>
+      <% end %>
+
+
+<% if admin_signed_in? %>
+<%= link_to '新規投稿',new_preschool_path, class: 'tweet-btn' %>
+<%end%>
