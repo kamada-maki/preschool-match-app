@@ -74,7 +74,7 @@
 <% end %> 
 <% end%>
 
-<div class="comments_lists" , id = "comment-list" >
+<div class="comments_lists" id="comment-list">
    <% @preschool.comments.each do |comment|%>
     <div class="comments_list">
       <%= comment.text%>
@@ -82,12 +82,13 @@
     <% if user_signed_in? && current_user.id == comment.user_id %>
       <div class="comments_manage">
         <%= link_to "編集",  edit_preschool_comment_path(comment.id), class: :comment_edit__btn %>
+        </div>
       <div class="comments_manage">
       <%= link_to "削除", preschool_comment_path(@preschool,comment), remote: true, id:"comment-delete", class: :comment_destroy_btn, data: {'preschool-id': @preschool.id, 'comment-id': comment.id},method: :delete %>
       </div>
     <% end%>
+    </div>
    <% end %>
-   </div>
 </div>
 
 
