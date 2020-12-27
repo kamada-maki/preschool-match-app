@@ -21,7 +21,7 @@ function comment(){
     }
     const list = document.getElementById("comment-list");
     const formText = document.getElementById("comment-content");
-    list.insertAdjacentHTML("afterend", XHR.response.html);
+    list.insertAdjacentHTML("beforeend", XHR.response.html);
     formText.value = "";
   };
   e.preventDefault();
