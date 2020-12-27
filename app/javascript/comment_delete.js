@@ -27,9 +27,9 @@ function Delete () {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
       }
-     const DeleteComment= deleteComment.closest('.comments_list');
-     DeleteComment.remove();
-     DeleteComment.insertAdjacentHTML("afterend", XHR.response.html);
+     const DeleteComment= deleteComment.closest('.comments_list').remove();
+     const commentLists = document.querySelector('comments_lists');
+     commentLists.insertAdjacentHTML("afterend", XHR.response.html);
     };
     XHR.send();
   });
