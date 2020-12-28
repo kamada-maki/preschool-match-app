@@ -1,6 +1,7 @@
 function Delete () {
   // コメントエリアの要素を取得
   const commentList = document.getElementById('comment-list');
+  if (!commentList ){ return false;}
   commentList.addEventListener("click", (e) =>{
     // 削除ボタン以外の場合は何もしない
     if (! e.target.classList.contains('comment_destroy_btn')) {
@@ -26,7 +27,9 @@ function Delete () {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
       }
-      deleteComment.closest('.comments_list').remove();
+      const DeleteComment = deleteComment.closest('.comments_list');
+      DeleteComment.insertAdjacentHTML("afterend", XHR.response.html);
+      DeleteComment.remove();
     };
     XHR.send();
   });

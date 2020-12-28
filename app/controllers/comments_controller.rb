@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
   def create
     @preschool =Preschool.find(params[:preschool_id])
-    @comment = Comment.create(comment_params)
-    @user = User.find(@comment.user_id)
-    html = render_to_string layout: false
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      @user = User.find(@comment.user_id)
+      html = render_to_string layout: false
+    else
+      @user = nil
+      html = nil
+    end
     render json:{ comment: @comment, user: @user, html: html }
   end
   def edit
