@@ -21,9 +21,11 @@
 <% end %>
 
 <%# 検索結果表示 %>
+
 <div class='preschool-contents'>
     <ul class='preschool-lists'>
     <li class='list'>
+    <% if @preschools.any?%>
       <% @preschools.each do |preschool| %>
        <%= link_to preschool_path(preschool.id) do %>
        <div class='preschool-img-content'>
@@ -47,7 +49,9 @@
       <%= preschool.likes.count %>
       <% end %>
       <% end %>
-
+      <% else%>
+      <h2>検索結果はありませんでした</h2>
+      <%end%>
 
 <% if admin_signed_in? %>
 <%= link_to '新規投稿',new_preschool_path, class: 'tweet-btn' %>
