@@ -1,7 +1,7 @@
-<% if user_signed_in? && current_user.already_liked?(preschool) %>
-  <%= link_to "いいね解除",preschool_likes_path(preschool), data: {id: @preschool.id} , method: :delete,id:"liked_destroy_btn" %>
-  <%= preschool.likes.count %>
+<% if user_signed_in? && current_user.already_liked?(@preschool) %>
+  <%= link_to "いいね解除",preschool_likes_path(@preschool), data: {id: @preschool.id} , method: :delete,id:"liked_destroy_btn" %>
+  <%= @preschool.likes.count %>
 <% elsif user_signed_in?  %>
-  <%= link_to "いいね！", preschool_likes_path(preschool),  data: {id: @preschool.id} ,method: :post, id: "liked_btn" %>
- <%= preschool.likes.count %>
+  <%= link_to "いいね！", preschool_likes_path(@preschool),  data: {id: @preschool.id} ,method: :post, id: "liked_btn" %>
+ <%= @preschool.likes.count %>
 <% end %>
