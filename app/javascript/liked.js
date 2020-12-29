@@ -3,8 +3,9 @@ function liked(){
   if (!like){ return false;}
   like.addEventListener("click",(e) =>{
     e.preventDefault();
-    const preschoolId = like.getAttribute("data-preschool-id");
+    const preschoolId = like.getAttribute("data-id");
     const XHR = new XMLHttpRequest();
+    debugger
     XHR.open("POST",`/preschools/${preschoolId}/likes`, true);
     XHR.responseType = "json";
     XHR.onload = () => {
