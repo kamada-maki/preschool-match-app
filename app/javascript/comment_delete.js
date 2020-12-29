@@ -3,7 +3,7 @@ function Delete () {
   const commentList = document.getElementById('comment-list');
   if (!commentList ){ return false;}
   commentList.addEventListener("click", (e) =>{
-    // 削除ボタン以外の場合は何もしない
+    // 削除ボタン以外の場合は以下を読み込まない
     if (! e.target.classList.contains('comment_destroy_btn')) {
       return;
     }
