@@ -1,0 +1,115 @@
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  /* justify-content: space-between;
+  flex-direction: column; */
+  
+}
+.hoikunavi-icon {
+  width: 10vw;
+  margin-right: 10vw;
+}
+.user-admin-manage{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.user-manage {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.admin-manage {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  font-weight: bold;
+  color:#E85298
+}
+
+.user-logout {
+  text-decoration: none;
+  color:#E85298
+}
+
+.user-login {
+  text-decoration: none;
+  color:#E85298;
+  margin-right: 3vw;
+}
+
+.user-sign-up {
+  text-decoration: none;
+  color:#E85298;
+  padding:auto;
+  border:solid 1px #E85298;
+  border-radius: 10px;
+  padding:8px 10px;
+}
+
+.menu {
+  width: 20vw;
+}
+
+label {
+  display: block;
+  margin: auto;
+  padding : 10px;
+  width:10vw;
+  color :#fff;
+  background :pink;
+  text-align: center;
+}
+
+input {
+  display: none;
+}
+
+.menu ul {
+  margin: 0 auto;
+  background :#f4f4f4;
+  display: block;
+  text-align: center;
+}
+
+.menu li {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#menu_bar01:checked ~ #links01 li {
+  height: 5vh;
+  opacity: 1;
+}
+
+.admin-name {
+  text-decoration: none;
+  color:#E85298;
+  vertical-align: middle;
+}
+
+
+.admin-logout {
+  text-decoration: none;
+  color:#E85298;
+  vertical-align: middle;
+}
+
+.admin-login {
+  text-decoration: none;
+  color:#E85298;
+  vertical-align: middle;
+}
+
+.admin-sign-up {
+  text-decoration: none;
+  color:#E85298;
+  vertical-align: middle;
+}
