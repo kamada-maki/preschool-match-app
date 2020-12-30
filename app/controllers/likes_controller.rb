@@ -16,10 +16,4 @@ class LikesController < ApplicationController
     html = render_to_string layout: false
     render json:{ like: @like, user: @user, html: html }
   end
-
-  # private
-  # def like_params
-  #   params.require(:like)
-  #   .permit(:id).merge(user_id: current_user.id,preschool_id: params[:preschool_id])
-  # end
 end

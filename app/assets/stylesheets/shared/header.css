@@ -2,9 +2,6 @@
   width: 100vw;
   padding: 2vh 15vw;
   display: flex;
-  /* justify-content: space-between;
-  flex-direction: column; */
-  
 }
 .hoikunavi-icon {
   width: 10vw;
@@ -76,6 +73,7 @@ input {
   background :#f4f4f4;
   display: block;
   text-align: center;
+  width: 10vw;
 }
 
 .menu li {

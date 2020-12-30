@@ -1,7 +1,11 @@
 <% if user_signed_in? && current_user.already_liked?(@preschool) %>
-  <%= link_to "いいね解除", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
-  <%= @preschool.likes.count %>
+  <div class= "liked_destroy_area">
+    <%= link_to "いいね解除", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
+    <%= @preschool.likes.count %>
+  </div>
 <% elsif user_signed_in?  %>
-  <%= link_to "いいね！", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :post, class: "liked_btn" %>
- <%= @preschool.likes.count %>
+  <div class="like_area">
+    <%= link_to "いいね！", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :post, class: "liked_btn" %>
+    <%= @preschool.likes.count %>
+  </div>
 <% end %>
