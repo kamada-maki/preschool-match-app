@@ -1,19 +1,26 @@
-<%= link_to 'トップページに戻る（画像にする）', root_path %>
-<ul class='lists-right'>
+<header class='top-page-header'>
+ <div class=user-admin-manage>
+  <%= link_to image_tag("hoikunavi.png", class:"hoikunavi-icon"), root_path %>
+    <ul class='user-manage'>
       <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname"  %></li>
-      <li><%= link_to 'ログアウト(保護者）', destroy_user_session_path, method: :delete, class: "logout" %></li> 
+        <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname"  %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-logout" %></li> 
       <%else%>
-      <li><%= link_to 'ログイン（保護者）', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録（保護者）', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "user-login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "user-sign-up" %></li>
       <% end %>
     </ul>
-<ul class='lists-right'>
+    <div class = "menu">
+    <label for="menu_bar01">Menu</label>
+    <input type= "checkbox" id="menu_bar01" class="accordion"/>
+    <ul class='admin-manage' id="links01">
       <% if admin_signed_in? %>
-      <li><%= link_to current_admin.name, admin_path(current_admin.id), class: "admin-name"  %></li>
-      <li><%= link_to 'ログアウト(運営者）', destroy_admin_session_path, method: :delete, class: "logout" %></li> 
+        <li><%= link_to current_admin.name, admin_path(current_admin.id), class: "admin-name"  %></li>
+        <li><%= link_to 'ログアウト(運営者）', destroy_admin_session_path, method: :delete, class: "admin-logout" %></li> 
       <%else%>
-      <li><%= link_to 'ログイン（運営者）', new_admin_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録（運営者）', new_admin_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'ログイン（運営者）', new_admin_session_path, class: "admin-login" %></li>
+        <li><%= link_to '新規登録（運営者）', new_admin_registration_path, class: "admin-sign-up" %></li>
       <% end %>
     </ul>
+   </div> 
+</header>
