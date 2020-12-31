@@ -14,7 +14,7 @@ function liked(){
       return;
     }
     // e.target.insertAdjacentHTML("afterend", response.html);
-    e.target.innerHTML= response.html
+    e.target.closest('.liked_destroy_area, .like_area').outerHTML = response.html
   });
 
   // ajaxエラー時の処理
