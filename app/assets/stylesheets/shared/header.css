@@ -16,12 +16,7 @@
   display: flex;
   list-style: none;
   align-items: flex-end;
-}
-
-.admin-manage {
-  display: flex;
-  list-style: none;
-  align-items: flex-end;
+  width: 15vw;
 }
 
 .user-nickname {
@@ -50,7 +45,7 @@
   padding:8px 10px;
 }
 
-.menu {
+/* .menu {
   width: 20vw;
 }
 
@@ -62,10 +57,6 @@ label {
   color :#fff;
   background :pink;
   text-align: center;
-}
-
-input {
-  display: none;
 }
 
 .menu ul {
@@ -80,11 +71,6 @@ input {
   height: 0;
   overflow: hidden;
   transition: all 0.5s;
-}
-
-#menu_bar01:checked ~ #links01 li {
-  height: 5vh;
-  opacity: 1;
 }
 
 .admin-name {
@@ -110,4 +96,83 @@ input {
   text-decoration: none;
   color:#E85298;
   vertical-align: middle;
+} */
+
+
+/* 
+/* 基礎部分 */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+} */
+/* 
+
+/* 
+a {
+  text-decoration: none;
+} */
+
+a,
+a:visited {
+  color: inherit;
+}
+
+/* メニューの色 */
+.a {
+  background:#E85298;
+}
+
+/* ナビゲーションの大きさ */
+#header-nav {
+  width: 100vw;
+  margin: auto;
+}
+
+/* カラム落ちの防止 */
+.header-list {
+  font-size: 0;
+}
+
+/* メインメニュー */
+.menu-item {
+  display: inline-block;
+  width: 15%;
+  position: relative;
+}
+
+.menu-item a {
+  display: block;
+  width: 100%;
+  height: 10vh;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+
+/* サブメニュー */
+.sub-menu {
+  position: absolute;
+  width: 100%;
+}
+
+.sub-menu-item {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  /* サブメニューが出現する速度の調整 */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* メインメニューマウスカーソルが乗ったらサブメニューを出現させる */
+.menu-item:hover > .sub-menu > .sub-menu-item {
+  overflow: visible;
+  opacity: 1;
+  height: 10vh;
 }
