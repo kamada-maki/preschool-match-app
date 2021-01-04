@@ -1,0 +1,120 @@
+
+.title-contents {
+  min-width: 768px;
+  width: 100vw;
+  height: 80vh;
+  background-image: image-url('index.preschool.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // justify-content: center;
+  padding: 5vh 5vw;
+  text-shadow: 0 0 5px white(0, 0, 0, 0.9);
+}
+
+.service-title {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 5em;
+  color:#E85298;
+}
+.search-navi{
+  margin-top: 10vh;
+}
+.keyword-search{
+    width: 50%;
+    height: 6em;
+    border: 1px solid #999090;
+    outline: none;
+    color: #666666;
+    border-radius: 4px;
+}
+.search-select{
+  width: 25%;
+  height: 6em;
+  border: 1px solid #999090;
+  outline: none;
+  color: #666666;
+  border-radius: 4px;
+}
+.search-btn{
+  border-style: none;
+  border-radius: 4px;
+  width: 40%;
+  height: 6em;
+  padding: 0;
+}
+
+// preschool一覧表示部分
+.preschool-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+  
+}
+
+.preschool-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.preschool-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.preschool-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.preschool-img-content {
+  position: relative;
+}
+
+.preschool-img {
+  width: 33vh;
+  height: 33vh;
+  
+}
+
+.preschool-info {
+  background-color: #FFF;
+  padding: 1vw;
+  color: #999999;
+}
+
+.preschool-name {
+  font-size: 2.5vh;
+  color:#E85298;
+}
+
+.preschool-concept {
+  font-size: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+.preschool-path{
+  text-decoration: none;
+}
+.liked_btn, .liked_destroy_btn{
+  text-decoration: none;
+  font-size: 5vh;
+  color:#E85298;
+}
+
+
+.like-count{
+  font-size: 4vh;
+  color:#E85298
+}
