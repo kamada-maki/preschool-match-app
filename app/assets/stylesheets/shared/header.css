@@ -132,13 +132,14 @@ a:visited {
   background:#E85298;
 }
 
+
+
 /* ナビゲーションの大きさ */
 /* .header-nav {
   width: 100vw;
   margin-right: 2vw;
 } */
 
-/* カラム落ちの防止 */
 .header-list {
   font-size: 0;
 }
