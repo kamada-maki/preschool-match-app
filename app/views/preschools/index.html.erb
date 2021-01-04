@@ -24,37 +24,41 @@
 
 
 <div class='preschool-contents'>
-<h2 class='title'>一覧表示</h2>
-    <ul class='preschool-lists'>
+  <h2 class='title'>一覧表示</h2>
+  <ul class='preschool-lists'>
     <li class='list'>
       <% @preschools.each do |preschool| %>
-       <%= link_to preschool_path(preschool.id) ,class: "preschool-path" do %>
-       <div class='preschool-img-content'>
-        <% preschool.images.each do |image|%>
-        <%= image_tag(preschool.images[0], class:"preschool-img")%> 
+        <%= link_to preschool_path(preschool.id) ,class: "preschool-path" do %>
+        <div class='preschool-img-content'>
+          <% preschool.images.each do |image|%>
+          <%= image_tag(preschool.images[0], class:"preschool-img")%> 
        </div>
        <div class='preschool-info'>
-        <div class='preschool-name'><%= preschool.name %>(<%= preschool.category.name%>)</div>
-        <div class='preschool-concept'><%= preschool.concept %></div>
-        </div>
-      <% end %>
-      <% end %>
-      <%unless user_signed_in?%>
-      <span class="like-count">★<%= preschool.likes.count %></span>
-      <%end%>
-      <% if user_signed_in? && current_user.already_liked?(preschool) %>
-      <div class= "liked_destroy_area">
-        <%= link_to "★", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
-        <span class="like-count"><%= preschool.likes.count %></span>
-        </div>
-      <% elsif user_signed_in?  %>
-      <div class="like_area">
-        <%= link_to "☆", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :post, class: "liked_btn" %>
-       <span class="like-count"><%= preschool.likes.count %></span>
+         <div class='preschool-name'><%= preschool.name %>(<%= preschool.category.name%>)</div>
+         <div class='preschool-concept'><%= preschool.concept %></div>
         </div>
         <% end %>
       <% end %>
+      <div class="like-area">
+      <%unless user_signed_in?%>
+        <span class="like-count">★<%= preschool.likes.count %></span>
+      <%end%>
+      <% if user_signed_in? && current_user.already_liked?(preschool) %>
+        <div class= "liked_destroy_area">
+          <%= link_to "★", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
+          <span class="like-count"><%= preschool.likes.count %></span>
+        </div>
+      <% elsif user_signed_in?  %>
+        <div class="like_area">
+          <%= link_to "☆", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :post, class: "liked_btn" %>
+          <span class="like-count"><%= preschool.likes.count %></span>
+        </div>
+        <% end %>
+      <% end %>
+       </div>
       </li>
+      </ul>
+  </div>
 
 <% if admin_signed_in? %>
 <%= link_to '新規投稿',new_preschool_path, class: 'tweet-btn' %>

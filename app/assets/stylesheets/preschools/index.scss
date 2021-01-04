@@ -101,11 +101,15 @@
 
 .preschool-concept {
   font-size: 2vh;
-  display: flex;
+  // display: flex;
   justify-content: space-between;
 }
 .preschool-path{
   text-decoration: none;
+}
+.like-area{
+  display:flex;
+  align-items: center;
 }
 .liked_btn, .liked_destroy_btn{
   text-decoration: none;
