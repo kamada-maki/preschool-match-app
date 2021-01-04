@@ -4,4 +4,6 @@ class AdminsController < ApplicationController
     @preschool =Preschool.find(params[:id])
     @preschools = @admin.preschools
   end
+  def index
+  end
 end

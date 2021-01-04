@@ -17,15 +17,10 @@
     <a href="">menu</a>
     <ul class="sub-menu">
       <li class="sub-menu-item a">
-      <% if admin_signed_in? %>
-        <%= link_to current_admin.name, admin_path(current_admin.id), class: "admin-name"  %>
-        <%= link_to 'ログアウト(運営者）', destroy_admin_session_path, method: :delete, class: "admin-logout" %>
-      <%else%>
+        <%= link_to '運営者はこちら', admins_path, class: "for-admins" %>
        </li>
       <li class="sub-menu-item a">
-        <%= link_to 'ログイン（運営者）', new_admin_session_path, class: "admin-login" %>
-        <%= link_to '新規登録（運営者）', new_admin_registration_path, class: "admin-sign-up" %>
-        <% end %>
+      <%= link_to '企業主導型って？', "https://www8.cao.go.jp/shoushi/shinseido/ryouritsu/tachiage/1_01.html", class: "for-admins" %>
       </li>
        </ul><!-- /.sub-menu -->
       </li><!-- /.menu-item a -->

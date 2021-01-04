@@ -1,0 +1,48 @@
+
+.explanation {
+  max-width: 100%;;
+  height:auto; 
+  position: relative;
+  background-image: image-url('admin-explanation.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // justify-content: center;
+  padding: 10vh 10vw;
+  // text-shadow: 0 0 5px white(0, 0, 0, 0.9);
+}
+.admin-manage{
+  height: auto;
+  width: 40vw;
+}
+
+.admin-name {
+  text-decoration: none;
+  background: #99ccff;
+  color:white;
+  vertical-align: middle;
+}
+
+.admin-logout {
+  text-decoration: none;
+  background: #99ccff;
+  color:white;
+  vertical-align: middle;
+}
+
+.admin-login {
+  text-decoration: none;
+  background: #99ccff;
+  color:white;
+  vertical-align: middle;
+}
+
+.admin-sign-up {
+  text-decoration: none;
+  background: #99ccff;
+  color:white;
+  vertical-align: middle;
+} 
