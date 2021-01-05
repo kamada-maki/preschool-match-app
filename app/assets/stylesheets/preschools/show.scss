@@ -1,0 +1,91 @@
+
+.images{
+  width: 40vh;
+  height: 40vh;
+  display: flex;
+  margin: auto;
+}
+.detail-show{
+  margin:0 10vw
+}
+.title{
+  font-size: 2.0rem;
+  color: #E85298;  
+  border-left: 6px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-left:1vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom:3vh;
+}
+.name{
+  margin-right: auto;
+}
+.like-area{
+ font-size: 1em;
+}
+.email-click {
+  width: 10vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  font-size: 0.5em;
+  color:#E85298;
+  text-decoration: none;
+  background-color:white;
+  border: solid 2px #E85298;
+  text-align: center;
+  // justify-content: center;
+  // background-image: image-url('mail.icon.png');
+  // background-repeat: no-repeat;
+  
+}
+.email-icon{
+  width: 10%;
+  height: auto;
+}
+
+.email-click:hover {
+ background-color: #E85298;
+ color: white;
+}
+table{
+  width: 100%;
+  height: auto;
+  margin-bottom: 3vh;
+}
+
+table th{
+  border-bottom: solid 2px #E85298;
+  padding: 10px 0;
+  color: #666666;
+  text-align: center;
+  justify-content: center;
+}
+
+table td{
+  border-bottom: solid 2px #ddd;
+  text-align: left;
+  color: #666666;
+  padding: 1vh 1vh;
+}
+.map-area{
+  display: flex;
+}
+.google-map{
+  height: 60vh;
+  width: 70vw;
+}
+.map-open{
+  margin-left: 1vw;
+  display: block;
+}
+.map-icon{
+  width:10vw;
+
+  height: auto;
+}
+.map-click{
+  text-decoration: none;
+  color: #E85298;
+}
