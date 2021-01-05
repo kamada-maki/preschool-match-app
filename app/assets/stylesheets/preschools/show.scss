@@ -89,3 +89,79 @@ table td{
   text-decoration: none;
   color: #E85298;
 }
+
+// コメント欄
+.comments_lists{
+  margin-bottom: 40px;
+  }
+  
+  .mother-icon{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #E85298;
+  border-radius: 50%;
+  margin: 0;
+  }
+  
+  /* 画像の下のテキスト */
+  .comment_user {
+  padding: 5px 0 0;
+  font-size: 10px;
+  text-align: center;
+  }
+  
+  p.comment-text {
+  margin: 0 0 8px;
+  }
+  
+  p.comment-text:last-child {
+  margin-bottom: 0px;
+  }
+  
+  /* 回り込み解除 */
+  .comment:after,.comment:before {
+  clear: both;
+  content: "";
+  display: block;
+  }
+  
+  /* ----- 左の場合 ----- */
+  
+  /* 左画像 */
+  .mother-icon {
+  margin-left: 4px;
+  margin-top: -1px;
+  float: left;
+  width: 60px;
+  height: 60px;
+  }
+  
+  /* 左からの吹き出しテキスト */
+  .comment-Ltxt {
+  color: #444;
+  position: relative;
+  margin-left: 100px;
+  padding: 1.2em;
+  border: 3px solid #E85298;
+  background-color: #fff;
+  border-radius: 5px;
+  }
+  
+  /* 左の三角形を作る */
+  .comment-Ltxt:before {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  border-right: 10px solid #E85298;
+  top: 15px;
+  left: -20px;
+  }
+  
+  .comment-Ltxt:after {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  border-right: 10px solid #fff;
+  top: 15px;
+  left: -16px;
+  }
