@@ -2,7 +2,7 @@
 .title-contents {
   min-width: 768px;
   width: 100vw;
-  height: 80vh;
+  height: auto;
   background-image: image-url('index.preschool.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   // align-items: flex-start;
   // justify-content: center;
   padding: 5vh 5vw;
-  text-shadow: 0 0 5px white(0, 0, 0, 0.9);
+ 
 }
 
 .service-title {
@@ -20,21 +20,33 @@
   padding: 0px 0px 0px 0px;
   font-size: 5em;
   color:#E85298;
+  display: flex;
 }
+
+.three-points-block{
+  top: 16px;
+  right: 68px;
+  width: 170px;
+}
+
 .search-navi{
   margin-top: 10vh;
+  display: block;
 }
 .keyword-search{
-    width: 50%;
-    height: 6em;
+    width: 25%;
+    height: 3em;
     border: 1px solid #999090;
     outline: none;
     color: #666666;
     border-radius: 4px;
+    margin-bottom: 1vh;
 }
+
+
 .search-select{
-  width: 25%;
-  height: 6em;
+  width: 12.5%;
+  height: 3em;
   border: 1px solid #999090;
   outline: none;
   color: #666666;
@@ -43,10 +55,24 @@
 .search-btn{
   border-style: none;
   border-radius: 4px;
-  width: 40%;
-  height: 6em;
+  width: 10%;
+  height: 3em;
   padding: 0;
+  margin:auto;
 }
+
+
+// element.style {
+// }
+// @media (min-width: 768px)
+// .assert-points img {
+//     position: absolute;
+//     top: 16px;
+//     right: 68px;
+//     width: 170px;
+// }
+
+
 
 // preschool一覧表示部分
 .preschool-contents {
