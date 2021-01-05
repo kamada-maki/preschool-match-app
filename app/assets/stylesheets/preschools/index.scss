@@ -91,21 +91,27 @@
 .preschool-info {
   background-color: #FFF;
   padding: 1vw;
-  color: #999999;
+  // display:flex;
+  text-decoration: none;
 }
 
 .preschool-name {
   font-size: 2.5vh;
   color:#E85298;
 }
-
+.preschool-category{
+  font-size: 2vh;
+  color:#E85298;
+}
 .preschool-concept {
   font-size: 2vh;
-  // display: flex;
+  display: flex;
+  color: #999999;
   justify-content: space-between;
 }
 .preschool-path{
   text-decoration: none;
+  color: #999999;
 }
 .like-area{
   display:flex;
@@ -113,12 +119,11 @@
 }
 .liked_btn, .liked_destroy_btn{
   text-decoration: none;
-  font-size: 5vh;
+  font-size: 3vh;
   color:#E85298;
 }
 
-
 .like-count{
-  font-size: 4vh;
+  font-size: 2vh;
   color:#E85298
 }
