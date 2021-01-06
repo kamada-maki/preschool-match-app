@@ -1,0 +1,14 @@
+<footer class='footer'>
+  <%# <div class='fotter-text'> %>
+    <ul class = "admin-manage">
+      <li><%= link_to '運営者の皆様へ', admins_path, class: "for-admins" %></li>
+    <% if admin_signed_in? %>
+      <li><%= link_to "#{current_admin.name}さん", admin_path(current_admin.id), class: "admin-name"  %></li>
+      <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "admin-logout" %></li>
+    <%else%>
+      <li><%= link_to 'ログイン', new_admin_session_path, class: "admin-login" %></li>
+      <li><%= link_to '新規登録', new_admin_registration_path, class: "admin-sign-up" %></li>
+    <% end %>
+    </ul>
+    <%# </div> %>
+</footer>

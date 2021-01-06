@@ -2,12 +2,5 @@
 <div class= explanation>
 ほいくんナビは保護者と運営者を繋ぐサイトです
 </div>
-<ul class = "admin-manage">
-  <% if admin_signed_in? %>
-    <li><%= link_to current_admin.name, admin_path(current_admin.id), class: "admin-name"  %></li>
-    <li><%= link_to 'ログアウト(運営者）', destroy_admin_session_path, method: :delete, class: "admin-logout" %></li>
-  <%else%>
-    <li><%= link_to 'ログイン（運営者）', new_admin_session_path, class: "admin-login" %></li>
-    <li><%= link_to '新規登録（運営者）', new_admin_registration_path, class: "admin-sign-up" %></li>
-  <% end %>
- </ul>
+
+<%= render "shared/footer" %>
