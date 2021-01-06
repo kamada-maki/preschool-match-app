@@ -92,9 +92,11 @@ table td{
 
 // コメント欄
 .comments_lists{
+  margin-top:3vh;
   margin-bottom: 40px;
+  width: 100%;
   }
-  
+ 
   .mother-icon{
   width: 100%;
   height: 100%;
@@ -103,11 +105,12 @@ table td{
   margin: 0;
   }
   
-  /* 画像の下のテキスト */
+  // /投稿者名/
   .comment_user {
-  padding: 5px 0 0;
-  font-size: 10px;
+  font-size: 0.7em;
   text-align: center;
+  text-decoration: none;
+  color:#E85298;
   }
   
   p.comment-text {
@@ -118,16 +121,14 @@ table td{
   margin-bottom: 0px;
   }
   
-  /* 回り込み解除 */
-  .comment:after,.comment:before {
-  clear: both;
-  content: "";
-  display: block;
-  }
+  // .comment:after,.comment:before {
+  // clear: both;
+  // content: "";
+  // display: block;
+  // }
   
-  /* ----- 左の場合 ----- */
   
-  /* 左画像 */
+  /* アイコン */
   .mother-icon {
   margin-left: 4px;
   margin-top: -1px;
@@ -136,15 +137,17 @@ table td{
   height: 60px;
   }
   
-  /* 左からの吹き出しテキスト */
+  /* 吹き出しテキスト */
   .comment-Ltxt {
   color: #444;
   position: relative;
   margin-left: 100px;
   padding: 1.2em;
-  border: 3px solid #E85298;
+  border: 2px solid #E85298;
   background-color: #fff;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
   }
   
   /* 左の三角形を作る */
@@ -164,4 +167,8 @@ table td{
   border-right: 10px solid #fff;
   top: 15px;
   left: -16px;
+  }
+  .delete-icon{
+    width:5vw;
+    height: auto;
   }
