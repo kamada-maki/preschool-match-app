@@ -7,7 +7,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  // display: flex;
+  display: flex;
   // flex-direction: column;
   // align-items: flex-start;
   // justify-content: center;
@@ -20,7 +20,7 @@
   padding: 0px 0px 0px 0px;
   font-size: 5em;
   color:#E85298;
-  display: flex;
+  // display: flex;
 }
 
 .three-points-block{
@@ -32,10 +32,9 @@
 .search-navi{
   margin-top: 10vh;
   display: block;
+  height: 3em;
 }
 .keyword-search{
-    width: 25%;
-    height: 3em;
     border: 1px solid #999090;
     outline: none;
     color: #666666;
@@ -43,9 +42,13 @@
     margin-bottom: 1vh;
 }
 
+input[type="text"] {
+  width: 20%;
+  height: 4em;
+}
 
 .search-select{
-  width: 12.5%;
+  width: 20%;
   height: 3em;
   border: 1px solid #999090;
   outline: none;

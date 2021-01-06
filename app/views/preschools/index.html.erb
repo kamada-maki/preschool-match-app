@@ -2,23 +2,25 @@
 
 <%# 画面上部の帯部分 %>
 <div class='title-contents'>
-  <div class='service-title'>保育園探しをもっと簡単に。
-    <div class="three-points">
-      <%= image_tag "3points_block.png", class:"three-points-block" %>
-      <%# <%= image_tag "3points_flex.png", class:"three-points-flex" %> 
-    </div>
-    </div>
-  <%# 検索結果表示 %>
-  <div class="search-navi">
-    <%= search_form_for @q, url: search_path do |f| %>
-      <%= f.text_field :name_or_address_or_access_or_concept_cont, placeholder: "キーワードから探す",class:"keyword-search"%>
-      <div class="category">
-        <%= f.collection_select(:category_id_eq, Category.where.not(id: 0), :id, :name, {include_blank: "運営種別で検索"}, {class: "search-select"}) %>
-        <%= f.collection_select(:area_id_eq,  Area.where.not(id: 0), :id, :name, {include_blank: "エリアで検索"}, {class: "search-select"}) %>
-        <%= f.submit '探す' ,class:"search-btn"%>
-      </div>
-    <% end # search_form_for @q %>
+  <div>
+    <div class="service-title">保育園探しをもっと簡単に。</div>
+    <div class="search-navi">
+      <%= search_form_for @q, url: search_path do |f| %>
+        <%= f.text_field :name_or_address_or_access_or_concept_cont, placeholder: "キーワードから探す",class:"keyword-search"%>
+        <div class="category">
+          <%= f.collection_select(:category_id_eq, Category.where.not(id: 0), :id, :name, {include_blank: "運営種別で検索"}, {class: "search-select"}) %>
+          <%= f.collection_select(:area_id_eq,  Area.where.not(id: 0), :id, :name, {include_blank: "エリアで検索"}, {class: "search-select"}) %>
+          <%= f.submit '探す' ,class:"search-btn"%>
+        </div>
+      <% end # search_form_for @q %>
+    </div>      
   </div>
+  <div class="three-points">
+    <%= image_tag "3points_block.png", class:"three-points-block" %>
+    <%# <%= image_tag "3points_flex.png", class:"three-points-flex" %> 
+  </div>
+  <%# 検索結果表示 %>
+
   <%# 検索結果表示 %>
 </div>
 <%# /画面上部の帯部分  %>
