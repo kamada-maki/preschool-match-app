@@ -52,3 +52,12 @@
 }
 
 
+.new-create-btn{
+  text-decoration: none;
+  color:white;
+  padding:auto;
+  border:solid 1px white;
+  border-radius: 10px;
+  padding:8px 10px;
+  margin-left: 2vw;
+}
