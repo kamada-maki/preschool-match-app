@@ -4,7 +4,7 @@ function Delete () {
   if (!commentList ){ return false;}
   commentList.addEventListener("click", (e) =>{
     // 削除ボタン以外の場合は以下を読み込まない
-    if (! e.target.classList.contains('comment_destroy_btn')) {
+    if (! e.target.classList.contains('delete-icon')) {
       return;
     }
   
@@ -14,7 +14,7 @@ function Delete () {
     }
   
     // 削除ボタンの要素を取得
-    const deleteComment = e.target;
+    const deleteComment = e.target.closest('.comment_destroy_btn');
     const preschoolId = deleteComment.getAttribute("data-preschool-id");
     const commentId = deleteComment.getAttribute("data-comment-id");
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
@@ -38,4 +38,3 @@ function Delete () {
   window.addEventListener("load", Delete);
   // setInterval(Delete, 1000);
   // Delete();
-  
