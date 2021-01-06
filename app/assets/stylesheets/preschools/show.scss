@@ -89,8 +89,40 @@ table td{
   text-decoration: none;
   color: #E85298;
 }
+// 口コミ投稿欄
+.field{
+  margin-top:4vh;
+  border-bottom: dashed 2px #ccc;
+  width: 100%;
+}
+.comment-form{
+  display: flex;
+  width: 80%;
+  margin-top:1vh;
+}
+.comment-input{
+  width: 90vw;
+  border: 1px solid #E85298;
+}
+.comment_form__btn{
+  margin-left: 1.5vw;
+  border: 1px solid #E85298;
+  background-color: white;
+  color: #444;
+  width:10vw;
+  cursor:pointer;
+}
+.comment_form__btn:hover {
+  background-color: #E85298;
+  color: white;
 
-// コメント欄
+  
+ }
+.comment-title{
+  color:#E85298;
+ 
+}
+// 口コミ欄
 .comments_lists{
   margin-top:3vh;
   margin-bottom: 40px;
@@ -169,6 +201,6 @@ table td{
   left: -16px;
   }
   .delete-icon{
-    width:5vw;
+    width:4vw;
     height: auto;
   }

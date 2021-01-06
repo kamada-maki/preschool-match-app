@@ -93,15 +93,17 @@
 
 <div class="preschool__comments">
  <% if user_signed_in? %>
-<%= form_with( model: [@preschool, @comment], id: "comment-form") do |f|%>
-<div class="field">
-<%= f.label :text, "口コミ" %><br />
-<%= f.text_field :text, id:"comment-content"%>
-</div>
-<div class="actions" data-id=<%= @preschool.id %>>
-<%= f.submit "送信する", class: :comment_form__btn, id:"submit", data: {id: @preschool.id} %>
-</div>
-<% end %> 
+  <%= form_with( model: [@preschool, @comment], id: "comment-form") do |f|%>
+    <div class="field">
+      <%= f.label :text, "口コミ",class:"comment-title" %>
+    </div>
+    <div class="comment-form">
+      <%= f.text_field :text, id:"comment-content",placeholder: "見学に行かれた時の体験などぜひお書きください",class: "comment-input"%>
+      <div class="actions" data-id=<%= @preschool.id %>>
+        <%= f.submit "送信", class: :comment_form__btn, id:"submit", data: {id: @preschool.id} %>
+      </div>
+    </div>
+  <% end %> 
 <% end%>
 
 <div class="comments_lists" id="comment-list">
