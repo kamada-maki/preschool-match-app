@@ -9,13 +9,11 @@
       <div class="name">
         <%= @preschool.name %>
         </div>
-      <%# <div class="email-btn"> %>
-       <%= image_tag "mail.icon.png", class:"email-icon" %>
-        <%= mail_to @preschool.email, "見学へ行く",class:"email-click",
+        <%= mail_to @preschool.email,class:"email-click",
             :subject => '見学日程調整希望',
-            :body => '↓↓ご希望の日時を３日程書いていただきますようお願いいたします↓↓'  %>
-      <%# </div> %>
-      
+            :body => '↓↓ご希望の日時を３日程書いていただきますようお願いいたします↓↓' do %> 
+            <i class="fas fa-envelope"></i><span class="visit"> 見学に行く</span>
+            <% end %>
         <div class="like-area">
         <% unless user_signed_in? %>
         <span class="like-count">★<%= @preschool.likes.count %></span>
