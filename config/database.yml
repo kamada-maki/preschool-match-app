@@ -17,7 +17,6 @@ default: &default
   password: password
   socket: /tmp/mysql.sock
   host: db
-
 development:
   <<: *default
   database: preschool_match_development
