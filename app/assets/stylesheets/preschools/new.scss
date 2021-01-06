@@ -1,0 +1,90 @@
+.new-form{
+  margin: 0 10vw;
+}
+.new-title{
+    color: #E85298;  
+    border-left: 6px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left:1vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom:3vh;
+}
+.new-submit{
+  font-size: 2.0rem;
+  color: #E85298;  
+  margin-right: auto;
+}
+.title-indispensable{
+  font-size: 1.0rem;
+  color: #ea352d;
+}
+
+table{
+  width: 100%;
+  height: auto;
+  margin-bottom: 3vh;
+}
+table th{
+  width: 20%;
+  border-bottom: solid 2px #E85298;
+  padding: 10px 0;
+  color: #666666;
+  text-align: center;
+  justify-content: center;
+}
+
+table td{
+  width: 80%;
+  border-bottom: solid 2px #ddd;
+  text-align: left;
+  color: #666666;
+  padding: 1vh 1vh;
+}
+
+input[type="text"] {
+  width: 80%;
+  height: auto;
+}
+textarea{
+  width: 80%;
+  height: auto;
+}
+.select-box{
+  color:#666666;
+}
+
+.indispensable {
+  color: #ea352d;
+}
+// 投稿する、戻るボタン
+.register-btn-contents{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2vw;
+}
+.back-btn{
+  display: block;
+  text-decoration: none;
+  color: #666666;
+  border: solid 1px #E85298;
+  padding: 1vw 1vw;
+  margin-left: 2vw;
+}
+.register-btn{
+  text-decoration: none;
+  color: white;
+  background-color: #E85298;
+  border: solid 1px #E85298;
+  padding: 1vw 1vw;
+  cursor:pointer;
+  vertical-align: top;
+}
+
+.register-btn:hover{
+  opacity:0.75
+}
+.back-btn:hover{
+  opacity:0.75
+}
