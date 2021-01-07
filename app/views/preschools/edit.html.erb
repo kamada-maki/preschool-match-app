@@ -1,61 +1,77 @@
 <%= render "shared/header" %>
 
-<h1>編集ページ</h1>
-
-<div class="preschools-main">
-    <h2 class="preschools-title">保育園の情報を入力</h2>
+<div class="edit-form">
+    <ul class="edit-title">
+      <li class="new-submit">情報修正</li>
+      <li class="title-indispensable">※</li>
+      <li class="indispensable-form">は必須投稿</li>
+    </ul>
+    <table>
     <%= form_with(model: @preschool, local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
   
     <div class="img-upload">
         <div id="image-list"></div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :images, name:'preschool[images][]', id:"preschool-image" %>
-      </div>
+      <tr>
+      <th class="click-upload">画像選択<span class="indispensable">※</span></th>
+        <td><%= f.file_field :images, name:'preschool[images][]', id:"preschool-image" %></td>
+      </tr>
     </div>
   
     <div class="new-preschools">
-      <div class="preschool-name">
-        保育園名
-      <%= f.text_field  :name, class:"preschools-name", id:"preschool-name", placeholder:"〇〇保育園（最大40文字）", maxlength:"40" %>
-      </div>
-       <div class="preschool-address">
-        <div class="post-number">郵便番号
-        <%= f.text_field :post_number, class:"preschool-postnumber", placeholder:"123-4567" %>
-        </div>
-        <div class="area">所在地
-        <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box"}) %>
-       <%= f.text_field  :street_number, class:"preschools-street-number", id:"preschools-street-number", placeholder:"堂島1-2-3" %>
-       <%= f.text_field  :building, class:"preschools-building", placeholder:"ABCビル2階" %>
-       </div>
-       <div class="phone-number">電話番号
-       <%= f.text_field :phone_number, class:"phone-number", placeholder:"例）0612345678",maxlength:"11"%>
-       </div>
-        <div class="access">最寄り駅
-       <%= f.text_field :access, class:"access", placeholder:"例）大阪駅より徒歩10分"%>
-       </div>
-       <div class="capacity">定員数
-       <%= f.text_field :capacity, class:"capacity", placeholder:"例）50"%>
-       </div>
-       <div class="category">運営業態
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
-       </div>
-      <div class="opening-hour">開園時間
-       <%= f.time_select :open_hour,:minute_step => 15,class:"open-hour"%>〜
-       <%= f.time_select :close_hour,:minute_step => 15, class:"close-hour"%>
-       </div>
-      <div class="concept">園の特徴
-       <%= f.text_area :concept, class:"concept", placeholder:"例）たくましい子どもを育てます！"%>
-       </div>
+      <tr>
+        <th class="name">保育園名 <span class="indispensable">※</span></th>
+        <td><%= f.text_field  :name, class:"name", id:"preschool-name", placeholder:"〇〇保育園（最大40文字）", maxlength:"40" %></td>
+      </tr>
+      <tr>
+        <th  class="post-number">郵便番号 <span class="indispensable">※</span></th>
+          <td><%= f.text_field :post_number, class:"preschool-postnumber", placeholder:"123-4567（ハイフンあり）" %></td>
+      </tr>
+      <tr>
+        <th  class="area">所在地 <span class="indispensable">※</span></th>
+        <td><%= f.collection_select :area_id, Area.all, :id, :name, {include_blank: "選択してください"},{class:"select-box"}%>
+            <%= f.text_field  :address, class:"preschools-address", id:"preschools-address", placeholder:"天満1-2-3" %></td>
+      </tr>
+       <tr>
+        <th  class="building">建物名</th>
+        <td><%= f.text_field  :building, class:"preschools-building", id:"preschools-building", placeholder:"ABCビル1階" %></td>
+      </tr>
+      <tr>
+        <th  class="phone-number">電話番号 <span class="indispensable">※</span></th>
+        <td><%= f.text_field :phone_number, class:"phone-number", placeholder:"例）0612345678（ハイフンなし）",maxlength:"11"%></td>
+      </tr>
+      <tr>
+        <th  class="access">アクセス <span class="indispensable">※</span></th>
+        <td><%= f.text_field :access, class:"access", placeholder:"例）大阪駅より徒歩10分"%></td>
+      </tr>
+      <tr>
+        <th  class="capacity">定員数 <span class="indispensable">※</span></th>
+        <td><%= f.text_field :capacity, class:"capacity", placeholder:"例）50"%></td>
+      </tr>
+      <tr>
+        <th class="category">運営業態 <span class="indispensable">※</span></th>
+        <td><%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "選択してください"},{class:"select-box"}) %></td>
+       </tr>
+      <tr>
+        <th class="opening-hour">開園時間 <span class="indispensable">※</span></th>
+        <td><%= f.time_select :open_hour,:minute_step => 15,class:"open-hour",prompt: "--",ignore_data: false %>〜
+            <%= f.time_select :close_hour,:minute_step => 15, class:"close-hour",prompt: "--",ignore_data: false %></td>
+      </tr>
+      <tr>
+        <th class="concept">園の特徴 <span class="indispensable">※</span></th>
+        <td><%= f.text_area :concept, class:"concept", placeholder:"例）様々な預け方に対応できます！たくましい子どもを一緒に育てていきましょう！"%></td>
+      </tr>
+      <tr>
+        <th class="email">メールアドレス<span class="indispensable">※</span></th>
+        <td><%= f.text_field :email, class:"email", placeholder:"例）test@test.com"%></td>
+      </tr>
+       </table>
 
-
-    <div class="register-btn-contents">
-      <%= f.submit "修正する" ,url:preschools_path(@preschool.id), class:"register-btn" ,method: :put%>
-    </div>
+    <ul class="register-btn-contents">
+      <li><%= f.submit "修正する" ,url:preschools_path(@preschool.id), class:"edit-btn" ,method: :put%></li>
+      <li><%= link_to 'もどる', root_path, class:"edit-back-btn" %></li>
+    </ul>
  
   </div>
   <% end %>

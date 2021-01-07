@@ -1,8 +1,8 @@
-.new-form{
+.edit-form{
   margin: 0 10vw;
 }
-.new-title{
-    color: #E85298;  
+.edit-title{
+    color: #666666;  
     border-left: 6px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding-left:1vw;
@@ -43,7 +43,7 @@ table td{
   padding: 1vh 1vh;
 }
 
-.new-form{
+.edit-form{
   input[type="text"] {
     width: 80%;
     height: auto;
@@ -61,31 +61,31 @@ textarea{
 .indispensable {
   color: #ea352d;
 }
-// 投稿する、戻るボタン
+// 修正する、戻るボタン
 .register-btn-contents{
   display: flex;
   justify-content: flex-end;
   margin-bottom: 2vw;
 }
-.back-btn{
+.edit-back-btn{
   display: block;
   text-decoration: none;
   color: #666666;
-  border: solid 1px #E85298;
+  border: solid 1px #666666; 
   padding: 1vw 1vw;
   margin-left: 2vw;
 }
-.register-btn{
+.edit-btn{
   text-decoration: none;
   color: white;
-  background-color: #E85298;
-  border: solid 1px #E85298;
+  background-color: #666666; 
+  border: solid 1px #666666; 
   padding: 1vw 1vw;
   cursor:pointer;
   vertical-align: top;
 }
 
-.register-btn:hover{
+.edit-btn:hover{
   opacity:0.75
 }
 .back-btn:hover{
