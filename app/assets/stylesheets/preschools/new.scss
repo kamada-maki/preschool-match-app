@@ -43,10 +43,13 @@ table td{
   padding: 1vh 1vh;
 }
 
-input[type="text"] {
-  width: 80%;
-  height: auto;
+.new-form{
+  input[type="text"] {
+    width: 80%;
+    height: auto;
+  }
 }
+
 textarea{
   width: 80%;
   height: auto;

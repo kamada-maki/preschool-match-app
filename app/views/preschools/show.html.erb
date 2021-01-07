@@ -8,124 +8,124 @@
     <div class="title">
       <div class="name">
         <%= @preschool.name %>
-        </div>
+        </div> <%# "name"%>
         <%= mail_to @preschool.email,class:"email-click",
             :subject => '見学日程調整希望',
             :body => '↓↓ご希望の日時を３日程書いていただきますようお願いいたします↓↓' do %> 
             <i class="fas fa-envelope"></i><span class="visit"> 見学に行く</span>
             <% end %>
-        <div class="like-area">
-        <% unless user_signed_in? %>
-        <span class="like-count">★<%= @preschool.likes.count %></span>
+        <div class="like-destroy-area">
+          <% unless user_signed_in? %>
+            <span class="like-count">★<%= @preschool.likes.count %></span>
+          <% end %>
+          <% if user_signed_in? && current_user.already_liked?(@preschool) %>
+            <div class= "liked_destroy_area">
+              <%= link_to "★", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
+              <span class="like-count"><%= @preschool.likes.count %></span>
+            </div>
+          <% elsif user_signed_in?  %>
+            <div class="like_area">
+              <%= link_to "☆", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :post, class: "liked_btn" %>
+              <span class="like-count"><%= @preschool.likes.count %></span>
+            </div>
+          <% end %>
+        </div><%# like-destroy-area%>
+     </div><%# title%>
+<%# </div> %>
+      <div class="detail-image">
+        <% @preschool.images.each do |image| %>
+          <%= image_tag image, class: 'images' %>
         <% end %>
-        <% if user_signed_in? && current_user.already_liked?(@preschool) %>
-          <div class= "liked_destroy_area">
-            <%= link_to "★", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
-            <span class="like-count"><%= @preschool.likes.count %></span>
-          </div>
-        <% elsif user_signed_in?  %>
-          <div class="like_area">
-            <%= link_to "☆", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :post, class: "liked_btn" %>
-            <span class="like-count"><%= @preschool.likes.count %></span>
-          </div>
-        <% end %>
-    </div>
-    </div>
-</div>
-<div class="detail-image">
-  <% @preschool.images.each do |image| %>
-  <%= image_tag image, class: 'images' %>
-  <% end %>
-</div>
+      </div>
 
 <%# 表にする %>
-<table>
-<tr>
-<th class="post-number">住所</th>
-<td>〒<%= @preschool.post_number %>
-</br><%= @preschool.area.name%><%= @preschool.address%><%= @preschool.building%></td>
-</tr>
-
-<tr>
-<th class="phone-number">電話番号</th>
-<td><%= @preschool.phone_number%></td>
-</tr>
-<tr>
-<th class="access">アクセス</th>
-<td><%= @preschool.access %></td>
-</tr>
-<tr>
-<th class="capacccccity">定員数</th>
-<td><%= @preschool.capacity %>人</td>
-</tr>
-<tr>
-<th class="category">運営種別</th>
-<td><%= @preschool.category.name%></td>
-</tr>
-<tr>
-<th class="hour">開園時間</th>
-<td><%= l @preschool.open_hour, format: :short%>〜<%= l @preschool.close_hour ,format: :short%></td>
-</tr>
-<tr>
-<th class="concept">園の特徴</th>
-<td><%= @preschool.concept%></td>
-</tr>
-<%# 表にする %>
-</table>
-
- <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
-<div class="preschool__manage">
-<%= link_to "編集する",  edit_preschool_path(@preschool.id), class: :preschool__btn %>
-<%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
-</div>
-<% end%>
-<div class="map-area">
-<div class="google-map", id = "google-map">
-<%= render "shared/map" %></div>
-  <div class="map-open">
-  <%= link_to image_tag("google_maps_logo.png",class:"map-icon"), "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank"  %></br>
-  <%= link_to "GoogleMapを開く", "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank",class:"map-click"  %>
-  </div>
-</div>
-
-
-<div class="preschool__comments">
- <% if user_signed_in? %>
-  <%= form_with( model: [@preschool, @comment], id: "comment-form") do |f|%>
-    <div class="field">
-      <%= f.label :text, "口コミ",class:"comment-title" %>
-    </div>
-    <div class="comment-form">
-      <%= f.text_field :text, id:"comment-content",placeholder: "見学に行かれた時の体験などぜひお書きください",class: "comment-input"%>
-      <div class="actions" data-id=<%= @preschool.id %>>
-        <%= f.submit "送信", class: :comment_form__btn, id:"submit", data: {id: @preschool.id} %>
-      </div>
-    </div>
-  <% end %> 
-<% end%>
-
-<div class="comments_lists" id="comment-list">
-   <% @preschool.comments.each do |comment|%>
-    <div class="comments_list">
-      <ul class="comment-figure">
-       <li><%= link_to "#{comment.user.nickname}さん", "/users/#{comment.user_id}", {class: "comment_user"} %></li>
-       <li><%= image_tag "mother.png", class:"mother-icon" %></li>
-      </div>
-      <div class="comment-Ltxt">
-        <p class="cpomment-text"><%= comment.text%></p>
-      <% if user_signed_in? && current_user.id == comment.user_id %>
-      <%# <div class="comments_manage">
-        <%= link_to "編集",  edit_preschool_comment_path(comment.id), class: :comment_edit__btn 
-        </div> %>
-        <div class="comments_manage">
-          <%= link_to image_tag("comment-delete.png",class:"delete-icon"), preschool_comment_path(@preschool,comment), id:"comment-delete", class: :comment_destroy_btn, data: {'preschool-id': @preschool.id, 'comment-id': comment.id} %>
-          <%# <%= link_to "削除", preschool_comment_path(@preschool,comment), id:"comment-delete", class: :comment_destroy_btn, data: {'preschool-id': @preschool.id, 'comment-id': comment.id} %> 
+      <table>
+        <tr>
+          <th class="post-number">住所</th>
+          <td>〒<%= @preschool.post_number %>
+          </br><%= @preschool.area.name%><%= @preschool.address%><%= @preschool.building%></td>
+        </tr>
+        <tr>
+          <th class="phone-number">電話番号</th>
+          <td><%= @preschool.phone_number%></td>
+        </tr>
+        <tr>
+          <th class="access">アクセス</th>
+          <td><%= @preschool.access %></td>
+        </tr>
+        <tr>
+          <th class="capacccccity">定員数</th>
+          <td><%= @preschool.capacity %>人</td>
+        </tr>
+        <tr>
+          <th class="category">運営種別</th>
+          <td><%= @preschool.category.name%></td>
+        </tr>
+        <tr>
+          <th class="hour">開園時間</th>
+          <td><%= l @preschool.open_hour, format: :short%>〜<%= l @preschool.close_hour ,format: :short%></td>
+        </tr>
+        <tr>
+          <th class="concept">園の特徴</th>
+          <td><%= @preschool.concept%></td>
+        </tr>
+      <%# 表にする %>
+      </table>
+      <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
+        <div class="preschool__manage">
+          <%= link_to "編集する",  edit_preschool_path(@preschool.id), class: :preschool__btn %>
+          <%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
         </div>
-    <% end%>
-    </div>
-    <% end %>
-    </div>
-</div>
-</div>
-
-<%= render "shared/footer" %>
+      <% end%>
+      <div class="map-area">
+        <div class="google-map", id = "google-map">
+          <%= render "shared/map" %>
+        </div>
+        <div class="map-open">
+          <%= link_to image_tag("google_maps_logo.png",class:"map-icon"), "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank"  %></br>
+          <%= link_to "GoogleMapを開く", "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank",class:"map-click"  %>
+        </div>
+      </div>
+      <div class="preschool__comments">
+        <% if user_signed_in? %>
+          <%= form_with( model: [@preschool, @comment], id: "comment-form") do |f|%>
+            <div class="field">
+              <%= f.label :text, "口コミ",class:"comment-title" %>
+            </div>
+            <div class="comment-form">
+              <%= f.text_field :text, id:"comment-content",placeholder: "見学に行かれた時の体験などぜひお書きください",class: "comment-input"%>
+              <div class="actions" data-id=<%= @preschool.id %>>
+                <%= f.submit "送信", class: :comment_form__btn, id:"submit", data: {id: @preschool.id} %>
+              </div>
+            </div>
+          <% end %> 
+        <% end%>
+        <div class="comments_lists" id="comment-list">
+          <% @preschool.comments.each do |comment|%>
+            <div class="comments_list">
+              <ul class="comment-figure">
+                <li><%= link_to "#{comment.user.nickname}さん", "/users/#{comment.user_id}", {class: "comment_user"} %></li>
+                <li><%= image_tag "mother.png", class:"mother-icon" %></li>
+              </ul > <%#comment-figure%>
+  
+              <div class="comment-Ltxt">
+                <p class="comment-text"><%= comment.text%></p>
+                <% if user_signed_in? && current_user.id == comment.user_id %>
+                  <%# <div class="comments_manage">
+                    <%= link_to "編集",  edit_preschool_comment_path(comment.id), class: :comment_edit__btn 
+                  </div> %>
+                  <div class="comments_manage">
+                    <%# <%= link_to image_tag("comment-delete.png",class:"delete-icon"), preschool_comment_path(@preschool,comment), id:"comment-delete", class: :comment_destroy_btn, data: {'preschool-id': @preschool.id, 'comment-id': comment.id} %>
+                    <%= link_to preschool_comment_path(@preschool,comment), id:"comment-delete", class: :comment_destroy_btn, data: {'preschool-id': @preschool.id, 'comment-id': comment.id} do %>
+                      <span><i class="fa fa-trash"></i></span>
+                    <% end %>
+                  </div><%#comments_manage%>
+                <% end %><%# if user_signed_in?%>
+              </div><%#comment-Ltxt%>
+           </div><%#comments_list%>
+          <% end %><%# each do comment%>
+        </div><%#comments_lists%>
+      </div><%#preschool__comments%>
+  </div><%# detail-box%>
+</div><%# detail-show%>
+<%= render "shared/footer"%>
