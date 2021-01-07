@@ -1,31 +1,42 @@
 <%= render "shared/header" %>
-<h1>保護者マイページ</h1>
-<h1>いいねをしたpreschool一覧</h1>
-<div class='preschool-contents'>
-  <ul class='preschool-lists'>
-    <li class='list'>
-    <% @user.liked_preschools.each do |preschool| %>
-      <%= link_to preschool_path(preschool.id) do %>
-      <div class='preschool-img-content'>
-      <% preschool.images.each do |image|%>
-        <%= image_tag(preschool.images[0], class:"preschool-img")%> 
-      </div>
-      <div class='preschool-info'>
-        <h3 class='preschool-name'><%= preschool.name %></h3>
-        <h3 class='preschool-concept'><%= preschool.concept %></h3>
-      </div>
-      <% end %>
-    <% end %>    
 
- <% if user_signed_in? && current_user.already_liked?(preschool) %>
-      <div class= "liked_destroy_area">
-        <%= link_to "★", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
-        <span class="like-count"><%= preschool.likes.count %></span>
-        </div>
-      <% elsif user_signed_in?  %>
-      <div class="like_area">
-        <%= link_to "☆", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :post, class: "liked_btn" %>
-       <span class="like-count"><%= preschool.likes.count %></span>
-        </div>
-        <% end %>
-<% end %>
+<div class="user-mypage">
+  <div class="mypage-title">
+    <span><%= image_tag "mother.png", class:"mother-icon" %></span>
+      <span class="mypage">マイページ</span>
+  </div>
+  <div class="like-show">
+    いいね★をした保育園</div>
+  <div class='preschool-contents'>
+    <ul class='preschool-lists'>
+        <% @user.liked_preschools.each do |preschool| %>
+          <li class='list'>
+            <%= link_to preschool_path(preschool.id) ,class: "preschool-path" do %>
+              <div class='preschool-img-content'>
+                <% preschool.images.each do |image|%>
+                  <%= image_tag(preschool.images[0], class:"preschool-img")%> 
+                <% end # preschool.images.each %>
+              </div>
+            <div class='preschool-info'>
+              <div class='preschool-name'><%= preschool.name %></br>
+                <span class="preschool-category">(<%= preschool.category.name%>)<span></div>
+              <div class='preschool-concept'><%= preschool.concept %>
+                <% if user_signed_in? && current_user.already_liked?(preschool) %>
+                  <div class= "liked_destroy_area">
+                    <%= link_to "★", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
+                      <span class="like-count"><%= preschool.likes.count %></span>
+                  </div>
+                <% elsif user_signed_in?  %>
+                  <div class="like_area">
+                    <%= link_to "☆", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :post, class: "liked_btn" %>
+                      <span class="like-count"><%= preschool.likes.count %></span>
+                  </div>
+                <% end %>
+              </div>
+            <% end # link_to preschool_path(preschool.id) %>
+          </li><%# .list %>
+        <% end # @preschools.each %>
+      </ul><%# .preschool-lists %>
+    </div><%# .preschool-contents %>
+  </div>
+<%= render "shared/footer"%>
