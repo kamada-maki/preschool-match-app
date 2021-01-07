@@ -1,5 +1,8 @@
-<h1>修正完了ページ</h1>
-<h1>投稿完了しました</h1>
- <%= link_to '一覧へ戻る', root_path, class:"return_index" %>
-
+<%= render "shared/header" %>
+<div class="update-form">
+  <ul class="done">
+     <li class="done-title">投稿完了しました</li>
+     <li><%= link_to '一覧画面へ戻る', root_path, class:"return_index" %></li>
+  </ul>
+</div>
 <%= render "shared/footer" %>

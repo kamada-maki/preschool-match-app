@@ -1,0 +1,26 @@
+.update-form{
+  margin:10vw 10vw;
+  display: flex;
+  justify-content: center;
+}
+.done-title{
+  color: #666666;
+  margin-bottom:3vh;
+  border: solid 1px  #666666;
+  padding: 1vw 1vw;
+}
+.return_index{
+    text-decoration: none;
+    color: white;
+    background-color: #E85298;
+    border: solid 1px #E85298;
+    padding: 1vw 1vw;
+    cursor:pointer;
+    vertical-align: top;
+    padding: 1vw 1vw;
+    
+}
+
+.return_index:hover{
+  opacity:0.75
+}
