@@ -73,8 +73,8 @@
       </table>
       <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
         <div class="preschool__manage">
-          <%= link_to "編集する",  edit_preschool_path(@preschool.id), class: :preschool__btn %>
-          <%= link_to "削除する",  preschool_path(@preschool.id), class: :preschool__btn,method: :delete %>
+          <%= link_to "編集",  edit_preschool_path(@preschool.id), class: :edit_btn %>
+          <%= link_to "削除",  preschool_path(@preschool.id), class: :delete_btn,method: :delete %>
         </div>
       <% end%>
       <div class="map-area">

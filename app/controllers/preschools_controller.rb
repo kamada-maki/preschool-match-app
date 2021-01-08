@@ -1,5 +1,5 @@
 class PreschoolsController < ApplicationController
-  before_action :move_to_index, only: [:edit, :update]
+  before_action :move_to_index, only: [:edit, :update,:destroy]
   def index
     # @preschools = Preschool.all.order("created_at DESC")
     @q = Preschool.ransack(params[:q])
@@ -50,17 +50,14 @@ class PreschoolsController < ApplicationController
   end
 
   private
-
   def preschool_params
     params.require(:preschool)
           .permit(:name, :post_number, :area_id, :address, :building, :phone_number, :access, :open_hour, :close_hour, :capacity, :category_id, :concept, :email, images: []).merge(admin_id: current_admin.id)
   end
-
   def move_to_index
     @preschool = Preschool.find(params[:id])
     redirect_to action: :index unless admin_signed_in? && @preschool.admin_id == current_admin.id
   end
-
   def search_params
     params.require(:q).permit!
   end
