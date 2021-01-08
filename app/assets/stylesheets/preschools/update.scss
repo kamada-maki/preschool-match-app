@@ -3,21 +3,25 @@
   display: flex;
   justify-content: center;
 }
+.done{
+  text-align: center;
+}
 .done-title{
+  width: 50vw;
   color: #666666;
   margin-bottom:3vh;
-  border: solid 1px  #666666;
-  padding: 1vw 1vw;
+  border-bottom: solid 1px  #666666;
+  padding: 1vw 20vw;
 }
 .return_index{
+    width: 50vw;
     text-decoration: none;
     color: white;
     background-color: #E85298;
     border: solid 1px #E85298;
-    padding: 1vw 1vw;
     cursor:pointer;
     vertical-align: top;
-    padding: 1vw 1vw;
+    padding: 1vw 20vw;
     
 }
 
