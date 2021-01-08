@@ -60,7 +60,7 @@
   align-items: center;
 }
 .register-btn{
-  width: 20vw;
+  width: 25vw;
   text-decoration: none;
   color: white;
   background-color: #E85298;
@@ -73,13 +73,15 @@
   opacity:0.5
 }
 .google-resister{
-  width: 20vw;
+  width: 25vw;
   text-decoration:none;
   color: #666666;
   border:1px solid  #999999;
   padding: 1vw 1vw;
+  display: inline-block; 
 }
 .google-icon{
   width:4vw;
-  margin-right:0.5vw;
+  margin-right:3vw;
+  vertical-align: middle;
 }
