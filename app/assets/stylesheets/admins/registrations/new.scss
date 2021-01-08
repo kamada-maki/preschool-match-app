@@ -1,0 +1,86 @@
+.registrations-admin-area{
+  margin: 5vw 15vw;
+}
+
+.resister-title{
+  border: 1px solid #ccc;
+  padding-left:1vw;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:3vh;
+}
+.main-title{
+  color: #666666;  
+  font-size: 2.0rem;
+  justify-content: center;
+}
+
+.sub-title{
+  font-size: 1.0rem;
+  color: #999999;
+}
+
+.registrations-admin-area{
+  input[type="text"] {
+    width: 100%;
+    height: 7vh;
+  }
+}
+.registrations-admin-area{
+  input[type="password"] {
+    width: 100%;
+    height: 7vh;
+  }
+}
+
+.registrations-admin-area{
+  input[type="email"] {
+    width: 100%;
+    height: 7vh;
+  }
+}
+.admin-field {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.registrations-admin-area{
+.form-text {
+  width: 100%;
+  height: 20%;
+  color: #666666;  
+}
+}
+.actions{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+  align-items: center;
+}
+.register-btn{
+  width: 20vw;
+  text-decoration: none;
+  color: white;
+  background-color: #E85298;
+  border: solid 1px #E85298;
+  padding: 1vw 1vw;
+  cursor:pointer;
+  vertical-align: top;
+}
+.register-btn:hover{
+  opacity:0.5
+}
+.google-resister{
+  width: 20vw;
+  text-decoration:none;
+  color: #666666;
+  border:1px solid  #999999;
+  padding: 1vw 1vw;
+}
+.google-icon{
+  width:4vw;
+  margin-right:0.5vw;
+}

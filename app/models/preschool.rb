@@ -12,7 +12,7 @@ class Preschool < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   has_many :comments, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
   with_options presence: true do
     validates :name
     validates :post_number

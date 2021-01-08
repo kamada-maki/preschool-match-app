@@ -1,3 +1,5 @@
+<%= render "shared/header" %>
+
 <h2>ログイン（保護者）</h2>
 
  <%= form_with model: @user, url: user_session_path , local: true do |f| %>
@@ -19,4 +21,4 @@
   <% end %>
 
 <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
-<%# <%= render "users/shared/links" %> 
+<%= render "shared/footer" %>

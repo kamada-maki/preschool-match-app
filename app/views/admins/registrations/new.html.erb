@@ -1,31 +1,35 @@
-<h2>新規登録（運営者）</h2>
+<%= render "shared/header" %>
 
+
+
+<div class="registrations-admin-area">
+  <ul class="resister-title">
+    <li class="main-title">新規登録</li>
+    <li class="sub-title">1つのアカウントで複数の保育園を登録することができます</li>
+    </ul>
 <%= form_with model: @admin, url: admin_registration_path, class: 'registration-main', local: true do |f| %>
 <%= render 'shared/error_messages', model: f.object %>
-
-  <div class="field">
-   <%= f.label :name, "登録名" %><br />
-   <%= f.text_field :name %>
-   </div>
+   <ul class="admin-field">
+      <li class="form-text"><%= f.label :name, "登録名" %></li>
+      <li><%= f.text_field :name,placeholder:"社会福祉法人〇〇" %></li>
+    </ul>
    
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-   <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワード（確認）" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <ul class="admin-field">
+      <li><%= f.label :email ,"メールアドレス",class: "form-text"%></li>
+      <li><%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"example@example.com" %></li>
+    </ul>
+    <ul class="admin-field">
+      <li><%= f.label :password ,class: "form-text"%>
+      <li><%= f.password_field :password, autocomplete: "new-password",placeholder:"半数英数字6字以上" %></li>
+    </ul>  
+    <ul class="admin-field">
+      <li><%= f.label :password_confirmation ,class: "form-text"%><br /></li>
+      <li><%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"パスワード（確認用）" %></li>
+    </ul>
+    <ul class="actions">
+      <li><%= f.submit "新規登録" ,class:"register-btn"%></li>
+    </ul>
 <% end %>
+ </div>
 
-<%= render "admins/shared/links" %>
+<%= render "shared/footer" %>

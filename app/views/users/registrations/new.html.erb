@@ -1,32 +1,39 @@
-<h2>新規登録（保護者）</h2>
+<%= render "shared/header" %>
 
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-     <%= render 'shared/error_messages', model: f.object %>
 
-<div class="field">
-   <%= f.label :nickname, "ニックネーム" %><br />
-   <%= f.text_field :nickname %>
-   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="registrations-area">
+  <ul class="resister-title">
+    <li class="main-title">ようこそほいくんナビへ</li>
+    <li class="sub-title">登録していいねした保育園をいつでも見れるようにしよう！</li>
+    </ul>
+  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <ul class="user-field">
+      <li class="form-text"><%= f.label :nickname, "ニックネーム" %></li>
+      <li><%= f.text_field :nickname,placeholder:"ほいくん花子" %></li>
+    </ul>
+    <ul class="user-field">
+      <li><%= f.label :email ,"メールアドレス",class: "form-text"%></li>
+      <li><%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"example@example.com" %></li>
+    </ul>
+    <ul class="user-field">
+      <li><%= f.label :password ,class: "form-text"%>
+      <li><%= f.password_field :password, autocomplete: "new-password",placeholder:"半数英数字6字以上" %></li>
+    </ul>  
+    <ul class="user-field">
+      <li><%= f.label :password_confirmation ,class: "form-text"%><br /></li>
+      <li><%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"パスワード（確認用）" %></li>
+    </ul>
+    <ul class="actions">
+      <li><%= f.submit "新規登録" ,class:"register-btn"%></li>
+    </ul>
+    <ul class="actions">
+      <li><%= link_to user_google_oauth2_omniauth_authorize_path, method: :post,class: "google-resister" do %>
+          <span class="google"><%= image_tag("google_icon.png", class: "google-icon")  %>Googleで登録</span>
+          <%end%>
+      </li>
+    </ul>
+  <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-<%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
+<%= render "shared/footer" %>
