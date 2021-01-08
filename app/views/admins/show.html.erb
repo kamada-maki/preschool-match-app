@@ -9,8 +9,8 @@
     投稿した保育園一覧</div>
     <div class='preschool-contents'>
       <ul class='preschool-lists'>
+      <% @preschools.each do |preschool| %>
       <li class='list'>
-        <% @preschools.each do |preschool| %>
           <%= link_to preschool_path(preschool.id),class: "preschool-path"  do %>
             <div class='preschool-img-content'>
               <% preschool.images.each do |image|%>
@@ -32,9 +32,12 @@
               <li><%= link_to "削除",  preschool_path(preschool.id), class: :delete_btn,method: :delete %></li>
             </ul>
           <%# <% end%> 
+        
         </li>
         <% end %>
       </ul>
+      
   </div>
+  
 </div>
 <%= render "shared/footer"%>
