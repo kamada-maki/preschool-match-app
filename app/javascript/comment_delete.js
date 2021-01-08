@@ -4,9 +4,9 @@ function Delete () {
   if (!commentList ){ return false;}
   commentList.addEventListener("click", (e) =>{
     // 削除ボタン以外の場合は以下を読み込まない
-    if (! e.target.classList.contains('delete-icon')) {
+    if (! e.target.classList.contains('fa-trash')) {
       return;
-    }
+      }
   
     e.preventDefault();
     if (! confirm(`削除してもよろしいですか？`)) {
