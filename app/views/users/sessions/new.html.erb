@@ -1,24 +1,32 @@
 <%= render "shared/header" %>
 
-<h2>ログイン（保護者）</h2>
 
+<div class="registrations-area">
  <%= form_with model: @user, url: user_session_path , local: true do |f| %>
    <div class='login-flash-message'>
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
-  <div class="field">
-  <%= f.label :email, "メールアドレス" %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div class="field">
-  <%= f.label :password, "パスワード（6文字以上/英数字混合）" %><br />
-  <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  <div class="actions">
-  <%= f.submit "ログイン", class: :form__btn  %>
-  </div>
-  <% end %>
 
-<%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
+      <ul class="user-field">
+      <li><%= f.label :email ,"メールアドレス",class: "form-text"%></li>
+      <li><%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"example@example.com" %></li>
+    </ul>
+
+    <ul class="user-field">
+      <li><%= f.label :password ,class: "form-text"%><br /></li>
+      <li><%= f.password_field :password, autocomplete: "current-password" ,placeholder:"新規登録時のパスワード" %></li>
+    </ul>
+
+  <ul class="actions">
+      <li><%= f.submit "ログイン" ,class:"register-btn"%></li>
+    </ul>
+        <ul class="actions">
+      <li><%= link_to user_google_oauth2_omniauth_authorize_path, method: :post,class: "google-resister" do %>
+          <span class="google"><%= image_tag("google_icon.png", class: "google-icon")  %>Googleアカウントでログイン</span>
+          <%end%>
+      </li>
+    </ul>
+  <% end %>
+  </div>
 <%= render "shared/footer" %>
