@@ -1,20 +1,23 @@
-
-.explanation {
-  max-width: 100%;;
-  height:auto; 
-  position: relative;
-  background-image: image-url('admin-explanation.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: flex-start;
-  // justify-content: center;
-  padding: 10vh 10vw;
-  // text-shadow: 0 0 5px white(0, 0, 0, 0.9);
-}
-.admin-manage{
+.admin-index{
   height: auto;
-  width: 40vw;
+  margin: 0 10vw
+}
+.for-admin-image{
+  width: 80%;
+  margin: 5vw 10vw;
+  justify-content: center;
+}
+.admin-index-title{
+  border-left: 6px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-left:1vw;
+  margin-bottom:3vh;
+}
+.main-title{
+  color: #999999
+}
+.for-admin-concept{
+  margin: 0 5vw;
+  font-size: 1.5rem;
+  color: #E85298;  
 }

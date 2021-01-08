@@ -18,11 +18,17 @@
 .service-title {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  font-size: 5em;
-  color:#E85298;
   // display: flex;
 }
+.main-concept{
+  font-size: 5em;
+  color:#E85298;
+}
 
+.sub-concept{
+  font-size: 2em;
+  color: #444444;
+}
 .three-points-block{
   top: 16px;
   right: 68px;
