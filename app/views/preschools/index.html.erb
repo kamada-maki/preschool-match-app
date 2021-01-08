@@ -3,7 +3,12 @@
 <%# 画面上部の帯部分 %>
 <div class='title-contents'>
   <div>
-    <div class="service-title">保育園探しをもっと簡単に。</div>
+    <div class="service-title">
+      <div class="main-concept">
+        保育園探しをもっと簡単に。</div>
+      <div class="sub-concept">
+        働き方が多様化した今だからこそ、１人１人のお母さんに合った預け方を。</div>
+    </div>
     <div class="search-navi">
       <%= search_form_for @q, url: search_path do |f| %>
         <%= f.text_field :name_or_address_or_access_or_concept_cont, placeholder: "キーワードから探す",class:"keyword-search"%>
@@ -17,7 +22,6 @@
   </div>
   <div class="three-points">
     <%= image_tag "3points_block.png", class:"three-points-block" %>
-    <%# <%= image_tag "3points_flex.png", class:"three-points-flex" %> 
   </div>
   <%# 検索結果表示 %>
 

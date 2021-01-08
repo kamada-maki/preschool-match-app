@@ -1,21 +1,25 @@
-<h2>ログイン（運営者）</h2>
+<%= render "shared/header" %>
 
+
+<div class="registrations-admin-area">
  <%= form_with model: @admin, url: admin_session_path , local: true do |f| %>
    <div class='login-flash-message'>
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
-  <div class="field">
-  <%= f.label :email, "メールアドレス" %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div class="field">
-  <%= f.label :password, "パスワード（6文字以上/英数字混合）" %><br />
-  <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  <div class="actions">
-  <%= f.submit "ログイン", class: :form__btn  %>
-  </div>
-  <% end %>
 
-<%= render "admins/shared/links" %>
+    <ul class="admin-field">
+      <li><%= f.label :email ,"メールアドレス",class: "form-text"%></li>
+      <li><%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"example@example.com" %></li>
+    </ul>
+  <ul class="admin-field">
+      <li><%= f.label :password ,class: "form-text"%><br /></li>
+      <li><%= f.password_field :password, autocomplete: "current-password" ,placeholder:"新規登録時のパスワード" %></li>
+    </ul>
+
+  <ul class="actions">
+      <li><%= f.submit "ログイン" ,class:"register-btn"%></li>
+    </ul>
+    <% end %>
+</div>
+<%= render "shared/footer" %>
