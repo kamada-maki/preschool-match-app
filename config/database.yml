@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: preschool_match_production
-  username: preschool_match
+  database: <%= ENV['PRESCHOOL_MATCH_DATABASE'] %>
+  username: <%= ENV['PRESCHOOL_MATCH_DATABASE_USERNAME'] %>
   password: <%= ENV['PRESCHOOL_MATCH_DATABASE_PASSWORD'] %>
+  host: <%= ENV['PRESCHOOL_MATCH_DATABASE_HOST'] %>

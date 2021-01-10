@@ -6,6 +6,7 @@
   background-color: #E85298;
   display:flex;
   justify-content: flex-end;
+  color:white;
 }
 .admin-manage{
   width: 100%;

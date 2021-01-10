@@ -4,6 +4,7 @@
   padding: 2vh 10vw;
   display: flex;
   flex-direction: column;
+  color:#E85298;
 }
 
 .hoikunavi-icon {
@@ -67,14 +68,12 @@
   transition: all 0.5s;
 }
 
-/* 
-/* 基礎部分 */
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-} */
+} /*
 /* 
 
 /* 
