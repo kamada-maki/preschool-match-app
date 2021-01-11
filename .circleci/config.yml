@@ -33,13 +33,13 @@ jobs:
       - ruby/install-deps
       - run:
           name: Database create
-          command: bundle exec rails db:create
+          command: docker-compose run web bundle exec rake db:create  
       - run:
           name: Database setup
-          command: bundle exec rails db:migrate
+          command: docker-compose run web bundle exec rake db:migrate
       - run:
           name: test
-          command: bundle exec rake test
+          command: docker-compose run web bundle exec rake test
 workflows:
   version: 2
   build_test_and_deploy:
