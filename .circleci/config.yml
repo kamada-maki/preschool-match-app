@@ -24,16 +24,13 @@ jobs:
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
-      DB_HOST: 127.0.0.1
+      DB_HOST: 127.0.0.1"
       RAILS_ENV: test
     working_directory: ~/preschool-match
     steps:
       - checkout:
           path: ~/preschool-match
       - ruby/install-deps
-      - run:
-          name: Database create
-          command: bundle exec rails db:create
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
