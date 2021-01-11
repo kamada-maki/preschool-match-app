@@ -81,10 +81,6 @@ a {
   text-decoration: none;
 } */
 
-a,
-a:visited {
-  color: inherit;
-}
 
 /* メニューの色 */
 .a {
