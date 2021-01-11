@@ -24,7 +24,7 @@ jobs:
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
-      DB_HOST: 127.0.0.1"
+      DB_HOST: "127.0.0.1"
       RAILS_ENV: test
     working_directory: ~/preschool-match
     steps:
