@@ -32,6 +32,9 @@ jobs:
           path: ~/preschool-match
       - ruby/install-deps
       - run:
+          name: Database create
+          command: bundle exec rails db:create
+      - run:
           name: Database setup
           command: bundle exec rails db:migrate
       - run:
