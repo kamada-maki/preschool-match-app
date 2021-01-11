@@ -15,7 +15,7 @@ jobs:
 
   test:
     docker:
-      - image: circleci/ruby:2.7
+      - image: circleci/ruby:2.6.5
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
