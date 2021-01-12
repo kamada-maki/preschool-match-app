@@ -12,7 +12,7 @@ jobs:
         - MYSQL_ROOT_HOST: '127.0.0.1'
 
     working_directory: ~/preschool-match
-    
+
     steps:
     - checkout
 
@@ -24,7 +24,7 @@ jobs:
     - run:
         name: install dependencies
         command: |
-          gem install bundler -v 2.0.2
+          gem install bundler -v 2.1.4
           bundle install --jobs=4 --retry=3 --path vendor/bundle
 
     - save_cache:
