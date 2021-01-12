@@ -1,51 +1,65 @@
 version: 2.1
-orbs:
-  ruby: circleci/ruby@1.1.2
-  heroku: circleci/heroku@1.2.3
-
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.5
-    working_directory: ~/preschool-match
-    steps:
-      - checkout:
-          path: ~/preschool-match
-      - ruby/install-deps
+    - image: circleci/ruby:2.6.5-node-browsers
+      environment:
+        - BUNDLER_VERSION: 2.0.2
+        - RAILS_ENV: 'test'
+    - image: circleci/mysql:5.7
+      environment:
+        - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+        - MYSQL_ROOT_HOST: '127.0.0.1'
 
-  test:
-    docker:
-      - image: circleci/ruby:2.6.5
-      - image: circleci/mysql:5.5
-        environment:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: app_test
-          MYSQL_USER: root
-    environment:
-      BUNDLE_JOBS: "3"
-      BUNDLE_RETRY: "3"
-      DB_HOST: "127.0.0.1"
-      RAILS_ENV: test
     working_directory: ~/preschool-match
+    
     steps:
-      - checkout:
-          path: ~/preschool-match
-      - ruby/install-deps
-      - run:
-          name: Database create
-          command: docker-compose run web bundle exec rake db:create  
-      - run:
-          name: Database setup
-          command: docker-compose run web bundle exec rake db:migrate
-      - run:
-          name: test
-          command: docker-compose run web bundle exec rake test
-workflows:
-  version: 2
-  build_test_and_deploy:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-  
+    - checkout
+
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "Gemfile.lock" }}
+        - v1-dependencies-
+
+    - run:
+        name: install dependencies
+        command: |
+          gem install bundler -v 2.0.2
+          bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+    - save_cache:
+        paths:
+        - ./vendor/bundle
+        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+    # Database setup
+    - run: mv ./config/database.yml.ci ./config/database.yml
+
+    # Database setup
+    - run:
+        name: Databasesetup
+        command: |
+           bundle exec rake db:create
+           bundle exec rake db:schema:load
+
+    # run tests!
+    - run:
+        name: Run rspec
+        command: |
+          mkdir /tmp/test-results
+          TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+            circleci tests split --split-by=timings)"
+
+          bundle exec rspec \
+            --format progress \
+            --format RspecJunitFormatter \
+            --out /tmp/test-results/rspec.xml \
+            --format progress \
+            $TEST_FILES
+
+    # collect reports
+    - store_test_results:
+        path: /tmp/test-results
+    - store_artifacts:
+        path: /tmp/test-results
+        destination: test-results
