@@ -1,4 +1,8 @@
 version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.2
+  heroku: circleci/heroku@1.2.3
+
 jobs:
   build:
     docker:
@@ -64,6 +68,9 @@ jobs:
         destination: test-results
         
   deploy:
+      filters:
+        branches:
+          only: master
       docker:
         - image: circleci/ruby:2.7
       steps:
@@ -84,14 +91,4 @@ jobs:
             name: database setup
             command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
 
-  workflows:
-    version: 2
-    build_and_deploy:
-      jobs:
-        - build:
-        - deploy:
-            requires:
-              - build
-            filters:
-              branches:
-                only: master
+
