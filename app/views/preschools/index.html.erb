@@ -11,7 +11,7 @@
     </div>
     <div class="search-navi">
       <%= search_form_for @q, url: search_path do |f| %>
-        <%= f.text_field :name_or_address_or_access_or_concept_cont, placeholder: "キーワードから探す",class:"keyword-search"%>
+        <%= f.text_field :name_or_address_or_access_or_concept_cont, placeholder: "キーワード検索　例）英語教育、大阪駅",class:"keyword-search"%>
         <div class="category">
           <%= f.collection_select(:category_id_eq, Category.where.not(id: 0), :id, :name, {include_blank: "運営種別で検索"}, {class: "search-select"}) %>
           <%= f.collection_select(:area_id_eq,  Area.where.not(id: 0), :id, :name, {include_blank: "エリアで検索"}, {class: "search-select"}) %>

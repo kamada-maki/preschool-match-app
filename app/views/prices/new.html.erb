@@ -1,5 +1,8 @@
 <%= render "shared/header" %>
 <div class="price-form">
+   <ul class="new-title">
+      <li class="new-submit">無償化料金シュミレーション</li>
+    </ul>
   <%= form_with(model: @price, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <table>
@@ -25,10 +28,10 @@
     <span>※各自治体の制度により金額結果が前後する可能性がございます。
           詳細金額はお住まいの自治体の制度をご確認ください。</span>
   </div>
-  <div class="done">
-     <%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"to_result" %>
-     <%= link_to '一覧画面へ戻る', root_path, class:"return_index" %>
-  </div>
+  <ul class="choose-area">
+    <li class="return"><%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"return_btn" %></li>
+    <li class="return"><%= link_to '一覧画面へ戻る', root_path, class:"return_index_btn" %></li>
+  </ul>
    <%end%>
 </div>
 

@@ -33,3 +33,47 @@ table td{
 .select-box{
   color:#666666;
 }
+
+.choose-area{
+  margin:0 auto;
+  text-align: center;
+  margin: 3vh auto;
+}
+.return_btn{
+  display: inline-block;
+  width: 60vw;
+  text-decoration: none;
+  color: white;
+  background-color: #E85298;
+  border: solid 1px #E85298;
+  cursor:pointer;
+  padding: 1vw 10vw;
+}
+.return_index_btn{
+  display: inline-block;
+  width: 50vw;
+  text-decoration: none;
+  background-color: white;
+  color: #E85298;
+  border: solid 1px #E85298;
+  cursor:pointer;
+  padding: 1vw 10vw;
+  margin: 3vh auto;
+}
+
+.return_btn:hover{
+  opacity:0.75
+}
+.arrow{
+  color:red;
+
+  text-align: center;
+  font-size: 120%;
+}
+.arrow-area{
+  margin-left:1vw;
+  border-bottom: solid 1px #ddd;
+}
+.attention{
+  color: #E85298;
+}
