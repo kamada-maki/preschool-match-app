@@ -98,4 +98,4 @@ jobs:
               - build
             filters:
               branches:
-                only: main
+                only: master
