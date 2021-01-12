@@ -1,0 +1,42 @@
+<%= render "shared/header" %>
+
+<div class="price-form">
+    <table>
+      <tr>
+        <th class  ="serelt-input">運営業態</th>
+        <td><%@price.category_id%><%= @price.category.name%></td>
+      </tr>
+      <tr>
+        <th class  ="serelt-input">お子さんの年齢（半角英数字）</th>
+        <td><%= @price.age%>歳</td>
+      </tr>
+      <tr>
+        <th class  ="serelt-input">保育料（半角英数字）</th>
+        <td><%=@price.free_price%>円</td>
+      </tr>
+      <tr>
+        <th class  ="serelt-input">保育料以外の教材費、食費等（半角英数字）</th>
+        <td><%= @price.not_free_price%>円</td>
+      </tr>
+      </table>
+      <table>
+      <tr>  
+        <th class  ="input-result">無償化対象金額</th>
+        <td class="result-price"><%= target_price %>円</td>
+      </tr>
+      <tr>  
+        <th class  ="input-result">上限まであと</th>
+        <td class= "result-price"><span id='maxprice'></span>円</td>
+      </tr>
+    </table>
+  <div class="attention">
+    <span>※各自治体の制度により金額結果が前後する可能性がございます。
+          詳細金額はお住まいの自治体の制度をご確認ください。</span>
+  </div>
+  <div class="done">
+     <%= link_to 'もう一度シュミレーションをする', new_price_path, class:"return_index" %>
+     <%= link_to '一覧画面へ戻る', root_path, class:"return_index" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

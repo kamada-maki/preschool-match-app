@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    omniauth_callbacks: 'users/omniauth_callbacks',
    registrations: 'users/registrations'
   }
+  resources :prices, only:[:new,:create,:show]
   resources :admins, only:[:show,:index]
   root to: 'preschools#index'
   

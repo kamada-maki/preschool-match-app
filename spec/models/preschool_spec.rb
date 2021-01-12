@@ -33,12 +33,12 @@ RSpec.describe Preschool, type: :model do
       it 'エリアを選択しないと登録できない' do
         @preschool.area_id = nil
         @preschool.valid?
-        expect(@preschool.errors.full_messages).to include('Areaは1以外の値にしてください')
+        expect(@preschool.errors.full_messages).to include('Areaは数値で入力してください')
       end
       it '住所が空と登録できない' do
-        @preschool.street_number = nil
+        @preschool.address = nil
         @preschool.valid?
-        expect(@preschool.errors.full_messages).to include('Street numberを入力してください')
+        expect(@preschool.errors.full_messages).to include('Addressを入力してください')
       end
       it '電話番号が空と登録できない' do
         @preschool.phone_number = nil
@@ -58,7 +58,7 @@ RSpec.describe Preschool, type: :model do
       it '最寄り駅情報が空だと登録できない' do
         @preschool.access = nil
         @preschool.valid?
-        expect(@preschool.errors.full_messages).to include('accessを入力してください')
+        expect(@preschool.errors.full_messages).to include('Accessを入力してください')
       end
     end
   end

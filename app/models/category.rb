@@ -7,4 +7,5 @@ class Category < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :preschools
+  has_many :prices
 end
