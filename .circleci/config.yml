@@ -68,8 +68,6 @@ jobs:
         destination: test-results
         
     - deploy:
-        docker:
-          - image: circleci/ruby:2.6.5
         name: Deploy Master to Heroku
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
