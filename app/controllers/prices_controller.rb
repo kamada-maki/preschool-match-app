@@ -20,6 +20,6 @@ class PricesController < ApplicationController
 
   def price_params
     params.require(:price)
-          .permit(:age, :category_id, :free_price, :not_free_price)
+          .permit(:age_id, :category_id, :free_price, :not_free_price)
   end
 end

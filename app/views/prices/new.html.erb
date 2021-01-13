@@ -1,5 +1,8 @@
 <%= render "shared/header" %>
 <div class="price-form">
+   <ul class="new-title">
+      <li class="new-submit">無償化料金シュミレーション</li>
+    </ul>
   <%= form_with(model: @price, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <table>
@@ -8,8 +11,8 @@
         <td><%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "選択してください"},{class:"select-box"}) %></td>
       </tr>
       <tr>
-        <th class  ="serelt-input">お子さんの年齢（半角英数字）</th>
-        <td><%= f.text_field :age, class:"age", placeholder:"例）3"%>歳</td>
+        <th class  ="serelt-input">お子さんの年齢（学年齢）</th>
+         <td><%= f.collection_select(:age_id, Age.all, :id, :name, {include_blank: "選択してください"},{class:"select-box"}) %></td>
       </tr>
       <tr>
         <th class  ="serelt-input">保育料（半角英数字）</th>
@@ -20,15 +23,10 @@
         <td><%= f.text_field :not_free_price, class:"not_free_price", placeholder:"例)20000"%></td>
       </tr>
       </table>
- 
-  <div class="attention">
-    <span>※各自治体の制度により金額結果が前後する可能性がございます。
-          詳細金額はお住まいの自治体の制度をご確認ください。</span>
-  </div>
-  <div class="done">
-     <%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"to_result" %>
-     <%= link_to '一覧画面へ戻る', root_path, class:"return_index" %>
-  </div>
+  <ul class="choose-area">
+    <li class="return"><%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"return_btn" %></li>
+    <li class="return"><%= link_to '一覧画面へ戻る', root_path, class:"return_index_btn" %></li>
+  </ul>
    <%end%>
 </div>
 

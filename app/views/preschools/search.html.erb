@@ -50,11 +50,11 @@
       <% end %>
       <% end %>
       <% else%>
-      <h2>検索結果はありませんでした</h2>
+      <div class="no-contents">検索結果はありませんでした</div>
       <%end%>
 
 <% if admin_signed_in? %>
 <%= link_to '新規投稿',new_preschool_path, class: 'tweet-btn' %>
 <%end%>
-
+</div>
 <%= render "shared/footer" %>
