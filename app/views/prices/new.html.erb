@@ -23,11 +23,6 @@
         <td><%= f.text_field :not_free_price, class:"not_free_price", placeholder:"例)20000"%></td>
       </tr>
       </table>
- 
-  <div class="attention">
-    <span>※各自治体の制度により金額結果が前後する可能性がございます。
-          詳細金額はお住まいの自治体の制度をご確認ください。</span>
-  </div>
   <ul class="choose-area">
     <li class="return"><%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"return_btn" %></li>
     <li class="return"><%= link_to '一覧画面へ戻る', root_path, class:"return_index_btn" %></li>
