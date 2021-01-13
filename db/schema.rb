@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_072332) do
 
   create_table "prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category_id", null: false
-    t.integer "age", null: false
+    t.integer "age_id", null: false
     t.integer "free_price", null: false
     t.integer "not_free_price", null: false
     t.datetime "created_at", precision: 6, null: false
