@@ -1,9 +1,9 @@
 class PreschoolsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  PER = 6
   def index
-    # @preschools = Preschool.all.order("created_at DESC")
     @q = Preschool.ransack(params[:q])
-    @preschools = @q.result(distinct: true)
+    @preschools = @q.result(distinct: true).page(params[:page]).per(PER)
   end
 
   def search
