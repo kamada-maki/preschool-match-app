@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   padding: 5vh 5vw;
- 
 }
 
 .service-title {
@@ -64,6 +63,12 @@ input[type="text"] {
   height: 3em;
   padding: 0;
   margin:auto;
+  background-color: #666666;
+  color: white;
+}
+.search-btn:hover{
+  opacity:0.75
+
 }
 
 
