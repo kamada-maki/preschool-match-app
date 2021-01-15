@@ -9,11 +9,7 @@
       <div class="name">
         <%= @preschool.name %>
         </div> <%# "name"%>
-        <%= mail_to @preschool.email,class:"email-click",
-            :subject => '見学日程調整希望',
-            :body => '↓↓ご希望の日時を３日程書いていただきますようお願いいたします↓↓' do %> 
-            <i class="fas fa-envelope"></i><span class="visit"> 見学に行く</span>
-            <% end %>
+        
         <div class="like-destroy-area">
           <% unless user_signed_in? %>
             <span class="like-count">★<%= @preschool.likes.count %></span>
@@ -71,6 +67,13 @@
         </tr>
       <%# 表にする %>
       </table>
+       <ul classs="contact">
+        <li class="mail-contact"><%= mail_to @preschool.email,class:"email-click",
+            :subject => '見学日程調整希望',
+            :body => '↓↓ご希望の日時を３日程書いていただきますようお願いいたします↓↓' do %> 
+            <i class="fas fa-envelope"></i><span class="visit"> お問い合わせはこちら</span>
+            <% end %></li>
+      </ul>
       <% if admin_signed_in? && current_admin.id == @preschool.admin_id %>
         <div class="preschool__manage">
           <%= link_to "編集",  edit_preschool_path(@preschool.id), class: :edit_btn %>
