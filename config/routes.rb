@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   resources :prices, only:[:new,:create,:show]
   resources :admins, only:[:show,:index]
+  resources :beginners, only:[:show,:index]
   root to: 'preschools#index'
   
   resources :users, only: [:show] do
