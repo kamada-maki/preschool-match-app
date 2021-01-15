@@ -1,5 +1,36 @@
 <%= render "shared/header" %>
-<li class="sub-menu-item a">
-  <%= link_to '認可、認可外って何が違うの？', categories_path, class: "categories" %>
-</li>
+<div class="for-beginner">
+  <div class= for-beginners-title>
+    <span class="main-title">ご利用の流れ</span>
+  </div>
+  <div class="first-body">
+    ほいくんナビは保育園の種類に関係なく、検索ができるアプリです。<br>
+    気になった保育園には質問や見学日程の調整ができます。
+  </div>
+   <%= link_to '保育園の種類って何が違うの？→', categories_path, class: "categories" %>
+  
+  <div class="method-explanation">
+    <div class=search-method>
+      <%= image_tag "for-search.png", class:"method-image" %>
+      <div class="method-detail">
+        <span class="detail">検索画面から、エリア別、運営業態別、</br>
+        またはキーワード検索（最寄り駅など）を</br>入力しご検索ください。</span>
+      </div>  
+    </div>
+    <div class="contact-method">
+     <%= image_tag "contact.png", class:"method-image" %>
+    <div class="method-detail">
+        <span class="detail">見学や質問がある場合はこちらをクリック</span>
+      </div>  
+    </div>
+    <div class="users-point">
+      <div class="users-merit">
+      ユーザー登録をするとマイページやお気に入り登録や保育園への口コミ投稿が可能になります。</br>
+      ※上記の機能はユーザー登録なしでご利用が可能です。
+      </div>
+    </div>
+  </div>
+   
+</div>
+
 <%= render "shared/footer" %>
