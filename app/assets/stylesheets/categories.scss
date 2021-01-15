@@ -1,0 +1,114 @@
+//目次部分
+ul.cp_list li {
+	position:relative;
+  padding: 0em 0.3em 0.3em 1.3em;
+}
+ul.cp_list li a{
+  text-decoration: none;
+  color: #666666;
+}
+ul.cp_list li a:hover {
+  color: #E85298; 
+  cursor:pointer;
+}
+ul.cp_list {
+	position: relative;
+	padding: 0.5em;
+	margin: 2em;
+	list-style-type: none;
+	border: solid 1px #E85298;
+}
+ul.cp_list::after {
+	position: absolute;
+	content: "目次";
+	padding: 1px 7px;
+	letter-spacing: 0.05em;
+	font-weight: bold;
+	font-size: .8em;
+	background: #E85298;
+	color: #fff;
+	bottom: 100%;
+	left: -2px;
+	border-radius: 4px 4px 0px 0px;
+}
+ul.cp_list li::before {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 0.5em;
+	left: 0;
+	width: 6px;
+	height: 6px;
+	border-right: 3px solid #E85298;
+	border-bottom: 3px solid #E85298;
+	transform: rotate(-45deg);
+}
+//目次部分
+
+.explanation-area {
+  width: 80vw;
+  padding: 2vh 10vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+.preschool-category-title{
+  font-size: 2.0rem;
+  color: #E85298;  
+  border: 1px solid #ccc;
+  padding-left:1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:3vh;
+}
+
+.preschool-category{
+  margin: 2em;
+  justify-content: center;
+}
+.introduction{
+  color: #666666;
+}
+.preschool-title{
+  font-size: 2.0rem;
+  color: #E85298;  
+  border-left: 6px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding-left:1vw;
+  display: flex;
+  align-items: center;
+  margin-bottom:3vh;
+  }
+
+.feature{
+  color: #666666;
+  margin-bottom:1vh;
+}
+.sub-feature{
+  color: #666666;
+  
+}
+.strong-point{
+  border: solid 1px #E85298;
+  color: #E85298;
+}
+
+.free-simulation{
+  display: inline-block;
+  width: 50vw;
+  text-decoration: none;
+  background-color: white;
+  color: #E85298;
+  border: solid 1px #E85298;
+  cursor:pointer;
+  padding: 1vw 10vw;
+  margin: 3vh auto;
+  display: flex;
+  justify-content: center;
+}
+.free-simulation:hover{
+  opacity:0.75
+}

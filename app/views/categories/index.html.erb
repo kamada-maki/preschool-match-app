@@ -2,59 +2,66 @@
 
 <div class="explanation-area">
   <div class= preschool-category-title>
-   <span class="main-title">
+   <span class="main-title"><%= image_tag "puzzled.png", class:"mother-icon" %>
       保育園の種類って何が違うの？</span>
   </div>
+  <div class="introduction">
+   認可保育園、認可外保育園、などそれぞれの種類によって制度や特徴が異なり、分かりづらい部分があるかと思います。
+   こちらのページは保育園の種類ごとに何が違うのか、簡単にご説明させて頂きますのでご参考にして頂ければ幸いです。
+   </div>
 <ul class="cp_list">
-	<li>認可保育園</li>
-	<li>認可外保育園</li>
-	<li>認定こども園</li>
+	<li><a href="#認可保育園">認可保育園</a></li>
+	<li><a href="#認可外保育園">認可外保育園</a></li>
+	<li><a href="#認定こども園">認定こども園</a></li>
 </ul>
-
-
-
   <div class="preschool-category">
     <div class=preschool-title>
-      認可保育園
+      <a name="認可保育園">認可保育園</a>
     </div>
     <div class=feature>
     多くの方が「保育園」と聞いた時にイメージされる保育園が認可保育園です。
+    入園手続きは、各市区町村に直接申請を行います。
+    施設の1人当たりの基準面積が3.3㎡と決められており、建物も比較的広く園庭もある保育園が多いです。
     </div>
-    <ul class="sub-feature">
-      <li>所得によって保育料は変わる</li>
-      <li>就労状況や家庭の状況を点数化され、点数が高い人から入園ができる。</li>
+    <ul class="sub-feature"><span class="strong-point">特徴</span>
+      <li>・所得によって保育料は変わる。</li>
+      <li>・就労状況や家庭の状況を点数化され、点数が高い人から入園ができる。</li>
     </ul>
   </div>
   <div class="preschool-category">
     <div class=preschool-title>
-      認可外保育園
+      <a name="認可外保育園">認可外保育園</a>
     </div>
     <div class=feature>
-      認可保育園”以外”の保育園を指します。
-      保育料金やサービス内容を運営者が自由に設定ができるため、認可保育園の基準を満たしていても
-      あえて認可外保育園として運営している施設もあります。
-      企業主導型保育園も認可保育園の一部ですが、こちらは2016年から始まった新しい制度で、その他の認可外保育園との大きな違いは
+      認可保育園<b>”以外”</b>の保育園を指します。
+      （企業主導型保育園も認可外保育園に含まれます。）</br>
+      保育料金やサービス内容を運営者が自由に設定ができるため、
+      あえて認可外保育園として運営している施設もあります。</br>
+      企業主導型保育園は2016年から始まった新しい制度で、その他の認可外保育園との大きな違いは、
       働いているお母さんお父さんを対象としているため、預けるには就労証明書などが必要という点です。
     </div>
-    <ul class="sub-feature">
-      <li>所得によって保育料は変わらない</li>
-      <li>預けるための制限はなく、働いていなくても預けられる</li>
-      <li>※認可外保育園の中でも企業主導型保育園の場合は就労証明書、保育認定書（※呼び方は自治体によって変わります）が必要</li>
-      <li>開園時間が長い保育園が多く、不規則な預け方にも対応しやすい</li>
-      <li>自治体ではなく、直接申し込むため、預け先を自由に設定ができる</li>
+    <ul class="sub-feature"><span class="strong-point">特徴</span>
+      <li>・所得によって保育料は変わらない</li>
+      <li>・預けるための制限はなく、働いていなくても預けられる。</li>
+      <li>※企業主導型保育園の場合は就労証明書、保育認定書が必要です。</li>
+      <li>・開園時間が長い保育園が多く、不規則な預け方にも対応しやすい。</li>
+      <li>・自治体ではなく、直接申し込むため、預け先を自由に設定ができる。</li>
     </ul>
   </div>
   <div class="preschool-category">
     <div class=preschool-title>
-      認定こども園  
+     <a name="認定こども園">認定こども園</a>
     </div>
     <div class=feature>
     幼稚園と保育所の機能や特徴をあわせ持ち、地域の子育て支援も行う施設です。</div>
-    <ul class="sub-feature">
-      <li>幼保連携型、地方最良型などタイプによって果たす機能が異なる</li>
-      <li>認可保育園と同様に入園の優先順位がある</li>
-      <li>１号〜３号までのどの保育認定を取得しているかによって保育料金や預けられる時間が変わる</li>
+    <ul class="sub-feature"><span class="strong-point">特徴</span>
+      <li>・幼保連携型、地方最良型などタイプによって果たす機能が異なる。</li>
+      <li>・認可保育園と同様に入園の優先順位がある。</li>
+      <li>・１号〜３号までのどの保育認定を取得しているかによって保育料金や預けられる時間が変わる。</li>
     </ul>
+  </div>
+  <div class="simulation">
+   <%= link_to '種類別の無償化料金をシュミレーションしてみる→', new_price_path, class: "free-simulation" %>
   </div>
 </div>
 <%= render "shared/footer" %>
