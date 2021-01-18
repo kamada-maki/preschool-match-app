@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['PRESCHOOL_MATCH_DATABASE'] %>
-  username: <%= ENV['PRESCHOOL_MATCH_DATABASE_USERNAME'] %>
-  password: <%= ENV['PRESCHOOL_MATCH_DATABASE_PASSWORD'] %>
-  host: <%= ENV['PRESCHOOL_MATCH_DATABASE_HOST'] %>
+  host: <%= Rails.application.credentials.rds[:host] %>
+  database: <%= Rails.application.credentials.rds[:database] %>
+  username: <%= Rails.application.credentials.rds[:username] %>
+  password: <%= Rails.application.credentials.rds[:password] %>

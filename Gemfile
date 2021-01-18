@@ -70,3 +70,4 @@ gem "geocoder"
 gem "dotenv-rails"
 gem "ransack"
 gem "kaminari"
+gem "aws-sdk-s3", require: false
