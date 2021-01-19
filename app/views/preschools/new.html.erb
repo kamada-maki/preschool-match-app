@@ -6,7 +6,6 @@
       <li class="title-indispensable">※</li>
       <li class="indispensable-form">は必須投稿</li>
     </ul>
-    <%# 表にする %>
     <table>
     <%= form_with(model: @preschool, local: true) do |f| %>
 
@@ -68,7 +67,6 @@
         <td><%= f.text_field :email, class:"email", placeholder:"例）test@test.com"%></td>
       </tr>
        </table>
-  <%# 表にする %>
     <ul class="register-btn-contents">
       <li><%= f.submit "投稿する" ,url:preschools_path, class:"register-btn" %></li>
       <li><%= link_to 'もどる', root_path, class:"back-btn" %></li>
