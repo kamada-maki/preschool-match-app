@@ -18,10 +18,8 @@
                 <% end # preschool.images.each %>
               </div>
             <div class='preschool-info'>
-              <div class='preschool-name'><%= preschool.name %></br>
-                <span class="preschool-category">(<%= preschool.category.name%>)<span></div>
-              <div class='preschool-concept'><%= preschool.concept %>
-                <% if user_signed_in? && current_user.already_liked?(preschool) %>
+              <div class='preschool-name'><%= preschool.name %>
+               <% if user_signed_in? && current_user.already_liked?(preschool) %>
                   <div class= "liked_destroy_area">
                     <%= link_to "★", preschool_likes_path(preschool), data: {id: preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
                       <span class="like-count"><%= preschool.likes.count %></span>
@@ -32,6 +30,10 @@
                       <span class="like-count"><%= preschool.likes.count %></span>
                   </div>
                 <% end %>
+                </div>
+                <div class="preschool-category">(<%= preschool.category.name%>)</div>
+              <div class='preschool-concept'><%= preschool.concept %>
+               
               </div>
             <% end # link_to preschool_path(preschool.id) %>
           </li><%# .list %>

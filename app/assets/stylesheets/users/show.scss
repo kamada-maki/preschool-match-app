@@ -23,7 +23,8 @@
   display: flex;
   align-items: center;
 }
-  
+
+.detail-show{
   // preschool一覧表示部分
 .preschool-contents {
   background-color: #FFF;
@@ -102,4 +103,21 @@
 .like-count{
   font-size: 2vh;
   color:#E85298
+}
+}
+
+
+/* スマホ表示時 */
+@media (max-width: 480px) {
+  .mother-icon {
+    margin-left: 4px;
+    margin-top: -1px;
+    float: left;
+    width: 10vw;
+    height: 10vw;
+  }
+  .mypage-title{
+    font-size: 1.5rem;
+  }
+  
 }

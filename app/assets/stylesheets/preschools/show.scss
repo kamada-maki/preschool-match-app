@@ -129,13 +129,7 @@ table td{
   margin-bottom: 0px;
   }
   
-  // .comment:after,.comment:before {
-  // clear: both;
-  // content: "";
-  // display: block;
-  // }
-  
-  
+
   /* アイコン */
   .mother-icon {
   margin-left: 4px;
@@ -208,7 +202,7 @@ table td{
     margin:1.5vw 1.5vw;
   }
   .email-click {
-    width: 15vw;
+    width: 30vw;
     padding:0.3em;
     margin-right: 1vw;
     font-size: 1.1em;
@@ -227,3 +221,232 @@ table td{
    background-color: #E85298;
    color: white;
   }
+
+  /* スマホ表示時 */
+@media (max-width: 480px) {
+  .images{
+    width: 40vw;
+    height: auto;
+    display: flex;
+    margin: auto;
+  }
+  .detail-show{
+    margin:0 10vw;
+    // min-width: 650px;
+  }
+  .title{
+    font-size: 2.0rem;
+    color: #E85298;  
+    border-left: 6px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left:1vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom:3vh;
+  }
+  .name{
+    margin-right: auto;
+  }
+  .like-destroy-area{
+   font-size: 1em;
+  }
+  
+  table{
+    width: 100%;
+    height: auto;
+    margin-bottom: 3vh;
+  }
+  
+  table th{
+    border-bottom: solid 2px #E85298;
+    padding: 10px 0;
+    color: #666666;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  table td{
+    border-bottom: solid 2px #ddd;
+    text-align: left;
+    color: #666666;
+    padding: 1vh 1vh;
+    font-size:0.8em;
+  }
+  .map-area{
+    display: flex;
+  }
+  .google-map{
+    height: 30vh;
+    width: 70vw;
+  }
+  .map-open{
+    margin-left: 1vw;
+    display: block;
+  }
+  .map-icon{
+    width:8vw;
+    height: auto;
+    margin-left: 1vw;
+  }
+  .map-click{
+    text-decoration: none;
+    color: #E85298;
+    font-size: 0.8em;
+  }
+  // 口コミ投稿欄
+  .field{
+    margin-top:4vh;
+    border-bottom: dashed 2px #ccc;
+    width: 100vw;
+  }
+  .comment-form{
+    display: flex;
+    width: 80%;
+    margin-top:1vh;
+  }
+  .comment-input{
+    width: 100vw;
+    border: 1px solid #E85298;
+  }
+  .comment_form__btn{
+    margin-left: 1vw;
+    border: 1px solid #E85298;
+    background-color: white;
+    color: #444;
+    width:8vw;
+    cursor:pointer;
+  }
+  .comment_form__btn:hover {
+    background-color: #E85298;
+    color: white;
+  
+    
+   }
+  .comment-title{
+    color:#E85298;
+   
+  }
+  // 口コミ欄
+  .comments_lists{
+    margin-top:3vh;
+    margin-bottom: 40px;
+    width: 100%;
+    }
+   
+    .mother-icon{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #E85298;
+    border-radius: 50%;
+    margin: 0;
+    }
+    
+    // /投稿者名/
+    .comment_user {
+    font-size: 0.7em;
+    text-align: center;
+    text-decoration: none;
+    color:#E85298;
+    }
+    
+    p.comment-text {
+    margin: 0 0 8px;
+    }
+    
+    p.comment-text:last-child {
+    margin-bottom: 0px;
+    }
+    
+    
+    /* アイコン */
+    .mother-icon {
+    margin-left: 4px;
+    margin-top: -1px;
+    float: left;
+    width: 60px;
+    height: 60px;
+    }
+    
+    /* 吹き出しテキスト */
+    .comment-Ltxt {
+    color: #444;
+    position: relative;
+    margin-left: 100px;
+    padding: 1.2em;
+    border: 2px solid #E85298;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    /* 左の三角形を作る */
+    .comment-Ltxt:before {
+    position: absolute;
+    content: '';
+    border: 10px solid transparent;
+    border-right: 10px solid #E85298;
+    top: 15px;
+    left: -20px;
+    }
+    
+    .comment-Ltxt:after {
+    position: absolute;
+    content: '';
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
+    top: 15px;
+    left: -16px;
+    }
+    .delete-icon{
+      width:4vw;
+      height: auto;
+    }
+  
+  // 投稿自体の修正、削除
+    .preschool__manage{
+      display:flex;
+      // justify-content: flex-end;
+      margin:1.5vw 1.5vw;
+    }
+    .edit_btn{
+      text-decoration: none;
+      color: #666666;  
+      border: 1px solid #ccc;
+      padding:0.3em;
+    }
+    .delete_btn{
+      text-decoration: none;
+      color: #666666;  
+      border: 1px solid #ccc;
+      margin-left:2vw;
+      padding:0.3em;
+    }
+  
+    // 問い合わせフォーム
+    .mail-contact{
+      display:flex;
+      justify-content: flex-end;
+      margin:1.5vw 1.5vw;
+    }
+    .email-click {
+      width: 50vw;
+      padding:0.2em;
+      font-size: 0.9em;
+      color:#E85298;
+      text-decoration: none;
+      background-color:white;
+      border: solid 2px #E85298;
+      text-align: center;
+    }
+    .email-icon{
+      width: 10%;
+      height: auto;
+    }
+    
+    .email-click:hover {
+     background-color: #E85298;
+     color: white;
+    }
+}

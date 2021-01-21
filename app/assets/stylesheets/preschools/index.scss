@@ -1,6 +1,5 @@
 
 .title-contents {
-  min-width: 768px;
   width: 100vw;
   height: auto;
   background-image: image-url('index.preschool.jpg');
@@ -10,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5vh 5vw;
+  
 }
 
 .service-title {
@@ -71,9 +71,6 @@ input[type="text"] {
 
 }
 
-
-
-
 // preschool一覧表示部分
 .preschool-contents {
   background-color: #FFF;
@@ -81,8 +78,6 @@ input[type="text"] {
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
-  margin:1vh;
-  
 }
 
 .preschool-contents>.title {
@@ -93,14 +88,10 @@ input[type="text"] {
 
 .preschool-lists {
   width: 100vw;
-  padding: 1vh 10vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .preschool-lists>.list {
-  width: 30vh;
+  width: 25%;
   padding: 1vw;
   background-color: #FFF;
   margin: 1vh 2vw;
@@ -110,23 +101,27 @@ input[type="text"] {
 }
 
 .preschool-img {
-  width: 25vh;
-  height: 25vh;
+  max-width: 277px;
+  max-height: 200px;
+  width: 33vh;
+  height: 33vh;
 }
 
 .preschool-info {
+  width: 33vh;
   background-color: #FFF;
-  padding: 1vw;
   text-decoration: none;
 }
 
 .preschool-name {
   font-size: 2.5vh;
+  display: flex;
+  justify-content: space-between;
   color:#E85298;
 }
 .preschool-category{
   font-size: 2vh;
-  color:#E85298;
+  color: #999999;
 }
 .preschool-concept {
   font-size: 2vh;
@@ -136,7 +131,7 @@ input[type="text"] {
 }
 .preschool-path{
   text-decoration: none;
-  color: #999999;
+  // color: #999999;
 }
 .like-area{
   display:flex;
@@ -151,3 +146,101 @@ input[type="text"] {
   font-size: 2vh;
   color:#E85298
 }
+
+
+
+/* スマホ表示時 */
+@media (max-width: 480px) {
+  .title-contents {
+    // min-width: 750px;
+    width: 100vw;
+    // justify-content: space-between;
+    padding: 5vh 5vw;
+  }
+  
+  .service-title {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+  .main-concept{
+    font-size: 4em;
+    color:#E85298;
+  }
+  
+  .sub-concept{
+    font-size: 2em;
+    color: #444444;
+  }
+  .three-points-block{
+    width: 150px;
+  }
+  
+  // preschool一覧表示部分
+  .preschool-contents {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .preschool-contents>.title {
+    font-size: 5vh;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  .preschool-lists {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .preschool-lists>.list {
+    width: 25%;
+    padding: 1vw;
+    background-color: #FFF;
+  }
+    
+  
+  .preschool-img {
+    width: 12vh;
+    height: 12vh;
+  }
+  
+  .preschool-info {
+    width: 12vh;
+    background-color: #FFF;
+    text-decoration: none;
+  }
+  
+  .preschool-name {
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    color:#E85298;
+  }
+  .preschool-category{
+    font-size: 0.7em;
+    color: #999999;
+  }
+  .preschool-concept {
+    font-size: 0.7em;
+    display: flex;
+    color: #999999;
+    justify-content: space-between;
+  }
+  .liked_btn, .liked_destroy_btn{
+    text-decoration: none;
+    font-size: 1em;
+    color:#E85298;
+  }
+  .like-count{
+    font-size: 1em;
+    color:#E85298
+  }
+  
+  
+
+ }
