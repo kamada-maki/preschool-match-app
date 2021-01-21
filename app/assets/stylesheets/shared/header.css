@@ -139,7 +139,7 @@ a {
 }
 
 /* スマホ表示時 */
-@media (max-width: 599px) {
+@media (max-width: 480px) {
 
 .top-page-header {
   min-width: 750px;
