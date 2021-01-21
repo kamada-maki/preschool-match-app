@@ -23,7 +23,8 @@
   display: flex;
   align-items: center;
 }
-  
+
+.detail-show{
   // preschool一覧表示部分
 .preschool-contents {
   background-color: #FFF;
@@ -102,4 +103,5 @@
 .like-count{
   font-size: 2vh;
   color:#E85298
+}
 }
