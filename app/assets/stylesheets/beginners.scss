@@ -42,3 +42,54 @@
 .categories:hover{
   opacity: 0.5;
 }
+
+/* スマホ表示時 */
+@media (max-width: 480px) {
+  .for-beginner{
+    min-width: 650px;
+    margin: 0 10vw;
+    width: 100%;
+    padding: 2vh 10vw;
+    color: #666666;
+    justify-content: center;
+  }
+  .method-explanation{
+    display: block;
+  }
+  .method-image{
+    width: 60%;
+    padding: 1em;
+  }
+  .method-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+  .search-method{
+    display: flex;
+    border: 1px solid #ccc9c9;
+    margin-top:3vh;
+  }
+  .contact-method{
+    display: flex;
+    border: 1px solid #ccc9c9;
+    margin-top:3vh;
+  }
+  .first-body{
+    
+  }
+  .for-beginners-title{
+    background-color: #feeaf2;
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+  .categories{
+    text-decoration: none;
+    color: #E85298;
+  }
+  .categories:hover{
+    opacity: 0.5;
+  }
+  
+}
