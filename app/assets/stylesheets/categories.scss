@@ -118,22 +118,10 @@ ul.cp_list li::before {
 /* スマホ表示時 */
 @media (max-width: 480px) {
   //目次部分
-ul.cp_list li {
-	position:relative;
-  padding: 0em 0.3em 0.3em 1.3em;
-}
-ul.cp_list li a{
-  text-decoration: none;
-  color: #666666;
-}
-ul.cp_list li a:hover {
-  color: #E85298; 
-  cursor:pointer;
-}
 ul.cp_list {
 	position: relative;
 	padding: 0.5em;
-	margin: 2em;
+	margin: 1.5em;
 	list-style-type: none;
 	border: solid 1px #E85298;
 }
@@ -162,10 +150,9 @@ ul.cp_list li::before {
 	border-bottom: 3px solid #E85298;
 	transform: rotate(-45deg);
 }
-//目次部分
+//目次部分終了
 
 .explanation-area {
-  min-width: 650px;
   margin: 0 10vw;
   width: 100%;
   padding: 2vh 10vw;
@@ -175,43 +162,48 @@ ul.cp_list li::before {
   margin-left: auto;
   margin-right: auto;
 }
-.preschool-category-title{
-  font-size: 2.0rem;
-  color: #E85298;  
-  border: 1px solid #ccc;
-  padding-left:1vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom:3vh;
-}
-
-.explanation-area{
-.preschool-category{
-  margin: 2em;
-  justify-content: center;
-}
-}
+.preschool-title{
+  font-size: 1.0rem;
+  }
 .introduction{
   color: #666666;
+  font-size: 0.7rem;
 }
-.preschool-title{
-  font-size: 2.0rem;
-  color: #E85298;  
-  border-left: 6px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  padding-left:1vw;
-  display: flex;
-  align-items: center;
-  margin-bottom:3vh;
+.explanation-area{
+  .main-title{
+    font-size: 1.0rem;
+  
   }
-
+  .mother-icon {
+    margin-left: 4px;
+    margin-top: -1px;
+    float: left;
+    width: 10vw;
+    height: 10vw;
+  }
+  .preschool-category-title{
+    font-size: 1.0rem;
+    color: #E85298;  
+    border: 1px solid #ccc;
+    padding-left:1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:3vh;
+  }
+  .preschool-category{
+    margin: 2em;
+    justify-content: center;
+  }
+}
 .feature{
   color: #666666;
   margin-bottom:1vh;
+  font-size: 0.7rem;
 }
 .sub-feature{
   color: #666666;
+  font-size: 0.7rem;
   
 }
 .strong-point{
@@ -222,16 +214,7 @@ ul.cp_list li::before {
 
 .free-simulation{
   display: inline-block;
-  width: 50vw;
-  text-decoration: none;
-  background-color: white;
-  color: #E85298;
-  border: solid 1px #E85298;
-  cursor:pointer;
-  padding: 1vw 10vw;
-  margin: 3vh auto;
-  display: flex;
-  justify-content: center;
+  width: 80vw;
 }
 .free-simulation:hover{
   opacity:0.75

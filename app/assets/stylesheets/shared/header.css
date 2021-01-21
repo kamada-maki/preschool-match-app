@@ -140,11 +140,13 @@ a {
 
 /* スマホ表示時 */
 @media (max-width: 480px) {
-
+header{
+  margin: 0;
+}
 .top-page-header {
-  min-width: 750px;
+  /* max-width: 750px; */
   width: 100vw;
-  padding: 2vh 10vw;
+  padding: 2vh 1vw;
   display: flex;
   flex-direction: column;
   color:#E85298;
@@ -157,7 +159,7 @@ a {
 .user-admin-manage{
   display: flex;
   align-items: center;
-  font-size:1.3em;
+  font-size:0.8em;
 }
 .user-manage {
   display: flex;

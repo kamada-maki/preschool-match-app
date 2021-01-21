@@ -16,7 +16,7 @@
 
 
  .pagination{
-    min-width: 750px;
+    /* min-width: 750px; */
     display: flex;
     justify-content: center;
     margin-bottom: 2vh;

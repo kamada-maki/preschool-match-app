@@ -66,7 +66,6 @@ table td{
 }
 .arrow{
   color:red;
-
   text-align: center;
   font-size: 120%;
 }
@@ -81,7 +80,6 @@ table td{
 
 @media (max-width: 480px) {
   .price-form{
-    min-width: 650px;
     margin: 0 10vw;
   }
   table{
@@ -116,7 +114,6 @@ table td{
   .select-box{
     color:#666666;
   }
-  
   .choose-area{
     margin:0 auto;
     text-align: center;
@@ -124,41 +121,21 @@ table td{
   }
   .return_btn{
     display: inline-block;
-    width: 100vw;
-    text-decoration: none;
-    color: white;
-    background-color: #E85298;
-    border: solid 1px #E85298;
-    cursor:pointer;
+    width: 80vw;
     padding: 1vw 10vw;
   }
   .return_index_btn{
     display: inline-block;
-    width: 80vw;
-    text-decoration: none;
-    background-color: white;
-    color: #E85298;
-    border: solid 1px #E85298;
-    cursor:pointer;
-    padding: 1vw 10vw;
-    margin: 3vh auto;
+    width: 60vw;
   }
-  
-  .return_btn:hover{
-    opacity:0.75
-  }
-  .arrow{
-    color:red;
-
-    text-align: center;
-    font-size: 120%;
-  }
-  .arrow-area{
-    margin-left:1vw;
-    border-bottom: solid 1px #ddd;
+  .new-submit {
+    font-size: 1.3rem;
+    color: #666666;
+    margin-right: auto;
   }
   .attention{
     color: #E85298;
+    font-size: 0.7em;
   }
   
 }

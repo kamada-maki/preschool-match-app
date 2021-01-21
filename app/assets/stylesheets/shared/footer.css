@@ -67,7 +67,7 @@
 /* スマホ表示時 */
 @media (max-width: 480px) {
   .footer {
-    min-width: 750px;
+    /* min-width: 750px; */
     width: 100vw;
     padding: 2vh 10vw;
     display: flex;
