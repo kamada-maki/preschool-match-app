@@ -9,7 +9,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/webapp
+      - .:/app_name
       - public-data:/webapp/public
       - tmp-data:/webapp/tmp
       - log-data:/webapp/log
