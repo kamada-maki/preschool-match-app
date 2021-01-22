@@ -1,4 +1,5 @@
-
+.pc { display: block !important; }
+.sp { display: none !important; }
 .title-contents {
   width: 100vw;
   height: auto;
@@ -8,8 +9,7 @@
   background-position: top center;
   display: flex;
   justify-content: space-between;
-  padding: 5vh 5vw;
-  
+  padding: 1vh 5vw;
 }
 
 .service-title {
@@ -25,14 +25,14 @@
   font-size: 2em;
   color: #444444;
 }
-.three-points-block{
-  width: 170px;
+.pc{
+  width: 10em;
 }
 
 .search-navi{
-  margin-top: 10vh;
+  margin-top: 8vh;
   display: block;
-  height: 3em;
+  height: 4em;
 }
 .keyword-search{
     border: 1px solid #999090;
@@ -47,10 +47,13 @@ input[type="text"] {
   height: 4em;
 }
 }
-
+::placeholder {
+  font-size: 0.5em;
+  text-align: center;
+}
 .search-select{
   width: 20%;
-  height: 3em;
+  height: 4em;
   border: 1px solid #999090;
   outline: none;
   color: #666666;
@@ -60,7 +63,7 @@ input[type="text"] {
   border-style: none;
   border-radius: 4px;
   width: 10%;
-  height: 3em;
+  height: 4em;
   padding: 0;
   margin:auto;
   background-color: #666666;
@@ -151,30 +154,79 @@ input[type="text"] {
 
 /* スマホ表示時 */
 @media (max-width: 480px) {
+  .pc { display: none !important; }
+  .sp {
+     display: block !important; 
+     width: 80%;
+     position: relative;
+     margin: 0 auto;
+     margin-top:3em;}
   .title-contents {
-    // min-width: 750px;
     width: 100vw;
-    // justify-content: space-between;
-    padding: 5vh 5vw;
+    padding: 1vh 5vw ;
+    display: block;
   }
-  
+  .main-concept{
+    font-size: 2em;
+  }
+  .sub-concept{
+    font-size: 1em;
+  }
   .service-title {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
   }
   .main-concept{
-    font-size: 4em;
+    font-size: 1.5em;
     color:#E85298;
   }
   
   .sub-concept{
-    font-size: 2em;
+    font-size: 1em;
     color: #444444;
   }
-  .three-points-block{
-    width: 150px;
-  }
   
+  .search-navi{
+    display: flex;
+    height: 2em;
+    margin-top: 1vh;
+    position: absolute;
+  }
+  .keyword-search{
+      border: 1px solid #999090;
+      outline: none;
+      color: #666666;
+      border-radius: 4px;
+      margin-bottom: 1vh;
+  }
+  .title-contents{
+  input[type="text"] {
+    width: 40%;
+    height: 2em;
+  }
+  }
+  .search-select{
+    width: 20%;
+    height: 2em;
+    border: 1px solid #999090;
+    outline: none;
+    color: #666666;
+    border-radius: 4px;
+  }
+  .search-btn{
+    border-style: none;
+    border-radius: 4px;
+    width: 10%;
+    height: 2em;
+    padding: 0;
+    margin:auto;
+    background-color: #666666;
+    color: white;
+  }
+  .search-btn:hover{
+    opacity:0.75
+  
+  }
   // preschool一覧表示部分
   .preschool-contents {
     width: 100vw;
@@ -182,14 +234,13 @@ input[type="text"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2vh 0;
   }
-  
   .preschool-contents>.title {
     font-size: 5vh;
     line-height: 1.4;
     font-weight: bold;
   }
-  
   .preschool-lists {
     width: 100vw;
     display: flex;
@@ -202,45 +253,37 @@ input[type="text"] {
     padding: 1vw;
     background-color: #FFF;
   }
-    
-  
   .preschool-img {
     width: 12vh;
     height: 12vh;
   }
-  
   .preschool-info {
     width: 12vh;
     background-color: #FFF;
     text-decoration: none;
   }
-  
   .preschool-name {
-    font-size: 1em;
-    display: flex;
-    justify-content: space-between;
+    font-size: 0.8em;
+    display: block;
     color:#E85298;
   }
   .preschool-category{
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: #999999;
   }
   .preschool-concept {
-    font-size: 0.7em;
+    font-size: 0.5em;
     display: flex;
     color: #999999;
     justify-content: space-between;
   }
   .liked_btn, .liked_destroy_btn{
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.6em;
     color:#E85298;
   }
   .like-count{
-    font-size: 1em;
+    font-size: 0.6em;
     color:#E85298
   }
-  
-  
-
  }
