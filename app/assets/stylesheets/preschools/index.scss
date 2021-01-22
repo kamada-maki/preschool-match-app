@@ -47,10 +47,7 @@ input[type="text"] {
   height: 4em;
 }
 }
-::placeholder {
-  font-size: 0.5em;
-  text-align: center;
-}
+
 .search-select{
   width: 20%;
   height: 4em;
@@ -180,7 +177,10 @@ input[type="text"] {
     font-size: 1.5em;
     color:#E85298;
   }
-  
+  ::placeholder {
+    font-size: 0.5em;
+    text-align: center;
+  }
   .sub-concept{
     font-size: 1em;
     color: #444444;
