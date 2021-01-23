@@ -37,28 +37,24 @@ AWS:https://www.preschool-match.tk/
 ---------------------------------------------
 ## 実装機能
 - 一覧表示
-- 表示順変更（★が多い園、更新日が新しい順）
-- 検索（エリア検索、運営業種別、キーワード検索、保育料無償化対象園）
+- 検索（エリア検索、運営業種別、キーワード検索）
 - 詳細表示
-- 見学に行きたいボタン
+- 問い合わせボタンの改良
 （メールアドレス、名前、希望日を選択し送信することで保育園側にこの情報が送られ、日程の相談をし見学日を決定）
 - ログイン（保育園側、保護者側）
 - 投稿（画像投稿可）
 - 園情報の修正、削除
 - Googleマップで園の位置を表示
-- ログイン
 - ★評価を押す、取り消す
 - コメント（口コミ）投稿
-- コメント（口コミ）修正
 - コメント（口コミ）削除
 - マイページ
 - SNS認証
-※保育園側はログイン必須、保護者側はログインしなくても口コミ投稿、★評価機能以外は可能。
-
-### 実装予定機能
 - 保育料金シュミレーション機能
 （預ける時間、年齢を入力すると料金の概算が出るものをJavascriptで実装）
-- 見学に行きたいボタンの改良
+
+### 実装予定機能
+- 問い合わせボタンの改良
 （希望日を入力して送るのではなく、保育園側が空いている時間をカレンダーで共有でき、
   空き時間を保護者が選択できるもの）
 
@@ -78,8 +74,7 @@ Git/Github
 
 - インフラ
 本番環境:
-AWS（EC2,S3）
-Nginx/puma
+AWS（EC2,S3,RDB,Docker,）
 開発環境:
 Docker/docker-compose
 mysql
@@ -92,8 +87,12 @@ Rubocop
 
 </br>
 
-## テーブル設計
+## インフラ構成図
+![インフラ構成図](https://user-images.githubusercontent.com/74590047/105568544-95c5de80-5d7d-11eb-8e09-ddfd0dc620ef.png)
 
+
+## テーブル設計
+![テーブル設計図](https://user-images.githubusercontent.com/74590047/105568808-9495b100-5d7f-11eb-8bd0-794723fe2669.png)
 ### usersテーブル
 ---------------------------------------------
 | Column     | Type         |  Options      |
@@ -129,7 +128,7 @@ Rubocop
 | column       | Type         |  Options                     |
 |--------------|------------- |------------------------------|
 |name          |string        | null: false                  |
-|post-number   |string        | null: false                  |
+|post_number   |string        | null: false                  |
 |area_id       |integer       | null: false                  |
 |address       |string        | null: false                  |
 |building      |string        |                              |
@@ -140,8 +139,11 @@ Rubocop
 |capacity      |integer       | null: false                  |
 |category_id   |integer       | null: false                  |
 |concept       |string        | null: false                  |
+|latitude      |string        | null: false                  |
+|longitude     |string        | null: false                  |
+|email         |string        | null: false                  |
 |admin         |references    | foreign_key: true            |
-※ imageはActivestrageで実装すること
+
 #### Association
 - belongs_to :admin
 - has_many :comments
@@ -156,3 +158,4 @@ Rubocop
 #### Association
 - belongs_to :preschool
 - belongs_to :user
+
