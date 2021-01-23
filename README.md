@@ -1,7 +1,6 @@
 # preschool-match app
 ## URL
-heroku:記入</br>
-AWS:デプロイ後記入
+AWS:https://www.preschool-match.tk/
 ## 概要
 保育園を探す保護者と保育園を繋ぐマッチングアプリ
 
