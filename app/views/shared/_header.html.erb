@@ -3,6 +3,7 @@
  <div class=user-admin-manage>
   <%= link_to image_tag("hoikunavi.png", class:"hoikunavi-icon"), root_path %>
     <ul class='user-manage'>
+        <li><%= link_to '簡単ログイン', users_guest_sign_in_path, method: :post,class: "guest-login" %></li>
       <% if user_signed_in? %>
         <li><%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: "user-nickname"  %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-logout" %></li> 
