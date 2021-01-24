@@ -85,3 +85,78 @@
   margin-right:3vw;
   vertical-align: middle;
 }
+
+/* スマホ表示時 */
+@media (max-width: 480px) {
+  .google-resister{
+    width: 60vw;
+    text-decoration:none;
+    color: #666666;
+    border:1px solid  #999999;
+    padding: 1vw 1vw;
+    display: inline-block; 
+    font-size: 0.8em;
+  }
+  .google-icon{
+    width:6vw;
+    margin-right:3vw;
+    vertical-align: middle;
+  }
+  .register-btn{
+    width: 40vw;
+    font-size: 0.8em;
+  }
+
+
+  .resister-title{
+    color: #E85298;  
+    border: 1px solid #ccc;
+    padding-left:1vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:3vh;
+  }
+  .main-title{
+    font-size: 1.0rem;
+    justify-content: center;
+  }
+  
+  .sub-title{
+    font-size: 0.8em;
+    color: #999999;
+  }
+  .registrations-area {
+  ::placeholder {
+    font-size: 1em;
+    text-align: center;
+    }
+  }
+  .registrations-area{
+    input[type="text"] {
+      width: 100%;
+      height: 5vh;
+    }
+  }
+  .registrations-area{
+    input[type="password"] {
+      width: 100%;
+      height: 5vh;
+    }
+  }
+  
+  .registrations-area{
+    input[type="email"] {
+      width: 100%;
+      height: 5vh;
+    }
+  }
+  .user-field {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+
+}

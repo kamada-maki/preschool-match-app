@@ -109,6 +109,7 @@
 
 /* スマホ表示時 */
 @media (max-width: 480px) {
+  .user-mypage{
   .mother-icon {
     margin-left: 4px;
     margin-top: -1px;
@@ -117,7 +118,19 @@
     height: 10vw;
   }
   .mypage-title{
-    font-size: 1.5rem;
+    font-size: 1.5em;
+  }
+  .preschool-img {
+    width: 15vh;
+    height: auto;
+    
   }
   
+  .preschool-info {
+    width: 15vh;
+    background-color: #FFF;
+    padding: 1vw;
+    text-decoration: none;
+  }
+}
 }
