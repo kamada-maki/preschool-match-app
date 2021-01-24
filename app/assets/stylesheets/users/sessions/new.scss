@@ -1,3 +1,26 @@
 .login-flash-message{
   color: #ea352d;
 }
+
+
+/* スマホ表示時 */
+@media (max-width: 480px) {
+  .google-resister{
+    width: 60vw;
+    text-decoration:none;
+    color: #666666;
+    border:1px solid  #999999;
+    padding: 1vw 1vw;
+    display: inline-block; 
+    font-size: 0.8em;
+  }
+  .google-icon{
+    width:6vw;
+    margin-right:3vw;
+    vertical-align: middle;
+  }
+  .register-btn{
+    width: 40vw;
+    font-size: 0.8em;
+  }
+}
