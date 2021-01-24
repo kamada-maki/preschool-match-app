@@ -10,20 +10,9 @@
           <% unless user_signed_in? %>
             <span class="like-count">★<%= @preschool.likes.count %></span>
           <% end %>
-          <% if user_signed_in? && current_user.already_liked?(@preschool) %>
-            <div class= "liked_destroy_area">
-              <%= link_to "★", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :delete, class: "liked_destroy_btn" %>
-              <span class="like-count"><%= @preschool.likes.count %></span>
-            </div>
-          <% elsif user_signed_in?  %>
-            <div class="like_area">
-              <%= link_to "☆", preschool_likes_path(@preschool), data: {id: @preschool.id}, remote:true, method: :post, class: "liked_btn" %>
-              <span class="like-count"><%= @preschool.likes.count %></span>
-            </div>
-          <% end %>
+          <%= render "shared/likes" %>
         </div><%# like-destroy-area%>
      </div><%# title%>
-<%# </div> %>
       <div class="detail-image">
         <% @preschool.images.each do |image| %>
           <%= image_tag image, class: 'images' %>
