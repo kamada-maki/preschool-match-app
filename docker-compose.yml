@@ -4,7 +4,7 @@ services:
     build:
       context: .
     env_file:
-      - db.env
+      - .env
     command: bundle exec puma -C config/puma.rb
     ports:
       - 3000:3000
@@ -20,7 +20,7 @@ services:
     ports:
       - "4306:3306"
     env_file:
-      - db.env
+      - .env
     volumes:
       - db-data:/var/lib/mysql
   # web:
