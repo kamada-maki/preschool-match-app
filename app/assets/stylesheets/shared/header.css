@@ -169,12 +169,22 @@ header{
 
 .hoikunavi-icon {
   width: 20vw;
-  margin-right: 10vw;
+  margin-right: 8vw;
+  margin-left: 1vw;
 }
 .user-admin-manage{
   display: flex;
   align-items: center;
-  font-size:0.8em;
+  font-size:0.5em;
+}
+.guest-login{
+  text-decoration: none;
+  background-color: white;
+  color: #999999;
+  padding:auto;
+  border:solid 1px #999999;
+  border-radius: 10px;
+  padding:4px 5px;
 }
 .user-manage {
   display: flex;
@@ -188,20 +198,21 @@ header{
   font-weight: bold;
   color:#E85298;
   width: 100vw;
+  padding:4px 5px;
 }
 
 .user-logout {
   text-decoration: none;
   color:#E85298;
   width: 100vw;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 .user-login {
   text-decoration: none;
   color:#E85298;
-  margin-right: 3vw;
+  margin-right: 1vw;
 }
 
 .user-sign-up {
@@ -210,13 +221,13 @@ header{
   padding:auto;
   border:solid 1px #E85298;
   border-radius: 10px;
-  padding:8px 10px;
+  padding:4px 5px;
 }
 
 
 
 .menu ul {
-  margin: 0 auto;
+  padding:4px 5px;
   background :#f4f4f4;
   display: block;
   text-align: center;
