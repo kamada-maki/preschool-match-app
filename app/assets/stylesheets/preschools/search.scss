@@ -1,0 +1,44 @@
+.search-result{
+  margin:0 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-title{
+  font-size: 2.0em;
+  color: #E85298;  
+  border: 1px solid #ccc;
+  padding:0.5vw
+}
+.no-contents{
+  color: #666666;
+}
+  .to_index{
+    width: 30%;
+    font-size: 1em;
+    color: #E85298;  
+    border: 1px solid #ccc;
+    padding:1vw;
+    text-decoration: none;
+  }
+
+.to_index:hover{
+  opacity:0.75
+}
+
+/* スマホ表示時 */
+@media (max-width: 480px) {
+  .search-title{
+    font-size: 1.5em;
+    padding:0.3vw
+  }
+  .to_index{
+    width: 30%;
+    font-size: 0.7em;
+    color: #E85298;  
+    border: 1px solid #ccc;
+    padding:1vw;
+    text-decoration: none;
+  }
+
+}
