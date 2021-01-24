@@ -4,10 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :check_guest, only: :destroy
 
   def check_guest
-    if resource.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーは削除できません。'
-    end
+    redirect_to root_path, alert: 'ゲストユーザーは削除できません。' if resource.email == 'guest@example.com'
   end
+
   def create
     if params[:sns_auth] == 'true'
       pass = Devise.friendly_token
@@ -16,5 +15,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     super
   end
-
 end

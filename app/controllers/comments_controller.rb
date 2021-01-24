@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_preschool 
+  before_action :set_preschool
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     end
     render json: { comment: @comment, user: @user, html: html }
   end
+
   def destroy
     @comment = Comment.destroy(params[:id])
     @user = User.find(@comment.user_id)
@@ -18,12 +19,13 @@ class CommentsController < ApplicationController
     render json: { comment: @comment, user: @user, html: html }
   end
 
-
   private
+
   def comment_params
     params.require(:comment)
           .permit(:text).merge(user_id: current_user.id, preschool_id: params[:preschool_id])
   end
+
   def set_preschool
     @preschool = Preschool.find(params[:preschool_id])
   end

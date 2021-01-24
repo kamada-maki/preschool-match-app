@@ -1,6 +1,6 @@
 class PreschoolsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
-  before_action :set_preschool ,only:[:show,:edit,:update,:destroy]
+  before_action :set_preschool, only: [:show, :edit, :update, :destroy]
   PER = 6
   def index
     @q = Preschool.ransack(params[:q])
@@ -47,6 +47,7 @@ class PreschoolsController < ApplicationController
   end
 
   private
+
   def preschool_params
     params.require(:preschool)
           .permit(:name, :post_number, :area_id, :address, :building, :phone_number, :access, :open_hour, :close_hour, :capacity,
@@ -61,6 +62,7 @@ class PreschoolsController < ApplicationController
   def search_params
     params.require(:q).permit!
   end
+
   def set_preschool
     @preschool = Preschool.find(params[:id])
   end
