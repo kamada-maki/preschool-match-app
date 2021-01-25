@@ -4,7 +4,7 @@ AWS:https://www.preschool-match.tk/
 ## 概要
 保育園を探す保護者と保育園を繋ぐマッチングアプリ
 
-（一覧表示と詳細「見学に行きたいボタン」の画面を載せる）
+[![Image from Gyazo](https://i.gyazo.com/dcfb9029fcec4296c85d2aac02a8f1c3.jpg)](https://gyazo.com/dcfb9029fcec4296c85d2aac02a8f1c3)
 
 ---------------------------------------------
 
@@ -37,22 +37,24 @@ AWS:https://www.preschool-match.tk/
 ---------------------------------------------
 ## 実装機能
 - 一覧表示
-- 検索（エリア検索、運営業種別、キーワード検索）
+  - 検索（エリア検索、運営業種別、キーワード検索）
+  [![Image from Gyazo](https://i.gyazo.com/dcfb9029fcec4296c85d2aac02a8f1c3.jpg)](https://gyazo.com/dcfb9029fcec4296c85d2aac02a8f1c3)
 - 詳細表示
-- 問い合わせボタンの改良
-（メールアドレス、名前、希望日を選択し送信することで保育園側にこの情報が送られ、日程の相談をし見学日を決定）
+  - 問い合わせボタンの実装
+  （クリックすると運営者のメールが送信できる）
+  - Googleマップで園の位置を表示
 - ログイン（保育園側、保護者側）
+  - SNS認証
 - 投稿（画像投稿可）
 - 園情報の修正、削除
-- Googleマップで園の位置を表示
+- マイページ
+- 保育料金シュミレーション機能（預ける時間、年齢を入力すると料金の概算結果が出る）
+[![Image from Gyazo](https://i.gyazo.com/474b18597015bfc34dd6fbf7b95bd7fd.gif)](https://gyazo.com/474b18597015bfc34dd6fbf7b95bd7fd)
 - ★評価を押す、取り消す
+[![Image from Gyazo](https://i.gyazo.com/5b1f1878bc6e54045c8ee9a25bd5ccb2.gif)](https://gyazo.com/5b1f1878bc6e54045c8ee9a25bd5ccb2)
 - コメント（口コミ）投稿
 - コメント（口コミ）削除
-- マイページ
-- SNS認証
-- 保育料金シュミレーション機能
-（預ける時間、年齢を入力すると料金の概算が出るものをJavascriptで実装）
-
+[![Image from Gyazo](https://i.gyazo.com/57d88cdc7a5e2c857137c27c2764391b.gif)](https://gyazo.com/57d88cdc7a5e2c857137c27c2764391b)
 ### 実装予定機能
 - 問い合わせボタンの改良
 （希望日を入力して送るのではなく、保育園側が空いている時間をカレンダーで共有でき、
@@ -74,10 +76,10 @@ Git/Github
 
 - インフラ
 本番環境:
-AWS（EC2,S3,RDB,Docker,）
+AWS（EC2,S3,RDB,Docker,ALB,SSL）
 開発環境:
-Docker/docker-compose
-mysql
+Docker/Docker-compose
+Mysql
 
 - テスト
 Rspec
