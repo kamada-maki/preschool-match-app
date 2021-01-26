@@ -1,9 +1,25 @@
 ja:
- activerecord:
+  activerecord:
    attributes:
      preschool:
        name: 保育園名
-ja:
+       post_number: 郵便番号
+       area_id: エリア
+       address: 住所
+       building: 建物名
+       phone_number: 電話番号
+       access: アクセス
+       open_hour: 開園時間
+       close_hour: 開園時間
+       capacity: 定員数
+       email: メールアドレス
+       concept: 園の特徴
+       category_id: 運営業態
+     price:
+       category_id: 運営業態
+       age_id: 年齢
+       free_price: 保育料
+       not_free_price: 保育料以外の金額
   time:
    formats:
      default: "%Y/%m/%d %H:%M:%S"
