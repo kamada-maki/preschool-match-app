@@ -9,7 +9,7 @@ FactoryBot.define do
     access            { Faker::Lorem.sentence(1..30) }
     open_hour         { Faker::Number.decimal_part(digits: 2) }
     close_hour        { Faker::Number.decimal_part(digits: 2) }
-    capacity          { Faker::Number.number(digits: 10) }
+    capacity          { Faker::Number.number(digits:4) }
     category_id       { 1 }
     email                 { Faker::Internet.free_email }
     concept { Faker::Lorem.sentence(1..150) }

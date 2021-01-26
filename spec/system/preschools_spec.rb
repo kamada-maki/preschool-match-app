@@ -6,11 +6,15 @@
 #   end
 #   context '保育園情報投稿ができるとき'do
 #   it 'ログインした管理者は新規投稿できる' do
+#     # トップページに移動する
+#     visit root_path
+#     # トップページにログインページへ遷移するボタンがあることを確認する
+#     expect(page).to have_content('ログイン')
 #     # ログインする
 #     visit new_admin_session_path
-#     fill_in 'Email', with: @admin.email
-#     fill_in 'Password', with: @admin.password
-#     find('input[name="commit"]').click
+#     fill_in 'メールアドレス', with: @admin.email
+#     fill_in 'パスワード', with: @admin.password
+#     find('input[name="ログイン"]').click
 #     expect(current_path).to eq root_path
 #     # 新規投稿ページへのリンクがあることを確認する
 #     expect(page).to have_content('新規投稿')
