@@ -15,6 +15,7 @@ services:
       - log-data:/webapp/log
     depends_on:
       - db
+      - selenium
   db:
     image: mysql:5.7
     ports:
@@ -23,6 +24,11 @@ services:
       - .env
     volumes:
       - db-data:/var/lib/mysql
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    shm_size: 256m
+    ports:
+      - "5900:5900"
   # web:
   #   build:
   #     context: containers/nginx
