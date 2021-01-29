@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :preschool do
+    # images             {Faker::Lorem.sentence}
     name              { Faker::Name.last_name }
     post_number       { '123-4567' }
     area_id           { 1 }
