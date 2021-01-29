@@ -26,28 +26,28 @@
       </tr>
       <tr>
         <th  class="post-number">郵便番号 <span class="indispensable">※</span></th>
-          <td><%= f.text_field :post_number, class:"preschool-postnumber", placeholder:"123-4567（ハイフンあり）" %></td>
+          <td><%= f.text_field :post_number, id:"preschool-postnumber",class:"preschool-postnumber", placeholder:"123-4567（ハイフンあり）" %></td>
       </tr>
       <tr>
         <th  class="area">所在地 <span class="indispensable">※</span></th>
         <td><%= f.collection_select :area_id, Area.all, :id, :name, {include_blank: "選択してください"},{class:"select-box"}%>
-            <%= f.text_field  :address, class:"preschools-address", id:"preschools-address", placeholder:"天満1-2-3" %></td>
+            <%= f.text_field  :address, class:"preschools-address", id:"preschool-address", placeholder:"天満1-2-3" %></td>
       </tr>
        <tr>
         <th  class="building">建物名</th>
-        <td><%= f.text_field  :building, class:"preschools-building", id:"preschools-building", placeholder:"ABCビル1階" %></td>
+        <td><%= f.text_field  :building, class:"preschools-building", id:"preschool-building", placeholder:"ABCビル1階" %></td>
       </tr>
       <tr>
         <th  class="phone-number">電話番号 <span class="indispensable">※</span></th>
-        <td><%= f.text_field :phone_number, class:"phone-number", placeholder:"例）0612345678（ハイフンなし）",maxlength:"11"%></td>
+        <td><%= f.text_field :phone_number, class:"phone-number", id:"preschool-phonenumber",placeholder:"例）0612345678（ハイフンなし）",maxlength:"11"%></td>
       </tr>
       <tr>
         <th  class="access">アクセス <span class="indispensable">※</span></th>
-        <td><%= f.text_field :access, class:"access", placeholder:"例）大阪駅より徒歩10分"%></td>
+        <td><%= f.text_field :access, class:"access",id:"preschool-access", placeholder:"例）大阪駅より徒歩10分"%></td>
       </tr>
       <tr>
         <th  class="capacity">定員数 <span class="indispensable">※</span></th>
-        <td><%= f.text_field :capacity, class:"capacity", placeholder:"例）50"%></td>
+        <td><%= f.text_field :capacity, class:"capacity",id:"preschool-capacity", placeholder:"例）50"%></td>
       </tr>
       <tr>
         <th class="category">運営業態 <span class="indispensable">※</span></th>
@@ -60,11 +60,11 @@
       </tr>
       <tr>
         <th class="concept">園の特徴 <span class="indispensable">※</span></th>
-        <td><%= f.text_area :concept, class:"concept", placeholder:"例）様々な預け方に対応できます！たくましい子どもを一緒に育てていきましょう！"%></td>
+        <td><%= f.text_area :concept, class:"concept",id:"preschool-concept", placeholder:"例）様々な預け方に対応できます！たくましい子どもを一緒に育てていきましょう！"%></td>
       </tr>
       <tr>
         <th class="email">メールアドレス<span class="indispensable">※</span></th>
-        <td><%= f.text_field :email, class:"email", placeholder:"例）test@test.com"%></td>
+        <td><%= f.text_field :email, class:"email", id:"preschool-enail",placeholder:"例）test@test.com"%></td>
       </tr>
        </table>
     <ul class="register-btn-contents">
