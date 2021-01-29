@@ -4,7 +4,16 @@ RSpec.describe "Preschools", type: :system do
   before do
     @preschool = FactoryBot.create(:preschool)
     @admin = FactoryBot.create(:admin)
+    @preschool.images = fixture_file_upload('public/rspec-sample.png')
   end
+  context '保育園情報投稿ができないとき'do
+  it 'ログインしていないと新規投稿ページに遷移できない' do
+    # トップページに遷移する
+      visit root_path
+   # 新規投稿ページへのリンクがない
+    expect(page).to have_no_content('新規投稿')
+  end
+end
   context '保育園情報投稿ができるとき'do
   it 'ログインした管理者は新規投稿できる' do
     # トップページに移動する
@@ -22,23 +31,25 @@ RSpec.describe "Preschools", type: :system do
     # 投稿ページに移動する
     visit new_preschool_path
     # フォームに情報を入力する
-    # fill_in 'images', with: @preschool.images
-    fill_in '保育園名', with: @preschool.name
-    fill_in '郵便番号', with: @preschool.post_number
-    fill_in 'エリア', with: @preschool.area_id
-    fill_in '所在地', with: @preschool.address
-    fill_in '建物名', with: @preschool.building
-    fill_in '電話番号', with: @preschool.phone_number
-    fill_in 'アクセス', with: @preschool.access
-    fill_in '開園時間', with: @preschool.open_hour
-    fill_in '開園時間', with: @preschool.close_hour
-    fill_in '定員数', with: @preschool.capacity
-    fill_in '運営業態', with: @preschool.category.id
-    fill_in 'メールアドレス', with: @preschool.email
-    fill_in '園の特徴', with: @preschool.concept
+    fill_in 'preschool-image', with: @preschool.images
+    fill_in 'preschool-name', with: @preschool.name
+    fill_in 'preschool-postnumber', with: @preschool.post_number
+    fill_in 'preschool_area_id', with: @preschool.area_id
+    fill_in 'preschool-address', with: @preschool.address
+    fill_in 'preschool-building', with: @preschool.building
+    fill_in 'preschool-phonenumber', with: @preschool.phone_number
+    fill_in 'preschool-access', with: @preschool.access
+    fill_in 'preschool_open_hour_4i', with: @preschool.open_hour
+    fill_in 'preschool_open_hour_5i', with: @preschool.open_hour
+    fill_in 'preschool_close_hour_4i', with: @preschool.close_hour
+    fill_in 'preschool_close_hour_5i', with: @preschool.close_hour
+    fill_in 'preschool-capacity', with: @preschool.capacity
+    fill_in 'preschool_category_id', with: @preschool.category.id
+    fill_in 'preschool-enail', with: @preschool.email
+    fill_in 'preschool-concept', with: @preschool.concept
     # 送信するとPreschoolモデルのカウントが1上がることを確認する
     expect{
-      find('input[name="投稿する"]').click
+      find('input[name="commit"]').click
     }.to change { Preschool.count }.by(1)
     # 投稿完了ページに遷移することを確認する
     expect(current_path).to eq preschools_path
@@ -52,10 +63,5 @@ RSpec.describe "Preschools", type: :system do
     expect(page).to have_content(@preschool_text)
   end
 end
-  context '保育園情報投稿ができないとき'do
-    it 'ログインしていないと新規投稿ページに遷移できない' do
-      # トップページに遷移する
-      # 新規投稿ページへのリンクがない
-    end
-  end
+
 end
