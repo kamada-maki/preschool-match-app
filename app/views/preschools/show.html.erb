@@ -68,8 +68,8 @@
           <%= render "shared/map" %>
         </div>
         <div class="map-open">
-          <%= link_to image_tag("google_maps_logo.png",class:"map-icon"), "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank"  %></br>
-          <%= link_to "GoogleMapを開く", "https://maps.google.co.jp/maps?q=loc:#{@preschool.latitude},#{@preschool.longitude}&iwloc=J",target: "_blank",class:"map-click"  %>
+          <%= link_to image_tag("google_maps_logo.png",class:"map-icon"), "https://www.google.co.jp/maps/search/?api=1&query=#{@preschool.latitude},#{@preschool.longitude}",target: "_blank"  %></br>
+          <%= link_to "GoogleMapを開く", "https://www.google.co.jp/maps/search/?api=1&query=#{@preschool.latitude},#{@preschool.longitude}",target: "_blank",class:"map-click"  %>
         </div>
       </div>
       <div class="preschool__comments">
