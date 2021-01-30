@@ -2,18 +2,17 @@ require 'rails_helper'
 
 RSpec.describe "Preschools", type: :system do
   before do
-    @preschool = FactoryBot.create(:preschool)
+    @preschool = FactoryBot.build(:preschool)
     @admin = FactoryBot.create(:admin)
-    @preschool.images = fixture_file_upload('public/rspec-sample.png')
   end
   context '保育園情報投稿ができないとき'do
-  it 'ログインしていないと新規投稿ページに遷移できない' do
-    # トップページに遷移する
+    it 'ログインしていないと新規投稿ページに遷移できない' do
+      # トップページに遷移する
       visit root_path
-   # 新規投稿ページへのリンクがない
-    expect(page).to have_no_content('新規投稿')
+      # 新規投稿ページへのリンクがない
+      expect(page).to have_no_content('新規投稿')
+    end
   end
-end
   context '保育園情報投稿ができるとき'do
   it 'ログインした管理者は新規投稿できる' do
     # トップページに移動する
@@ -31,20 +30,21 @@ end
     # 投稿ページに移動する
     visit new_preschool_path
     # フォームに情報を入力する
-    fill_in 'preschool-image', with: @preschool.images
+    attach_file 'preschool-image', 'public/rspec-sample.png'
     fill_in 'preschool-name', with: @preschool.name
     fill_in 'preschool-postnumber', with: @preschool.post_number
-    fill_in 'preschool_area_id', with: @preschool.area_id
+    find('#preschool_area_id').find("option[value='#{@preschool.area_id}']").select_option
+    # select '大阪市都島区', from: 'preschool_area_id' #ラベル指定であればこのような書き方もできる様です
     fill_in 'preschool-address', with: @preschool.address
     fill_in 'preschool-building', with: @preschool.building
     fill_in 'preschool-phonenumber', with: @preschool.phone_number
     fill_in 'preschool-access', with: @preschool.access
-    fill_in 'preschool_open_hour_4i', with: @preschool.open_hour
-    fill_in 'preschool_open_hour_5i', with: @preschool.open_hour
-    fill_in 'preschool_close_hour_4i', with: @preschool.close_hour
-    fill_in 'preschool_close_hour_5i', with: @preschool.close_hour
+    select 10, from: 'preschool_open_hour_4i' 
+    select 30, from: 'preschool_open_hour_5i' 
+    select 20, from: 'preschool_close_hour_4i' 
+    select 15, from: 'preschool_close_hour_5i' 
     fill_in 'preschool-capacity', with: @preschool.capacity
-    fill_in 'preschool_category_id', with: @preschool.category.id
+    find('#preschool_category_id').find("option[value='#{@preschool.category_id}']").select_option
     fill_in 'preschool-enail', with: @preschool.email
     fill_in 'preschool-concept', with: @preschool.concept
     # 送信するとPreschoolモデルのカウントが1上がることを確認する
