@@ -51,15 +51,11 @@ RSpec.describe "Preschools", type: :system do
     expect{
       find('input[name="commit"]').click
     }.to change { Preschool.count }.by(1)
-    # 投稿完了ページに遷移することを確認する
-    expect(current_path).to eq preschools_path
     # 「投稿が完了しました」の文字があることを確認する
-    expect(page).to have_content('投稿が完了しました。')
+    expect(page).to have_content('投稿完了しました')
     # トップページに遷移する
     visit root_path
-    # トップページには先ほど投稿した内容のツイートが存在することを確認する（画像）
-    expect(page).to have_selector ".content_post[style='background-image: url(#{@preschool.image});']"
-    # トップページには先ほど投稿した内容のツイートが存在することを確認する（テキスト）
+    # トップページには先ほど投稿した内容のツイートが存在することを確認
     expect(page).to have_content(@preschool_text)
   end
 end
