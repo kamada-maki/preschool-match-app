@@ -6,20 +6,16 @@
       <li class="title-indispensable">※</li>
       <li class="indispensable-form">は必須投稿</li>
     </ul>
-    <table>
     <%= form_with(model: @preschool, local: true) do |f| %>
+    <table>
 
     <%= render 'shared/error_messages', model: f.object %>
   
-    <div class="img-upload">
-        <div id="image-list"></div>
       <tr>
       <th class="click-upload">画像選択<span class="indispensable">※</span></th>
         <td><%= f.file_field :images, name:'preschool[images][]', id:"preschool-image" %></td>
       </tr>
-    </div>
   
-    <div class="new-preschools">
       <tr>
         <th class="name">保育園名 <span class="indispensable">※</span></th>
         <td><%= f.text_field  :name, class:"preschool-name", id:"preschool-name", placeholder:"〇〇保育園（最大40文字）", maxlength:"40" %></td>
