@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Preschools", type: :system do
+RSpec.describe "Preschools", type: :system, js: true do
   before do
     @preschool = FactoryBot.build(:preschool)
     @admin = FactoryBot.create(:admin)
