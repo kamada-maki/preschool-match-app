@@ -3,7 +3,7 @@ function count (){
   Concept.addEventListener("keyup", () => {
     const countVal = Concept.value.length;
     const charNum  = document.getElementById("char_num");
-    charNum.innerHTML = `${countVal}文字`;
+    charNum.innerHTML = `現在${countVal}文字`;
   });
   };
 window.addEventListener('load', count)
