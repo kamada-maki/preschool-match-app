@@ -55,8 +55,9 @@
             <%= f.time_select :close_hour,:minute_step => 15, class:"close-hour",prompt: "--",ignore_data: false %></td>
       </tr>
       <tr>
-        <th class="concept">園の特徴 <span class="indispensable">※</span></th>
-        <td><%= f.text_area :concept, class:"concept",id:"preschool-concept", placeholder:"例）様々な預け方に対応できます！たくましい子どもを一緒に育てていきましょう！"%></td>
+        <th class="concept-form">園の特徴（40文字以内) <span class="indispensable">※</span></th>
+        <td class="preschool-concept-form"><%= f.text_area :concept, class:"concept",id:"preschool-concept", placeholder:"例）様々な預け方に対応できます！たくましい子どもを一緒に育てていきましょう！"%>
+          <div id="char_num",class="char-count">現在0文字</div></td>
       </tr>
       <tr>
         <th class="email">メールアドレス<span class="indispensable">※</span></th>
