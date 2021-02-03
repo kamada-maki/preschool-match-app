@@ -39,10 +39,10 @@
 #     fill_in 'preschool-building', with: @preschool.building
 #     fill_in 'preschool-phonenumber', with: @preschool.phone_number
 #     fill_in 'preschool-access', with: @preschool.access
-#     select 10, from: 'preschool_open_hour_4i' 
-#     select 30, from: 'preschool_open_hour_5i' 
-#     select 20, from: 'preschool_close_hour_4i' 
-#     select 15, from: 'preschool_close_hour_5i' 
+#     select 10, from: 'preschool_open_hour_4i'
+#     select 30, from: 'preschool_open_hour_5i'
+#     select 20, from: 'preschool_close_hour_4i'
+#     select 15, from: 'preschool_close_hour_5i'
 #     fill_in 'preschool-capacity', with: @preschool.capacity
 #     find('#preschool_category_id').find("option[value='#{@preschool.category_id}']").select_option
 #     fill_in 'preschool-enail', with: @preschool.email
