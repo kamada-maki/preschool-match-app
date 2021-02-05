@@ -22,12 +22,11 @@
         <th class  ="serelt-input">保育料以外の教材費、食費等（半角英数字）</th>
         <td><%= f.text_field :not_free_price, class:"not_free_price", placeholder:"例)20000"%></td>
       </tr>
-      </table>
-  <ul class="choose-area">
-    <li class="return"><%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"return_btn" %></li>
-    <li class="return"><%= link_to '一覧画面へ戻る', root_path, class:"return_index_btn" %></li>
-  </ul>
+    </table>
+    <ul class="choose-area">
+      <li class="return"><%= f.submit "シュミレーション結果を見る" ,url:prices_path(@price.id), class:"return_btn" %></li>
+      <li class="return"><%= link_to '一覧画面へ戻る', root_path, class:"return_index_btn" %></li>
+    </ul>
    <%end%>
 </div>
-
 <%= render "shared/footer" %>

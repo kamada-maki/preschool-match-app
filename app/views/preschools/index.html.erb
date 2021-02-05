@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 
-<%# 画面上部の帯部分 %>
 <div class='title-contents'>
   <div>
     <div class="service-title">
@@ -25,7 +24,6 @@
     <%= image_tag "3points_flex.png", class:"sp", alt:"スマートフォン用の画像" %>
   </div>
 </div>
-<%# /画面上部の帯部分  %>
 
 
 <div class='preschool-contents'>
@@ -65,7 +63,6 @@
       </li><%# .list %>
     <% end # @preschools.each %>
   </ul><%# .preschool-lists %>
- 
 </div><%# .preschool-contents %>
  <div class="page-area"><%= paginate @preschools %></div>
 <%= render "shared/footer" %>
