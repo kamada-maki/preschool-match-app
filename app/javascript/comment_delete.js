@@ -7,12 +7,10 @@ function Delete () {
     if (! e.target.classList.contains('fa-trash')) {
       return;
       }
-  
     e.preventDefault();
     if (! confirm(`削除してもよろしいですか？`)) {
       return;
     }
-  
     // 削除ボタンの要素を取得
     const deleteComment = e.target.closest('.comment_destroy_btn');
     const preschoolId = deleteComment.getAttribute("data-preschool-id");
@@ -33,7 +31,6 @@ function Delete () {
     };
     XHR.send();
   });
-  
   }
   window.addEventListener("load", Delete);
   // setInterval(Delete, 1000);
