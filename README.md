@@ -40,7 +40,7 @@ AWS:https://www.preschool-match.tk/
   [![Image from Gyazo](https://i.gyazo.com/dcfb9029fcec4296c85d2aac02a8f1c3.jpg)](https://gyazo.com/dcfb9029fcec4296c85d2aac02a8f1c3)
 - 詳細表示
   - 問い合わせボタンの実装
-  （クリックすると運営者のメールが送信できる）
+  （クリックすると運営者のメールへ送信できる）
   - Googleマップで園の位置を表示
 - ログイン（保育園側、保護者側）
   - SNS認証
