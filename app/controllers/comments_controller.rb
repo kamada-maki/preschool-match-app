@@ -20,13 +20,11 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def comment_params
-    params.require(:comment)
-          .permit(:text).merge(user_id: current_user.id, preschool_id: params[:preschool_id])
-  end
-
-  def set_preschool
-    @preschool = Preschool.find(params[:preschool_id])
-  end
+    def comment_params
+      params.require(:comment)
+            .permit(:text).merge(user_id: current_user.id, preschool_id: params[:preschool_id])
+    end
+    def set_preschool
+      @preschool = Preschool.find(params[:preschool_id])
+    end
 end
