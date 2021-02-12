@@ -28,7 +28,6 @@ module ApplicationHelper
       23_100
     end
   end
-
   def max_price # #上限残り金額
     if @price.category_id != 3
       '他の施設を無償化対象としての併用はできません。'
