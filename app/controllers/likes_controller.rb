@@ -17,7 +17,6 @@ class LikesController < ApplicationController
   end
 
   private
-
   def set_preschool
     @preschool = Preschool.find(params[:preschool_id])
   end
